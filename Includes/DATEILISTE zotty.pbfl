@@ -1,0 +1,18 @@
+14
+..\Anzeige Tester.pb
+include_wesen.pb
+include_spieler.pb
+include_all.pb
+include_item.pb
+include_animation.pb
+..\include structures\include_spieler_structure.pb
+include_math.pb
+..\include structures\include_wesen_structure.pb
+..\include structures\include_animation_structure.pb
+include_anzeige.pb
+..\include structures\include_anzeige_structure.pb
+include_Teams.pb
+..\include structures\include_item_structure.pb
+include_kampfsystem.pb
+..\Wegfindung TESTER.pb
+..\include structures\include_kampfsystem_structure.pb

@@ -1,0 +1,22 @@
+- KI
+- anzeige
+- Figuren bewegen 
+- Gui
+- items
+- Kampfsystem
+
+- Eingabe
+- 
+
+ich: 
+
+- ki 
+- anzeige
+- Figuren bewegen 
+- evtl sound..
+
+scara:
+
+- GUI
+- Kampfsystem
+- Items :)

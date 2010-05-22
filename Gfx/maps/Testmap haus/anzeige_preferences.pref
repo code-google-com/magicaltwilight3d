@@ -1,0 +1,9 @@
+﻿
+resolutionx = 1024
+resolutiony = 768
+resolutiondepth = 32
+IsShadow = 1
+isnormalmapping = 1
+isparallaxmapping = 1
+islighting = 1
+isfog = 1

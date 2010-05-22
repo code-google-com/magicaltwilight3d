@@ -1,0 +1,21 @@
+13
+include_debug.pb
+include_item.pb
+include_Kampfsystem.pb
+include_ki.pb
+include_math.pb
+include_referat.pb
+include_Teams.pb
+include_waypoint.pb
+include_wegfindung.pb
+include_wesen.pb
+include_animation.pb
+include_spieler.pb
+include_anzeige.pb
+..\Anzeige Tester.pb
+include_3DEngine.pb
+include_all.pb
+..\include structures\include_spieler_structure.pb
+..\Wegfindung TESTER.pb
+include_GUIs.pb
+..\include structures\include_anzeige_structure.pb
