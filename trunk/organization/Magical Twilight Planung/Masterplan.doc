@@ -1,0 +1,848 @@
+{\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff31507\deff0\stshfdbch31505\stshfloch31506\stshfhich31506\stshfbi0\deflang1031\deflangfe1031\themelang1031\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f1\fbidi \fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f3\fbidi \froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}{\f34\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria Math;}{\flomajor\f31500\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\fdbmajor\f31501\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\fhimajor\f31502\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria;}
+{\fbimajor\f31503\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\flominor\f31504\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\fdbminor\f31505\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\fhiminor\f31506\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}
+{\fbiminor\f31507\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f39\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\f40\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}
+{\f42\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\f43\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\f44\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\f45\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\f46\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\f47\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\f49\fbidi \fswiss\fcharset238\fprq2 Arial CE;}{\f50\fbidi \fswiss\fcharset204\fprq2 Arial Cyr;}
+{\f52\fbidi \fswiss\fcharset161\fprq2 Arial Greek;}{\f53\fbidi \fswiss\fcharset162\fprq2 Arial Tur;}{\f54\fbidi \fswiss\fcharset177\fprq2 Arial (Hebrew);}{\f55\fbidi \fswiss\fcharset178\fprq2 Arial (Arabic);}
+{\f56\fbidi \fswiss\fcharset186\fprq2 Arial Baltic;}{\f57\fbidi \fswiss\fcharset163\fprq2 Arial (Vietnamese);}{\f379\fbidi \froman\fcharset238\fprq2 Cambria Math CE;}{\f380\fbidi \froman\fcharset204\fprq2 Cambria Math Cyr;}
+{\f382\fbidi \froman\fcharset161\fprq2 Cambria Math Greek;}{\f383\fbidi \froman\fcharset162\fprq2 Cambria Math Tur;}{\f386\fbidi \froman\fcharset186\fprq2 Cambria Math Baltic;}{\flomajor\f31508\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}
+{\flomajor\f31509\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\flomajor\f31511\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\flomajor\f31512\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}
+{\flomajor\f31513\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\flomajor\f31514\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\flomajor\f31515\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}
+{\flomajor\f31516\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\fdbmajor\f31518\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\fdbmajor\f31519\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}
+{\fdbmajor\f31521\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\fdbmajor\f31522\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\fdbmajor\f31523\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}
+{\fdbmajor\f31524\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\fdbmajor\f31525\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\fdbmajor\f31526\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}
+{\fhimajor\f31528\fbidi \froman\fcharset238\fprq2 Cambria CE;}{\fhimajor\f31529\fbidi \froman\fcharset204\fprq2 Cambria Cyr;}{\fhimajor\f31531\fbidi \froman\fcharset161\fprq2 Cambria Greek;}{\fhimajor\f31532\fbidi \froman\fcharset162\fprq2 Cambria Tur;}
+{\fhimajor\f31535\fbidi \froman\fcharset186\fprq2 Cambria Baltic;}{\fbimajor\f31538\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\fbimajor\f31539\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}
+{\fbimajor\f31541\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\fbimajor\f31542\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\fbimajor\f31543\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}
+{\fbimajor\f31544\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\fbimajor\f31545\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\fbimajor\f31546\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}
+{\flominor\f31548\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\flominor\f31549\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\flominor\f31551\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}
+{\flominor\f31552\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\flominor\f31553\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\flominor\f31554\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\flominor\f31555\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\flominor\f31556\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\fdbminor\f31558\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}
+{\fdbminor\f31559\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\fdbminor\f31561\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\fdbminor\f31562\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}
+{\fdbminor\f31563\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\fdbminor\f31564\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\fdbminor\f31565\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}
+{\fdbminor\f31566\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\fhiminor\f31568\fbidi \fswiss\fcharset238\fprq2 Calibri CE;}{\fhiminor\f31569\fbidi \fswiss\fcharset204\fprq2 Calibri Cyr;}
+{\fhiminor\f31571\fbidi \fswiss\fcharset161\fprq2 Calibri Greek;}{\fhiminor\f31572\fbidi \fswiss\fcharset162\fprq2 Calibri Tur;}{\fhiminor\f31575\fbidi \fswiss\fcharset186\fprq2 Calibri Baltic;}
+{\fbiminor\f31578\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\fbiminor\f31579\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\fbiminor\f31581\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}
+{\fbiminor\f31582\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\fbiminor\f31583\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\fbiminor\f31584\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\fbiminor\f31585\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\fbiminor\f31586\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;
+\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;
+\red192\green192\blue192;}{\*\defchp \fs22\loch\af31506\hich\af31506\dbch\af31505 }{\*\defpap \ql \li0\ri0\sa200\sl276\slmult1\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 }\noqfpromote {\stylesheet{
+\ql \li0\ri0\sa200\sl276\slmult1\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af31507\afs22\alang1025 \ltrch\fcs0 \fs22\lang1031\langfe1031\loch\f31506\hich\af31506\dbch\af31505\cgrid\langnp1031\langfenp1031 
+\snext0 \sqformat \spriority0 Normal;}{\*\cs10 \additive \ssemihidden \sunhideused \spriority1 Default Paragraph Font;}{\*
+\ts11\tsrowd\trftsWidthB3\trpaddl108\trpaddr108\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\trcbpat1\trcfpat1\tblind0\tblindtype3\tscellwidthfts0\tsvertalt\tsbrdrt\tsbrdrl\tsbrdrb\tsbrdrr\tsbrdrdgl\tsbrdrdgr\tsbrdrh\tsbrdrv \ql \li0\ri0\sa200\sl276\slmult1
+\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs22\alang1025 \ltrch\fcs0 \fs22\lang1031\langfe1031\loch\f31506\hich\af31506\dbch\af31505\cgrid\langnp1031\langfenp1031 
+\snext11 \ssemihidden \sunhideused \sqformat Normal Table;}}{\*\listtable{\list\listtemplateid1878444626\listsimple{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace0\levelindent0{\leveltext\'01*;}{\levelnumbers;}
+\hres0\chhres0 }{\listname ;}\listid-2}}{\*\listoverridetable{\listoverride\listid-2\listoverridecount1{\lfolevel\listoverrideformat{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelold\levelspace0\levelindent0
+{\leveltext\'01\u-3913 ?;}{\levelnumbers;}\f3\fbias0 }}\ls1}}{\*\rsidtbl \rsid874165\rsid1384283\rsid1470941\rsid4749585\rsid6583954\rsid11949965\rsid12588998}{\mmathPr\mmathFont34\mbrkBin0\mbrkBinSub0\msmallFrac0\mdispDef1\mlMargin0\mrMargin0\mdefJc1
+\mwrapIndent1440\mintLim0\mnaryLim1}{\info{\operator Krieger Drauf}{\creatim\yr2009\mo2\dy27\hr22\min21}{\revtim\yr2009\mo2\dy27\hr22\min27}{\version8}{\edmins0}{\nofpages9}{\nofwords3322}{\nofchars18943}{\nofcharsws22221}{\vern32895}}
+{\*\xmlnstbl {\xmlns1 http://schemas.microsoft.com/office/word/2003/wordml}}\paperw12240\paperh15840\margl1417\margr1417\margt1417\margb1134\gutter0\ltrsect 
+\widowctrl\ftnbj\aenddoc\hyphhotz425\trackmoves1\trackformatting1\donotembedsysfont0\relyonvml0\donotembedlingdata1\grfdocevents0\validatexml0\showplaceholdtext0\ignoremixedcontent0\saveinvalidxml0\showxmlerrors0\horzdoc\dghspace120\dgvspace120
+\dghorigin1701\dgvorigin1984\dghshow0\dgvshow3\jcompress\viewkind1\viewscale100\rsidroot4749585 \fet0{\*\wgrffmtfilter 2450}\ilfomacatclnup0\ltrpar \sectd \ltrsect\linex0\sectdefaultcl\sftnbj {\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang {\pntxta .}}
+{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang {\pntxta )}}{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}
+{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl9
+\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}\pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af31507\afs22\alang1025 \ltrch\fcs0 
+\fs22\lang1031\langfe1031\loch\af31506\hich\af31506\dbch\af31505\cgrid\langnp1031\langfenp1031 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\ul\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 Magical Twilight}{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 Einleitung:
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 vielleicht ist es am einfachsten, ein Rollenspiel anhand der m\'f6\loch\f1 glichen dinge zu beschreiben, die der Spieler tun kann.
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 
+\par \loch\af1\dbch\af31505\hich\f1 \'dc\loch\f1 bersicht
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 Technik:
+\par 
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Purebasic 4.}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid4749585 \hich\af1\dbch\af31505\loch\f1 3}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 
+\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 0 }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid4749585 
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Irrlicht 1.4,
+\par \hich\af1\dbch\af31505\loch\f1 Shadereffekte: }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid11949965 \hich\af1\dbch\af31505\loch\f1 Normal/Parallaxmapping, ansonsten: }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\hich\af1\dbch\af31505\loch\f1 KEINE.... erst, wenn irrlichts bereitstellt}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid11949965 \hich\af1\dbch\af31505\loch\f1  }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 Das Spiel ist relativ einfach zu steuern, wie ein 3rd person shooter, oder sowas (also besser, als Gothik halt ;)
+\par \hich\af1\dbch\af31505\loch\f1 im GUI kommen fas\hich\af1\dbch\af31505\loch\f1 \hich\f1 t nur PNG bilder mit alpha  vor: diese sollen schatten, antialiasing haben, und Holzbzw. Leder\'e4\loch\f1 nlich aussehen. 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Aufl\'f6\loch\f1 sung einstellbar ab 1024*768*32 alles nach oben hin offen, was die Grafikkarte erlaubt. (checkbox im einstellungsmenu)
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 G15 Unterst\'fc\loch\f1 tzung.}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1384283 \hich\af1\dbch\af31505\loch\f1  (\hich\af1\dbch\af31505\loch\f1 1. Beta evtl)}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 
+\f1\fs20\insrsid1470941 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 Zielgruppe:
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 Siehe Der Zielspieler.doc
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 Alleinstellungsmerkmale:
+\par 
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Kostenlos, eines der 1. Purebasic-3d Rollenspiele
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Ebenfalls f\'fc\loch\f1 \hich\f1 r/\'fc\loch\f1 ber Irrlicht gute Werbung 
+\par \hich\af1\dbch\af31505\loch\f1 Witziger Held mit vielen Animationen und Kommentaren
+\par \hich\af1\dbch\af31505\loch\f1 Viechers Fallen mit Physik um,\hich\af1\dbch\af31505\loch\f1 \hich\f1  wenn m\'f6\loch\f1 glich.
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 sch\'f6\loch\f1 \hich\f1 ne Levels sollten mit Gothic 3 vergleichbar sein, was z.b. Pflanzenvielfalt angeht -> evtl zus\'e4\loch\f1 tzlicher Grafiker, spricht 3d artist.
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Sch\'f6\loch\f1 ne Musik
+\par \hich\af1\dbch\af31505\loch\f1 "amazing" Zaubereffekte
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 Steuerung:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Mit}{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1  WASD+Pfeiltasten 
+}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 kann man den Spieler bewegen;  Camera fliegt Smooth hinterher.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Die }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Mausbewegung }{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 dreht die Camera links-rechts, w\'e4\loch\f1 \hich\f1 hrend auf-Abbewegung Die Cam \'fc\loch\f1 ber die Spielfigur bzw. im Bogen dahinder hindreht.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Mit }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Linksklick  }{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 schl\'e4\loch\f1 gt die Figur mit der linken waffe zu\hich\af1\dbch\af31505\loch\f1 \hich\f1 , oder benutzt den aktuell ausgew\'e4\loch\f1 \hich\f1 
+hlten Zauber, der z.b. mit der schnellbenutzleiste ausgew\'e4\loch\f1 hlt wurde.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 mit }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Rechtsklick }{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 schl\'e4\loch\f1 \hich\f1 gt die Figur mit rechter Waffe zu, sofern sie eine Hat, oder h\'e4\loch\f1 
+lt den Schild hoch, der, wie ein echter schild nur dannwirkt, wenn \hich\af1\dbch\af31505\loch\f1 der Gegner mit der waffe den schild und nicht den spieler trifft.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Die }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Leertaste }{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 l\'e4\loch\f1 sst den Helden Springen, wie in vielen spielen auch.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 2 Mal Leertaste}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+\hich\f1  = Flugrolle in die Bewegrichtung. kann bei steilen H\'e4\loch\f1 ngen ins Auge gehen, aber noch rechts/links gest\hich\af1\dbch\af31505\loch\f1 euert werden.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Die }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 M-Taste }{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 l\'e4\loch\f1 \hich\f1 sst das Mapfenster gro\'df\loch\f1 \hich\f1  werden, das dem Spieler die St\'e4\loch\f1 \hich\f1 dte und unfertigen bzw. gel\'f6
+\loch\f1 sten Quests in der karte anzeigt. (z.b. gelber punkt: hier wartet Onar auf sein Brot..)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 die }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Q-taste }{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \loch\af1\dbch\af31505\hich\f1 \'f6\hich\af1\dbch\af31505\loch\f1 \hich\f1 
+ffnet den Questlog. hier stehen die genauen Texte der Quests. z.b. "Onar wartet auf Brot: Brot gegeben. Onar will jetzt auch bier: bier gegeben; Onar ist gl\'fc\loch\f1 
+cklich und steigert euer Ansehen bei der Miliz, indem er euch als Pfundskerl beschreibt. + 10 beli\hich\af1\dbch\af31505\loch\f1 e\hich\af1\dbch\af31505\loch\f1 btheit miliz"
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Mit}{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1  I }{\rtlch\fcs1 
+\af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \loch\af1\dbch\af31505\hich\f1 \'f6\loch\f1 ffnet sich das }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Inventar}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 
+\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 . }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 rechtsklick }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\hich\af1\dbch\af31505\loch\f1 \hich\f1 hier = essen/lesen/benutzen, mit Linksklick und Ziehen von z.b. waffen ins Heldenmen\'fc\loch\f1 \hich\f1  zur linken seite kann man den Helden ausr\'fc\loch\f1 \hich\f1 sten, wenn man mit der Maus \'fc\loch\f1 
+ber ein benutzbares Item geht und eine \hich\af1\dbch\af31505\loch\f1 Taste von}{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1  0-9 }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\hich\af1\dbch\af31505\loch\f1 \hich\f1 dr\'fc\loch\f1 ckt (also }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 1,2,3,4...8,9,0) }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\hich\af1\dbch\af31505\loch\f1 \hich\f1 wird das Item der Schnellbenutzleiste (leiste unten im GUI ) hinzugef\'fc\loch\f1 \hich\f1 gt, man kann z.b. Zauber oder Waffen da ablegen, um schnell zugreifen zu k\'f6\loch\f1 \hich\f1 nnen; au\'df\loch\f1 
+erdem kann man gleich }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 linksklicken }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 auf Zauber => inventar 
+\hich\af1\dbch\af31505\loch\f1 wird geschlossen  und spieler hat zauber in der Hand; Wenn }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Maus \'fc\loch\f1 ber Item}{\rtlch\fcs1 \af1\afs20 
+\ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 , dann wird Immer ein Infotext angezeigt. Man kann Items \'fc\loch\f1 ber den }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+Rand des Inventars herausziehen}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 , um sie wegzuwerfen. (keine Questgegenst\'e4\loch\f1 nde)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Mit}{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1  H }{\rtlch\fcs1 
+\af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \loch\af1\dbch\af31505\hich\f1 \'f6\loch\f1 ffnet sich die Heldenansicht. \hich\af1\dbch\af31505\loch\f1 \hich\f1 man kann Punkte verteilen, sofern man welche \'fc\loch\f1 \hich\f1 
+brighat, sehen, wie lang es noch dauert, bis man level aufgestiegen ist und seinen Helden sch\'f6\loch\f1 n in 3d betrachten, wie er sich posiert ;-)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Mit den Tasten}{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1  0-9 }{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 kann (wobei 0 nach 9 kommt, wie auf der Tastatur) w\hich\af1\dbch\af31505\loch\f1 \hich\f1 
+ird das Item, das in der Schnellbenutzleiste drin ist benutzt, sofern noch eins vorhanden ist. z.b. Manatrank. man kann die Items im Inventar-men\'fc\loch\f1  in die schnellbenutzleiste hineingeben.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 ESC }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 
+bringt das Spiel wieder in das Spielmen\'fc\loch\f1 . man kann da speichern\hich\af1\dbch\af31505\loch\f1 , laden, spiel beenden, Optionen (grafik, sound) einstellen, etc.b 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Mit }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 SHIFT }{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 benutzt man gegenst\'e4\loch\f1 nde(Hebel, etc), Spricht man Leute an, hebt man Items auf. 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 mit }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 A}{\rtlch\fcs1 
+\af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1  nimmt die Figur alle in der Umgebung liegenden Items ins Inventar. ganz n\'fc\loch\f1 tzlich z.b. be\hich\af1\dbch\af31505\loch\f1 i rumliegendem Geld
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 F1 }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+Ruft eine kleine Tastaturbelegungsansicht auf den Bildschirm als einstiegshilfe
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 F9 }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+macht einen Screenshot und speichert ihn im Spielverzeichnis unter "screenshots\\"
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 RETURN }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \loch\af1\dbch\af31505\hich\f1 \'f6\loch\f1 
+ffnet ein kleines Input-fenster (irrlicht gui), um Che\hich\af1\dbch\af31505\loch\f1 \hich\f1 ats zum Testen des spiels einzugeben, oder im Falle einer Multiplayererweiterung ( 1. AddOn) chatten zu k\'f6\loch\f1 nnen.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Beim Sprechen mit Menschen/Wesen: }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 
+\hich\af1\dbch\af31505\loch\f1 return/MausLinks }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 = best\'e4\loch\f1 tigen, }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 
+\hich\af1\dbch\af31505\loch\f1 Pfeilrauf/runter bzw. W/S}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1  w\'e4\loch\f1 hlen eine Option nach oben/unten; Rechtsklick = S\hich\af1\dbch\af31505\loch\f1 
+\hich\f1 prechsequenz abbrechen (wenn mensch redet und redt..); w\'e4\loch\f1 \hich\f1 hrend sprechen kein Speichern m\'f6\loch\f1 glich.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Tasten }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 F2 }{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 = Grafikdetails niedrigst; }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 F3 }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 
+\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 = ausgewogen, aber schnell; }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 F4 }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\hich\af1\dbch\af31505\loch\f1 \hich\f1 = sch\'f6\loch\f1 nste Grafik.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 F6 }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+= Ansicht wechseln: 3rd Person/1st Person Camera.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Die Spielfigur kann:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Nicht durch W\'e4\loch\f1 nde}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\hich\af1\dbch\af31505\loch\f1  gehen XD
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Keine beitretbare }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+kasten/gilden.}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Held wird beim }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+\hich\f1 K\'e4\loch\f1 mpfen speziell Animiert}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+, kann aktobatische kampfeinlagen mit dem Schwert, sofern Schwertkampf gelernt: bei level 5 und 10 eine einlage mehr. (z.b. rundumschlag, etc) 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Mit Menschen reden }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+(dialogmenu)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Schwertkampf}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+: Auf Gegner Dreschen.. oh. ich meine Questen ^^
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Bogenschie\'df\loch\f1 en}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Magie }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 
+anwenden (gleiche Animation f\'fc\loch\f1 r alle magie)  + = "feuerball(x,y,zielx,ziely)"
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 in }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+manche Bereiche nicht hinein }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 (wachen "halten einen auf" - sequenz)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 mit }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+Teleportern Teleporten }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 (schnellreiseart, muss teles erst aktivieren)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 R\'fc\loch\f1 stungen an Haut Tr\hich\af1\dbch\af31505\loch\f1 agen }{\rtlch\fcs1 \af1\afs20 
+\ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 + }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Waffen }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\hich\af1\dbch\af31505\loch\f1 in die Hand nehmen.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Beim }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Sterben }{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Knochen animiert umfallen.. siehe auch "sterben des spielers" weiter unten
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Kommentare }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 
+Abgeben ("das h\'f6\loch\f1 rte sich nicht gut an.." wie mancher programmierer ;-)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Sachen }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 aufsammeln}{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 , }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 wegwerfen, essen, benutzen}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 
+\f1\fs20\insrsid1470941 ,\hich\af1\dbch\af31505\loch\f1  lesen.. in Betten schlafengehen..
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Level Aufsteigen }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+\hich\f1 + Punkte verteilen auf : Ausdauer (leben), Geschicklichkeit (bogen) + laufengesch + Sprungh\'f6\loch\f1 \hich\f1 he, St\'e4\loch\f1 rke (nahkampf) , Intelligenz (manaregeneration) , Weisheit (Manamenge); siehe spezialtext.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 F\'e4\loch\f1 higkeite\hich\af1\dbch\af31505\loch\f1 n lernen }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 
+\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 im Heldenmen\'fc\loch\f1 \hich\f1 
+ (H): Schwertkampf , Bogenkampf , Feuermagie , Eismagie, Erdmagie, Nekromantie, Blutmagie, Schnelles Heilen( er heilt sich im kritischen fall schneller), Sprinten (kurzzeitiges schnelles laufen... XD Je h\'f6\loch\f1 \hich\f1 her, desto l\'e4\loch\f1 
+nger kanner spri\hich\af1\dbch\af31505\loch\f1 nten) , Jagen: Ausweiden von Tieren=>  mehr beute. (geld)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Im Wasser Schwimmen }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+bzw, noch kein Tauchen; evtl beim ersten patch.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Kann }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+keine Freunde angreifen}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 .
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Bei langem Warten }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+\hich\f1 heruml\'fc\loch\f1 mmeln }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 und sogar aus Bildschirm-sicht verschwinden, bis spieler wieder\hich\af1\dbch\af31505\loch\f1  eingabe macht (maus bewegt, etc)
+
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Automatisch Verteidigen}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\hich\af1\dbch\af31505\loch\f1 , wenn Spieler sich nicht verteidigt
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 bei }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Hindernissen}{
+\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 , wenn z.b. Boden h\'f6\loch\f1 her, aber nicht zu hoch: }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+raufhupfen}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 wenn }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+Abgrund: nicht runterfallen}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 , bzw. laufen sondern ausweichen, essei denn, Spieler springt in den Abgrund.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Einrichtungsgegenst\'e4\loch\f1 nde kaputthauen }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 
+\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 + animation + Physik
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Ibot meinte irgendwas mit Sequenzen, die speziell gemacht werden sollten.. ^^. mal fragen
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 T\'fc\loch\f1 ren }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\loch\af1\dbch\af31505\hich\f1 \'f6\loch\f1 ffnen
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Hebel }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 benutzen, etc.
+
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 mit }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 H\'e4
+\loch\f1 ndlern }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Handeln.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Ganz sch\'f6\loch\f1 \hich\f1 n Textig.. aber langsam kriegt das ganze schon ein Gesicht, finde ich.. kommen wir zum N\'e4\loch\f1 chsten punkt:
+\par 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Gegnerfiguren k\'f6\loch\f1 nnen bzw. Menschen, Viecher, Monster
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Des Ganze h\'e4\loch\f1 ngt aber jetzt auch von den Gegnerarte\hich\af1\dbch\af31505\loch\f1 \hich\f1 n ab. die Simpelsten k\'f6\loch\f1 \hich\f1 
+nnen nicht viel, also z.b. nicht zaubern, nicht reden, haben nur wenig sounds und schlechte Bewegungen, oder k\'f6\loch\f1 \hich\f1 nnen keine R\'fc\loch\f1 stung oder waffen tragen (Schleimmonster,etc ..)
+\par 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Laufen entlang eines 3d Punktes + grobe wegfindung mit d\hich\af1\dbch\af31505\loch\f1 iesem.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 sobald spieler in N\'e4\loch\f1 he: direkt auf den zu + nahkampfversuch. 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Wenn Monster festh\'e4\loch\f1 ngt: versuch des Ausweichens von Hindernissen. (evtl vorberechnen.)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Ruft beim Gegnersichten umliegende Gegner gleichen B\'fc\loch\f1 ndnisses  her
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Zaubern
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Nahkampf
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Boge\hich\af1\dbch\af31505\loch\f1 nkampf
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Level Aufsteigen. (einfach mehr Lebensenergie und R\'fc\loch\f1 stung und angriff)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Verteidigen, z.b., wenn der Spieler gro\'df\loch\f1 en zauber macht, dass einige dann abblocken
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 NICHT FLIEGEN, aber etwas schweben (also k\'f6\loch\f1 \hich\f1 nnen nur da gehen, wo Fu\'df\loch\f1 
+\hich\f1 g\'e4\loch\f1 nger auch geht, ab\hich\af1\dbch\af31505\loch\f1 \hich\f1 er ein bisschen \'fc\loch\f1 ber dem Boden)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Sich unterhalten, und im kampf rufen
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 R\'fc\loch\f1 stungen + schwert tragen
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Tiefe L\'f6\loch\f1 cher ausweichen, um nicht dumm runterzufallen.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 auf h\'f6\loch\f1 here Ebenen springen (z.b. ne steigung, oder ein Fels)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 zur\'fc\loch\f1 ck zu ihrem Standort gehen, we\hich\af1\dbch\af31505\loch\f1 
+nn sie spieler nichtmehr nachlaufen wollen (er sie nach X sekunden nicht mehr angreift bzw. zu weit weggeht.)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Auch Freundlich  sein, solange man nicht angreift: B\'fc\loch\f1 \hich\f1 ffel, V\'f6\loch\f1 \hich\f1 
+gel. wobei V\'f6\loch\f1 gel nicht angreifen, wenn es keinen Luftkampf gibt.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 nicht schwimmen
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 wenn spieler handelt nicht k\'e4\loch\f1 mpfen
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 wenn spieler redet nicht k\'e4\loch\f1 \hich\f1 mpfen (w\'e4\loch\f1 \hich\f1 re einfach fie\'df\loch\f1 
+ und unfair) :)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Name und Lebensbalken stehen \'fc\loch\f1 ber Gegnerfigur.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Freunde sind ansprechbar.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \loch\af1\dbch\af31505\hich\f1 \'fc\loch\f1 \hich\f1 ber H\'e4\loch\f1 \hich\f1 ndlern schwebt noch eine M\'fc\loch\f1 nze
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \loch\af1\dbch\af31505\hich\f1 \'fc\hich\af1\dbch\af31505\loch\f1 ber Questleuten schwebt ein Rufezeichen
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Items k\'f6\loch\f1 nnen }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Ok.. eigendlich nichts, aber sie k\'f6\loch\f1 nnen haben:
+\par 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 k\'f6\loch\f1 \hich\f1 nnen Sein: Tragbar (waffen, r\'fc\loch\f1 \hich\f1 stung), Benutzbar u. ohne K\'f6
+\loch\f1 rperwirkung (texte, questsachen), Benutzbar u Dauerhaft (Heiltrank, Heiliger Apfel  der in\hich\af1\dbch\af31505\loch\f1 \hich\f1 teligenz. k.a.), Benutzbar und tempor\'e4\loch\f1 \hich\f1 r wirkend (Geschicklichkeitstrank + 3 Gesch f\'fc
+\loch\f1 r 5 min, etc) 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Bei Benutzung verfallen, oder eben nicht. (apfel  zu zauber)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Ausdauerbonus, Geschicklichkeitsbonus, St\'e4\loch\f1 rkebonus ,  Intelligenzbonus, Weisheitbonus. Leben
+\hich\af1\dbch\af31505\loch\f1 senergiebonus , Manabonus.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Manaverbrauch, Lebensenergieverbrauch (blutmagie Uhh.. ;-)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Geldwert
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Infotext (Inwentarinfo)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Name (beim rumliegen wird name angezeigt)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Animation beim Rumliegen.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 nicht einfach verschwinden.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Mindestanforderung haben in\hich\af1\dbch\af31505\loch\f1 \hich\f1  : Level, st\'e4\loch\f1 
+rke, intelligenz, weisheit, geschicklichkeit,  ausdauer, 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Gewicht f\'fc\loch\f1 r  Physik
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 ISQuestgegenstand. (z.b., man braucht einen "spezialstein", den  ma nicht wegwerfen darf.)  PS: es k\'f6
+\loch\f1 \hich\f1 nnen auch normale sachen questgegenst\'e4\loch\f1 nde sein. z.b. brot, w\hich\af1\dbch\af31505\loch\f1 ein, schwert etc.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Wenn selectiert leuchtet name \'fc\loch\f1 ber ihnen und sie leuchten auf.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 MESHES k\'f6\loch\f1 \hich\f1 nnen (Kisten, K\'e4\loch\f1 \hich\f1 sten, F\'e4\loch\f1 sser, tische)}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 
+\f1\fs20\insrsid1470941 
+\par 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Rumliegen XD.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Physik haben , oder nicht
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Masse
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 name (tisch)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Kaput-animation
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Schadensanimation (wird immer kaputter, bis es dann zerf\'e4\loch\f1 llt)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Steh-animation (oder eben  nicht, dann nur 1 frame)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Spezialanimation ( nur bei spezialitems, wird reingescriptet)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Lebensenergie (zum kaputmachen)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 3 Versionen, einmal Fernsicht, einmal st\hich\af1\dbch\af31505\loch\f1 andard, und einmal Detail.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Parallaxmapping-texturen, wie alles hier.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Wassereffekt haben.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Schatten bei Nahsicht.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 SHADER effekt besitzen, der in Map deklariert wird, aber erst bei 1.  Patch, nicht grunds\'e4\loch\f1 tzlich.
+
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Wenn selectiert schwebt Name 3d \'fc\loch\f1 ber\hich\af1\dbch\af31505\loch\f1 
+ ihnen und sie leuchten schwach auf
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 3D sounds k\'f6\loch\f1 nnen.. da sein..
+\par \hich\af1\dbch\af31505\loch\f1 Terrain kann auch nichts weiter..
+\par 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Quests k\'f6\loch\f1 nnen aussehen, wie folgt:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 Programmierer schreibt: Wenn spieler distance bei Kiste XY: < 100
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1  => Frau spricht ihn von hinten an: gespr\'e4\loch\f1 \hich\f1 chsmen\'fc\loch\f1 \hich\f1  \'f6\loch\f1 ffn\hich\af1\dbch\af31505\loch\f1 et, spieler dreht sich zu frau.
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1  => sagt "Hallo" (sprachausgabe + Text+animation. wenn Grafiker = flei\'df\loch\f1 ig, dann spezialeanimation) "ich brauche hilfe, weil mein kranker bruder..."
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1  => spieler bekommt 3 auswahlm\'f6\loch\f1 \hich\f1 glichkeiten, und je nachdem, was er w\'e4\hich\af1\dbch\af31505\loch\f1 \hich\f1 hlt, spricht die Frau  weiter und er kann wieder ausw\'e4\loch\f1 
+hlen. sowas hat jeder schonmal auf ner Konsole programmiert ^^.
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 => Questlog wird aktualisiert per Befehl (addquestlogeintrag, oder so)
+\par \hich\af1\dbch\af31505\loch\f1 => Gelber Punkt wird auf Karte verzeichet, solang, bis das Quest e\hich\af1\dbch\af31505\loch\f1 \hich\f1 rf\'fc\loch\f1 \hich\f1 llt ist, oder gescheitert (wird dann gr\'fc\loch\f1 n, oder Schwarz-rot)
+\par 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Zwischensequenzen:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 laufen, solange Ibot/scara noch nichts sagen folgenderma\'df\loch\f1 \hich\f1 en ab: (ihr habts doch irgendwas spezielles vorgeschlagen.. m\'fc\loch\f1 ssma nochmal besprechen)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Freelockcamera
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Einblen\hich\af1\dbch\af31505\loch\f1 den/ausblenden (IrrguiFader)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 bewegt sich SMOOTH/fl\'fc\loch\f1 \hich\f1 ssig entlang von Punkten (spezialeditor, soweit kein gr\'f6\'df
+\loch\f1 eres Problem..)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 bei Bezugspunkten wird auch blickrichtung mitgespeichert.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Viecher werden im Editor wie AOE-einheiten rumbewegt, also: wenn X e\hich\af1\dbch\af31505\loch\f1 
+intritt, geht ihr nach XY (Zeitlinie)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Figuren k\'f6\loch\f1 nnen speziell animiert werden,
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Sound an XY abspielen, Musik abspielen/\'e4\loch\f1 \hich\f1 ndern, Aus/einblenden/\'fc\loch\f1 berblenden
+
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Textbalken unten, (settextbalkentext, usw.)\'b4
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 AddPartikel nach zeitlinie
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 AddMesh nach Zeitlinie
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 AddViech/mensch nach zeitlinie.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 und.. des wars auch schon fast, oder ? 
+\par 
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Beispiel:
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 => \'fc\loch\f1 ber schwarz einblenden, spieler fliegt langsam in eine Halle mit wehenden fahnen.
+\par \hich\af1\dbch\af31505\loch\f1 => Links und rechts eines Mittelteppichs sind Wachen postiert\hich\af1\dbch\af31505\loch\f1 \hich\f1 , hinten sitzt erh\'f6\loch\f1 \hich\f1 ht K\'f6\loch\f1 \hich\f1 nig und unterh\'e4\loch\f1 
+lt sich gerade mit Prinzessin. (sound,animation, Textbalken)
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 "bald geh\'f6\loch\f1 rt mir ganze Welt, krieg notwendig.." usw.
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Prinzessin dreht sich besch\'e4\loch\f1 mt weg, er dreht jedoch mit sanfter gewalt ihr gesicht zu sich. 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 "was ist denn. Was ich tu tu ich nur f\'fc\loch\f1 r dich .." heuchelheuchel... 
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 also zumindest sei es hier ein bisschen demonstriert. Zwischensequenzen sind an sich nicht soo leicht, weil man sie fast mit einem spezial Editor bzw. editorteil machen muss.
+\par 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Leveldesig\hich\af1\dbch\af31505\loch\f1 n
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Epische Gr\'fc\loch\f1 ne und realistische Welten, das zeichnet Magical Twilight aus.
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 ein paar sch\'f6\loch\f1 \hich\f1 ne Shadereffekte und sch\'f6\loch\f1 ne Lichtbillboards von Lichtern von oben.
+\par \hich\af1\dbch\af31505\loch\f1 Die einfachen sachen sind alle Kaputtbar.
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 B\'e4\loch\f1 \hich\f1 ume k\'f6\loch\f1 nnen aber wohl nicht umfliegen.
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 T\'fc\loch\f1 \hich\f1 ren sind \'f6\loch\f1 ffneba\hich\af1\dbch\af31505\loch\f1 r, partikel prasseln..
+\par \hich\af1\dbch\af31505\loch\f1 alles soll genau auf dem Boden stehen
+\par \hich\af1\dbch\af31505\loch\f1 3 Versionen von meshes..
+\par \hich\af1\dbch\af31505\loch\f1 Keine beitretbare kasten/gilden.
+\par 
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Speicherformat: grobri\'df\loch\f1 :
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid6583954 \hich\af1\dbch\af31505\loch\f1 IRRLICHT \hich\f1 \endash \loch\f1  Map file (*.irr)}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 mapversion
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 ambientlight, for, shadowcolor..
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 + Alle Shader, damit man sie als\hich\af1\dbch\af31505\loch\f1  materialtype bei restdinge setzten kann.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Items (potition, name, mesh , alle Boni , ..)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Ger\'e4\loch\f1 \hich\f1 usche ( position, minloopdauer, etc. )   ; ger\'e4\loch\f1 \hich\f1 
+usche sind sounds, die immer wieder widerholt werden. z.b. eine Grille bei nacht, oder Windger\'e4\loch\f1 usch auf einer ebe\hich\af1\dbch\af31505\loch\f1 ne, oder das Meer etc.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Particles ; f\'fc\loch\f1 r Feuer, etc., evtl Explotionen im Quest
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Billboards ; f\'fc\loch\f1 \hich\f1 r Gra\'df\loch\f1 , Sonnenstrahlen, Eiszauber, etc.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Lights
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 3D punkte  ; f\'fc\loch\f1 r questprogrammierung
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Metaselector ; colliision
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Musik Ordner ; f\'fc\hich\af1\dbch\af31505\loch\f1 
+r hintergrundmusik... wird aber evtl noch aufgebessert mit Gebiet-Playlist, bei 1. Patch :)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Skybox
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Terrains
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Meshes mit/ohne animationen mit/ohne physik, mit/ohne genauer collision...
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Bewegknoten f\'fc\loch\f1 r die Menschen/viecher
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Menschen (alles, was anspr\hich\af1\dbch\af31505\loch\f1 echbar ist)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Monster /viecher. (position, meshes, etc.) , angriffslustige, oder ruhige, sich aber verteidigende
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Camera, spielerposition, Spielerfigur
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Inventar
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Heldenpunkte (lebensenergie, mana, Ausdauer, weisheit, f\'e4\loch\f1 higkeiten..)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Questlog. welche Q\hich\af1\dbch\af31505\loch\f1 \hich\f1 
+uests sind wie weit, was ist alles im Questlog. (karte muss neubemalt werden mit orangen /gr\'fc\loch\f1 nen punkten, etc)
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Aufsteigen:
+\par 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 
+Man bekommt EP (Erfahrungspunkte) wenn man Monster besiegt. EP = ( Monsterleben + Monsterangriff + Monstergeschicklichkeit) * L\hich\af1\dbch\af31505\loch\f1 \hich\f1 ernf\'e4\loch\f1 higkeit / 4 / ( Level )
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Beim t\'f6\loch\f1 \hich\f1 
+ten von "braven" menschen kommt ein halbtransparenter 3d Warnengel auf einen zugeflogen, der durch einen durchfliegt (mit alphachanneltextur m\'f6\loch\f1 glich), der aber nichts weiter abzieht. strafe= keine EP dazu.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Questleute\hich\af1\dbch\af31505\loch\f1 \hich\f1  lassen sich nicht t\'f6\loch\f1 ten
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Questgegenst\'e4\loch\f1 nde lassen sich nicht zerhaun.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Nach Questcompletes bekommt man auch (viele) punkte; bei kleinen rund 100 punkte, bei gro\'df\loch\f1 
+\hich\f1 en quests bis zu 10000 ( bzw. teilweise auch XX % der ben\'f6\loch\f1 tigten erfahrungspunkte, wenn man 0\hich\af1\dbch\af31505\loch\f1 \hich\f1  h\'e4\loch\f1 tte.)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Die Anzahl der ben\'f6\loch\f1 tigten Erfahrungspunkte steigt pro Levelup um 250* (  Level /2 )
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Man bekommt 2 F\'e4\loch\f1 \hich\f1 higkeitspunkte (Bogenschie\'df\loch\f1 en, Feuermagie, usw) , und
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 5 Fertigkeitspunkte (Lebensenergie, Weisheit, usw.)
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Zusatzbesch\'e4\loch\f1 ftigungen:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par 
+\par }{\rtlch\fcs1 \ai\af1\afs20 \ltrch\fcs0 \i\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Kochen:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 man braucht einen Kochtopf, einen Kochl\'f6\loch\f1 \hich\f1 ffel und die Zutaten: 1. Nahrung, 2. zweites, anderes Nahrungsmittel 3. beliebiges Gew\'fc\loch\f1 
+rz (evtl liste)  => daraus wird Gekochtes, oder hingemurkster Kram, wenn zutat nicht vorhanden. 
+\par \hich\af1\dbch\af31505\loch\f1 Zutaten werden dabei verbraucht;\hich\af1\dbch\af31505\loch\f1 \hich\f1  kochtopf und l\'f6\loch\f1 ffel bleiben; geht aber nur an speziellem "kochitem", sprich ein item, dass z.b. ausschaut wie feuerstelle.
+\par }{\rtlch\fcs1 \ai\af1\afs20 \ltrch\fcs0 \i\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Schlafen:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 geht \'fc\loch\f1 \hich\f1 berall, wenn kein Gegner da ist, und es nacht ist. am tag ( von 7 fr\'fc\loch\f1 \hich\f1 h bis 7 sp\'e4\loch\f1 \hich\f1 t)  weigert er sich, und gibt begr\'fc\loch\f1 n
+\hich\af1\dbch\af31505\loch\f1 \hich\f1 dungen wie "die sonne scheint doch so sch\'f6\loch\f1 n" von sich. 
+\par \hich\af1\dbch\af31505\loch\f1 Er bekommt Lebensenergie und Mana wieder voll.
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Schild bleibt kaputt. l\'e4\loch\f1 \hich\f1 sst sich nur bei H\'e4\loch\f1 ndler reparieren.
+\par }{\rtlch\fcs1 \ai\af1\afs20 \ltrch\fcs0 \i\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Schmieden:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 Braucht Schmiedestelle (Item zum benutzen) + Schmiedehammer + Zutaten: Rohstab
+\par }{\rtlch\fcs1 \ai\af1\afs20 \ltrch\fcs0 \i\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Br\hich\af1\dbch\af31505\loch\f1 ot Backen:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 Braucht Brotschaufel, Mehl, Wasser => er knetet Brot und Wasser zu Rohbrot, mit Brotschaufel in Ofen; nach Zeit wieder heraus, und tada: brot fertig.
+\par 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 F\'e4\loch\f1 higkeiten: (nochmal)
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Jeder Punkt auf Schwertkampf bringt + 3 St\'e4\loch\f1 rke. ab Level 5 kostet ein\hich\af1\dbch\af31505\loch\f1 \hich\f1 e Erh\'f6\loch\f1 \hich\f1 hung d F\'e4\loch\f1 higkeit 2 punkte, ab Level 10 3 Punkte.
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 +  2 F\'e4\loch\f1 higkeitspunkte Pro aufsteigen
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Man bekommt 8 F\'e4\loch\f1 \hich\f1 higkeitspunkte am Start., kann maximal 4 gleich auf eine F\'e4\loch\f1 higkeit tun.
+\par 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Schwertkampf \tab \hich\f1 + 3 st\'e4\loch\f1 rke , + 2 Ausdauer
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Bogenkampf \tab \hich\af1\dbch\af31505\loch\f1 + 3 Geschicklichkeit , + 1 Ausdauer
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Feuermagie \tab + 2 Weisheit , + 2 Intelligenz
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Eismagie\tab + 3 Weisheit , + 2 Intelligenz
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Erdmagie\tab + 2 Weisheit , + 3 Intelligenz
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Nekromantie\tab + 0 Weisheit , + 4 Intelligenz
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Blutmagie\tab + 2 Weisheit , + 2 Intelligenz
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 S\hich\af1\dbch\af31505\loch\f1 chnelles Heilen( er heilt sich im kritischen fall schneller)\tab + 5 Ausdauer
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Sprinten (kurzzeitiges schnelles laufen... XD Je h\'f6\loch\f1 \hich\f1 her, desto l\'e4\loch\f1 
+nger kanner sprinten) \tab + 5 Geschicklichkeit
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Jagen: Ausweiden von Tieren=>  mehr beute. (geld)\tab + 3 Geschicklichkeit\hich\af1\dbch\af31505\loch\f1 \hich\f1 
+ , + 3 St\'e4\loch\f1 rke
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Ausweichen ( ausweichchange in Prozent.)  NUR NAHKAMPF\tab \hich\f1 
+ (wenn random(100) < Ausweichen, dann ausweichen erfolgreich.) kann nicht \'fc\loch\f1 \hich\f1 ber 50 erh\'f6\loch\f1 ht werden!
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Kritischer Treffer ( 3 Facher Schaden -change in Prozent) NAHKAMPF\tab  (wenn random(100) 
+\hich\af1\dbch\af31505\loch\f1 \hich\f1 < Krit.Treff, dann erfolgreich) kann nicht \'fc\loch\f1 \hich\f1 ber 50 erh\'f6\loch\f1 ht werden.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Fertigkeiten:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par \hich\af1\dbch\af31505\loch\f1 + 5 Fertigkeitspunkte pro Aufsteigen
+\par \hich\af1\dbch\af31505\loch\f1 Man bekommt 20 Fertigkeitspunkte am Start; 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 hat \'fc\loch\f1 berall schon 5 Punkte am  Start.
+\par 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Ausdauer (leben)\tab (Ausdauer = Ausdauer + Ausdauer * 0\hich\af1\dbch\af31505\loch\f1 .13 ) * 20    \tab \tab 
+= leben ; bei jedem Punkt dazu wird das so ausgerechnet.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Geschicklichkeit (bogen) + laufengesch + Sprungh\'f6\loch\f1 he\tab \hich\f1 
+( Geschicklichkeit * 2 + Angriff d. Bogens + St\'e4\loch\f1 \hich\f1 rke / 3) / (R\'fc\loch\f1 stungsklasse / 5)= Angriff.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 St\'e4\loch\f1 rke (nahkampf) \tab \hich\f1 St\'e4\loch\f1 \hich\f1 rke = St\'e4\loch\f1 rke + 
+\hich\af1\dbch\af31505\loch\f1 \hich\f1 St\'e4\loch\f1 \hich\f1 rke * 0.1 ; steigt um 10 Prozent pro Punkt dazu  ;  ( St\'e4\loch\f1 \hich\f1 rke * 2 + angriff d. waffe + Geschicklichkeit / 3) / (R\'fc\loch\f1 stungsklasse  / 5)   = Angriff
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Intelligenz (manaregeneration) \tab mana + ( Maxmana * 0.02 ) + intelligenz  pro Sekunde
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Weisheit (Manamenge)\hich\af1\dbch\af31505\loch\f1 ;\tab Maxmana = Maxmana + Maxmana * 0.1\tab \tab 
+; bei jedem Punkt dazu wird das so ausgerechnet.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Charisma (f\'fc\loch\f1 r Handel)\tab \hich\f1 Senkt Preise und erh\'f6\loch\f1 
+ht Geldwert bei Handel. Preisveranderung = Charisma / 110
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Lernf\'e4\loch\f1 higkeit \tab EP = ( Monsterleben + Monsterangriff + Monstergesc
+\hich\af1\dbch\af31505\loch\f1 \hich\f1 hicklichkeit) * Lernf\'e4\loch\f1 higkeit / 4 / ( Level )
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\tx8094\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Wendigkeit (f\'fc\loch\f1 r Ausweichen)\tab \hich\f1 R\'fc\loch\f1 stungsklasse + Wendigkeit / 3
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Ausr\'fc\loch\f1 sten:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par 
+\par }{\rtlch\fcs1 \ai\af1\afs20 \ltrch\fcs0 \i\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Helden k\'f6\loch\f1 \hich\f1 nnen sich ausr\'fc\loch\f1 sten mit:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 1 Hose
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-710\li710\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin710\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 4 Ringe
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 1 Harnisch (R\'fc\loch\f1 stung an Brust)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 1 Schwert + 1 schwert, oder + 1 schild, 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 oder 1 Axt-zweih\'e4\loch\f1 nder,       kein schild
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 oder 1 Stab., aber              kein schild
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 1 Helm
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Tempor\'e4\loch\f1 \hich\f1 re Tr\'e4\loch\f1 \hich\f1 nke steigern F\'e4\loch\f1 \hich\f1 higkeiten f\'fc
+\loch\f1 r Zeit     ( bei benutzung)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Dauerhafte Tr\'e4\loch\f1 \hich\f1 nke steigern F\'e4\loch\f1 higkeiten dauerhaft ( bei benutzung)
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par }{\rtlch\fcs1 \ai\af1\afs20 \ltrch\fcs0 \i\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Am Helden wird angezeigt:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Hose
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Harnisch
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Helm
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Waffe + schild, wenn vorhanden
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlcont\ilvl0\ls0\pnrnot0\pndec }\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Am Start. 
+\par 
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Man bekommt 20 Fertigkeitspunkte zum Verteilen
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Man kann keinen Namen w\'e4\loch\f1 hlen.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Standardm\'e4\'df\loch\f1 \hich\f1 ig sind am Anfang \'fc\hich\af1\dbch\af31505\loch\f1 
+berall 5 Punkte bei Fertigkeiten (Leben, etc) verteilt.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Man bekommt 8 F\'e4\loch\f1 \hich\f1 higkeitspunkte zum Verteilen (bogenschie\'df\loch\f1 en, etc.)
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Der Held ist nicht w\'e4\loch\f1 
+hlbar , aber sehen kannman ihn; er wird 3d in einem kleinen Fenster links der Punkteverteilung dargestellt.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Jenachdem, was man gew\'e4\loch\f1 hlt hat, bekommt man andere sachen ins inventar:
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 eine schwertkampf stufeX waffe kommt rein;
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Bogen mussman selber finden
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Ein Feuerzauber StufeX  ; also stufe, die man selber ist.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Ein Nekromantiezauber StufeX ; also stufe, di\hich\af1\dbch\af31505\loch\f1 e man selber grad ist.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Au\'df\loch\f1 \hich\f1 erdem eine Leichte R\'fc\loch\f1 stung, eine Leichte hose.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Man sieht nichts von einer Karte.
+\par {\pntext\pard\plain\ltrpar \rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f3\fs20\insrsid1470941 \loch\af3\dbch\af31505\hich\f3 \'b7\tab}}\pard \ltrpar\ql \fi-720\li720\ri0\nowidctlpar\wrapdefault{\*\pn \pnlvlblt\ilvl0\ls1\pnrnot0\pnf3 {\pntxtb \'b7}}
+\faauto\ls1\rin0\lin720\itap0\pararsid4749585 {\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 \hich\f1 Hintergrundmusik = Aufbruchsmusik, evtl so \'e4\loch\f1 
+hnlich wie starwars-marschmusik, wobei verwechslungen ausgeschlossen sein solln.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Zauberliste:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 Sieh\hich\af1\dbch\af31505\loch\f1 e Waffen und zauber.doc
+\par 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Waffenliste:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 Siehe Waffen und zauber.doc
+\par 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 Kampfsystem:}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Wenn Spieler in n\'e4\loch\f1 he von allem:
+\par 
+\par \{
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Wenn Gegner = in n\'e4\loch\f1 he    }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid874165 \hich\af1\dbch\af31505\loch\f1 ; zum Ressourcensparen}{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+
+\par \hich\af1\dbch\af31505\loch\f1 \hich\f1 Figur1 bewegt sich \'fc\loch\f1 \hich\f1 ber die Bewegpunkte zum n\'e4\loch\f1 chsten Punkt, der an Figur2 grenzt.
+\par \hich\af1\dbch\af31505\loch\f1 Figur1 geht "Querfeldein" auf Figur2 zu
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 Wenn in Figur in Reichweite
+\par 
+\par \tab \hich\af1\dbch\af31505\loch\f1 Wenn Figur1 = Fernkampf
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 Figur1 macht Bogenangriff:
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 => Animation der Figur+ Element Pfeil wird erstellt, mit Ziel: Figur2.position
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 Pfeil bekommt 3d Sound + isanimiert (dreht sich i\hich\af1\dbch\af31505\loch\f1 m Wind, etc) + schatten.
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 + kleiner partikeleffekt, Luft wird um ihn herum geteilt.
+\par \tab \hich\af1\dbch\af31505\loch\f1 Wenn Figur1 = Zauber
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 \hich\f1 Figur1 macht Angriffszauber (h\'e4\loch\f1 rtesten habenden)\tab 
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 => Zauberanimation, wenn erledigt: Objekt Zauberkugel wird erstellt mit Ziel Figur2.position.
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 Zauberkugel bekommt 3d sound + particeleffekt
+\par \tab \hich\af1\dbch\af31505\loch\f1 wenn Figur1 = Nahkampf
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 Figur1 macht Nahkampf => Graphische animation + Sound d. Schwertes.
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 Gegner kann per zufall mit Schild verteidigen
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 falls nicht:
+\par 
+\par \tab \tab \tab \hich\af1\dbch\af31505\loch\f1 kritischer Treffer        = getcriticaltreffer  \hich\af1\dbch\af31505\loch\f1         (figur1\\kritischertrefferchange)\tab    \tab \hich\f1 ; R\'fc\loch\f1 
+ckgabewert = entweder 3, oder, wenn fehlgeschlagen: 1.
+\par \tab \tab \tab \hich\af1\dbch\af31505\loch\f1 ausweichechange     = getausweichechange  (figur2\\ausweichchange) \tab \tab  \tab \hich\f1 ; r\'fc\loch\f1 ckgabewert = 0, wenn successfull, oder 1, wenn fehlgeschlagen!
+\par \tab \tab \tab \hich\af1\dbch\af31505\loch\f1 Figur2\\\hich\af1\dbch\af31505\loch\f1 lebensenergie = figur2\\lebensenergie - (figur1\\Angriff (der waffe) + figur1\\\hich\f1 st\'e4\loch\f1 rke *2 + figur1\\Geschicklichkeit/3) /    (figur2\\
+Rustungsklasse / 5) * kritischerTreffer * ausweichechange
+\par 
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 endfalls
+\par \tab \hich\af1\dbch\af31505\loch\f1 endwenn 
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 Wenn Pfeil collision mit Figur2 
+\par \hich\af1\dbch\af31505\loch\f1  \tab Figur2\\leben\hich\af1\dbch\af31505\loch\f1 senergie = figur2\\lebensenergie - (figur1\\Angriff (des bogens) + figur1\\Geschicklichkeit*2 + figur1\\\hich\f1 st\'e4\loch\f1 rke/3) /    (figur2\\schild)
+\par \tab \hich\af1\dbch\af31505\loch\f1 deleteelement pfeil
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 wenn aber Zauber collision mit Figur2
+\par \tab \hich\af1\dbch\af31505\loch\f1 Figur2\\lebensenergie = figur2\\lebensenergie - zauber\\angriff * f\hich\af1\dbch\af31505\loch\f1 igur1\\zauberlevel (der Art der Kugel) /    (figur2\\schild / 3)
+\par \tab \hich\af1\dbch\af31505\loch\f1 Wenn Zauber = eis:
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 \hich\f1 Figur2 = eingeeist f\'fc\loch\f1 r zauber\\wirkungsdauer (in Sekunden.f) => kann sich nicht bewegen; wird leicht durchsichtig + Eiskristalle
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 Figur2\\Dauerschaden = zauber\\angriff * fi\hich\af1\dbch\af31505\loch\f1 gur1\\zauberlevel( von Eis) / 3
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 \hich\f1 Ger\'e4\loch\f1 usch von belastet werdendem Eis.
+\par \tab \hich\af1\dbch\af31505\loch\f1 wenn Zauber = feuer
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 \hich\f1 Figur2 = verbrannt f\'fc\loch\f1 r Zauber\\\hich\f1 wirkungsdauer (in Sekunden.f) => bekommt rote Feuerpartikel und rotes Gl\'fc\loch\f1 hen.
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 Figur2\\Dauerschaden = zauber\\angriff * figur1\\zauberl\hich\af1\dbch\af31505\loch\f1 evel( von Eis) / 3
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 \hich\f1 Ger\'e4\loch\f1 usch von Brand.
+\par \tab \hich\af1\dbch\af31505\loch\f1 wenn Zauber = Stein
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 beim Aufprall fliegen Steine durch die Gegend => partikel.
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 \hich\f1 Splittergr\'e4\loch\f1 usch
+\par \tab \hich\af1\dbch\af31505\loch\f1 wenn Zauber = Nekromantie
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 Schwarzer Rauch mit rosarotem schein steigt giftig auf.
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 \hich\f1 Zischendes Ger\'e4\loch\f1 usch von gepl\hich\af1\dbch\af31505\loch\f1 atztem Gasrohr
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 Spezialwirkung der zauber unterschiedlich..
+\par \tab \hich\af1\dbch\af31505\loch\f1 Wenn Zauber = Blutmagie
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 \hich\f1 Kurz wird Bildschirm rotget\'f6\loch\f1 \hich\f1 nt, und alles verlangsamt sich f\'fc\loch\f1 r eine halbe Sekunde, da bei der Blutmagie der Spieler mit seinen Zaubern direkt verbunden ist.
+\par \tab \tab \hich\af1\dbch\af31505\loch\f1 \hich\f1 ebenfalls ein zischendes ger\'e4\loch\f1 usch
+\par \tab \hich\af1\dbch\af31505\loch\f1 endwenn
+\par \hich\af1\dbch\af31505\loch\f1 endwenn
+\par 
+\par \hich\af1\dbch\af31505\loch\f1 Wenn Figur2\\lebensenergie > 0
+\par \hich\af1\dbch\af31505\loch\f1  \tab Figur2 macht gegenangriff
+\par \tab \hich\af1\dbch\af31505\loch\f1 alles von forn.
+\par \hich\af1\dbch\af31505\loch\f1 ansonsten:
+\par \tab \hich\af1\dbch\af31505\loch\f1 Figur2 = tot.
+\par \hich\af1\dbch\af31505\loch\f1 endwenn
+\par \}
+\par 
+\par }{\rtlch\fcs1 \ab\af1\afs20 \ltrch\fcs0 \b\f1\fs20\ul\insrsid1470941 \hich\af1\dbch\af31505\loch\f1 STERBEN (des spielers):
+\par }{\rtlch\fcs1 \af1\afs20 \ltrch\fcs0 \f1\fs20\insrsid1470941 
+\par 
+\par }{\*\themedata 504b030414000600080000002100828abc13fa0000001c020000130000005b436f6e74656e745f54797065735d2e786d6cac91cb6ac3301045f785fe83d0b6d8
+72ba28a5d8cea249777d2cd20f18e4b12d6a8f843409c9df77ecb850ba082d74231062ce997b55ae8fe3a00e1893f354e9555e6885647de3a8abf4fbee29bbd7
+2a3150038327acf409935ed7d757e5ee14302999a654e99e393c18936c8f23a4dc072479697d1c81e51a3b13c07e4087e6b628ee8cf5c4489cf1c4d075f92a0b
+44d7a07a83c82f308ac7b0a0f0fbf90c2480980b58abc733615aa2d210c2e02cb04430076a7ee833dfb6ce62e3ed7e14693e8317d8cd0433bf5c60f53fea2fe7
+065bd80facb647e9e25c7fc421fd2ddb526b2e9373fed4bb902e182e97b7b461e6bfad3f010000ffff0300504b030414000600080000002100a5d6a7e7c00000
+00360100000b0000005f72656c732f2e72656c73848fcf6ac3300c87ef85bd83d17d51d2c31825762fa590432fa37d00e1287f68221bdb1bebdb4fc7060abb08
+84a4eff7a93dfeae8bf9e194e720169aaa06c3e2433fcb68e1763dbf7f82c985a4a725085b787086a37bdbb55fbc50d1a33ccd311ba548b63095120f88d94fbc
+52ae4264d1c910d24a45db3462247fa791715fd71f989e19e0364cd3f51652d73760ae8fa8c9ffb3c330cc9e4fc17faf2ce545046e37944c69e462a1a82fe353
+bd90a865aad41ed0b5b8f9d6fd010000ffff0300504b0304140006000800000021006b799616830000008a0000001c0000007468656d652f7468656d652f7468
+656d654d616e616765722e786d6c0ccc4d0ac3201040e17da17790d93763bb284562b2cbaebbf600439c1a41c7a0d29fdbd7e5e38337cedf14d59b4b0d592c9c
+070d8a65cd2e88b7f07c2ca71ba8da481cc52c6ce1c715e6e97818c9b48d13df49c873517d23d59085adb5dd20d6b52bd521ef2cdd5eb9246a3d8b4757e8d3f7
+29e245eb2b260a0238fd010000ffff0300504b030414000600080000002100e35a492797060000551b0000160000007468656d652f7468656d652f7468656d65
+312e786d6cec594d6f1b4518be23f11f467b6f6327761a4775aad8b11b6852a2d82dea71bc3bde9d66766735334eea1b6a8f484888823850891b0704546a252e
+e5d7048aa048fd0bbc33b3bbde89d72469235a417d48bcb3cfbcdf5f33be7aed5eccd0211192f2a4edd52fd73c44129f073409dbdead61ffd29a87a4c2498019
+4f48db9b12e95ddb78ffbdab785d45242608f627721db7bd48a9747d6949fab08ce5659e9204de8db988b18247112e05021f01dd982d2dd76aab4b31a6898712
+1c03d91d2ca894f8d21691344cbc8d9c7c8f018f4449bde03331d0c489bbc7808383ba86c8a9ec32810e316b7bc02ae04743724f798861a9e045dbab998fb7b4
+717509af679b985ab0b7b4af6f3ed9be6c4370b06c788a705430adf71bad2b5b057d03606a1ed7ebf5babd7a41cf00b0ef83aa569632cd467faddec9699640f6
+eb3ced6ead596bb8f812fd9539995b9d4ea7d9ca64b1440dc87e6dcce1d76aab8dcd65076f4016df9cc3373a9bddeeaa8337208b5f9dc3f7afb4561b2ede8022
+46938339b47668bf9f512f2063ceb62be16b005fab65f0190aa2a1082fcd62cc13b530d8627c978b3e203492614513a4a62919631f22b98be391a05873c0eb04
+97ded8255fce2d696648fa82a6aaed7d9862c88a19bd97cf7e78f9ec093abefff4f8fecfc70f1e1cdfffc91272766de3242cef7af1dde77f3dfa04fdf9e4db17
+0fbfacc6cb32feb71f3ffdf5972faa81903f33719e7ff5f8f7a78f9f7ffdd91fdf3fac806f0a3c2ac387342612dd2447689fc7a098b18a2b391989f3ed184698
+96776c26a1c409d65c2ae8f754e4a06f4e31cbbce3c8d121ae056f0ba81f55c0eb93bb8ec083484c14ade07c238a1de02ee7acc345a5156e685e25330f274958
+cd5c4ccab87d8c0fab787771e2f8b73749a172e661e928de8d8823e61ec389c221498842fa1d3f20a442bb3b943a76dda5bee0928f15ba435107d34a930ce9c8
+89a6d9a66d1a835fa6553a83bf1ddbecde461dceaab4de22872e12b202b30ae187843966bc8e270ac755248738666583ef6015550939980abf8ceb49059e0e09
+e3a81710686d15527c2440df92d36f602859956edf65d3d8450a450faa68ee60cecbc82d7ed08d709c5661073489cad80fe4018428467b5c55c177b99b21fa19
+fc809385eebe4d89e3eed3abc12d1a3a22cd0244bf99086d45a8d54e058e69f24fe59851a8c7d6fa17578ea1003effe651854fdfd642bc093da92a13b64f94df
+45b89345b7cb4540dffe9abb8527c91e81309f6f3cef4aeebb92ebfde74beea27c3e6ba19dd55628bb7a6eb053b19991e3c523f298323650534676a499922534
+8aa00f8b7aa3392292e2cc9446f0352bec0e2e14d8ec4182ab8fa98a06114e61c2ae7b9a482833d2a144299770b433cb95b4351ea674650f864d7d64b0054162
+b5cb03bbbca297f3934141c6b49bd09c3f73462b9ac05999ad5cc98882daafc2acae853a33b7ba11cdd43a875ba13238715e35582cac09130882b905acbc0a87
+74cd1a4e26989140dbdd36dfdc2dc60b17e92219e180643ed27acffba86e9c94c78ab90c80d8a9f0913ee69d62b512b79626fb1adccee2a432bbc60276b9f75e
+c74b7904cfbca413f7443ab2a49c9c2c41476dafd55c6e7ac8c769db1bc3a116bec629785deaa10fb3106e877c256cd89f9acc26cb67de6ce58ab94950878b0a
+6bf739859d3a900aa9b6b08c6c6898575908b04473b2f22f37c1ac17a5808df4579062650d82e18d490176745d4bc663e2abb2b34b2bda76f6312ba57ca28818
+44c1111ab189d8c7e07e1daaa04f4025dc4d988aa01fe0264d5bdbbc728b739674e5fb2b83b3eb98a511cecaad4ed13c932ddce4712183792a8907ba55ca6e94
+3bbf2a26e52f48957218ffcf54d1fd04ae0a5602ed011fee7205463a5fdb1e172ae25085d288fa7d019383a91d102d701b0baf21a8e046d9fc17e450ffb73967
+6998b486139fdaa7211214fa918a04217b50964cf49d42ac9ef52e4b9265844c4495c495a9157b440e091bea1ab8aa7bbb87220875534db232607027e3cf7dce
+326814ea21a79c6f4e0d297aafcd817f7bf2b1c90c4ab975d80c34b9fd0b112bbaaadd6fb6e7bdb7ac887e311bb31a795600b3522b686569ff8a229cb3d5da8a
+35a7f17233170ebc38af312c1603510a173e48ff81fe4785cf880963dd50877c1f6a2b829f1a3431081b88ea4b76f040ba40dac5110c4e76d1069326654d9b8d
+4eda6a79b3bee049b7e07bc2d85ab2b3f8fb9cc62e8633979d938b1769ecccc28eadedda425383674fa6282c8df3938c718cf95dabfcc3131fdd05476fc105ff
+84296982097e55121846cf81c903487ecbd16cddf81b0000ffff0300504b0304140006000800000021000dd1909fb60000001b010000270000007468656d652f
+7468656d652f5f72656c732f7468656d654d616e616765722e786d6c2e72656c73848f4d0ac2301484f78277086f6fd3ba109126dd88d0add40384e4350d363f
+2451eced0dae2c082e8761be9969bb979dc9136332de3168aa1a083ae995719ac16db8ec8e4052164e89d93b64b060828e6f37ed1567914b284d262452282e31
+98720e274a939cd08a54f980ae38a38f56e422a3a641c8bbd048f7757da0f19b017cc524bd62107bd5001996509affb3fd381a89672f1f165dfe514173d98505
+28a2c6cce0239baa4c04ca5bbabac4df000000ffff0300504b01022d0014000600080000002100828abc13fa0000001c02000013000000000000000000000000
+00000000005b436f6e74656e745f54797065735d2e786d6c504b01022d0014000600080000002100a5d6a7e7c0000000360100000b0000000000000000000000
+00002b0100005f72656c732f2e72656c73504b01022d00140006000800000021006b799616830000008a0000001c000000000000000000000000001402000074
+68656d652f7468656d652f7468656d654d616e616765722e786d6c504b01022d0014000600080000002100e35a492797060000551b0000160000000000000000
+0000000000d10200007468656d652f7468656d652f7468656d65312e786d6c504b01022d00140006000800000021000dd1909fb60000001b0100002700000000
+0000000000000000009c0900007468656d652f7468656d652f5f72656c732f7468656d654d616e616765722e786d6c2e72656c73504b050600000000050005005d010000970a00000000}
+{\*\colorschememapping 3c3f786d6c2076657273696f6e3d22312e302220656e636f64696e673d225554462d3822207374616e64616c6f6e653d22796573223f3e0d0a3c613a636c724d
+617020786d6c6e733a613d22687474703a2f2f736368656d61732e6f70656e786d6c666f726d6174732e6f72672f64726177696e676d6c2f323030362f6d6169
+6e22206267313d226c743122207478313d22646b3122206267323d226c743222207478323d22646b322220616363656e74313d22616363656e74312220616363
+656e74323d22616363656e74322220616363656e74333d22616363656e74332220616363656e74343d22616363656e74342220616363656e74353d22616363656e74352220616363656e74363d22616363656e74362220686c696e6b3d22686c696e6b2220666f6c486c696e6b3d22666f6c486c696e6b222f3e}
+{\*\latentstyles\lsdstimax267\lsdlockeddef0\lsdsemihiddendef1\lsdunhideuseddef1\lsdqformatdef0\lsdprioritydef99{\lsdlockedexcept \lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority0 \lsdlocked0 Normal;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority9 \lsdlocked0 heading 1;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 2;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 3;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 4;
+\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 5;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 6;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 7;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 8;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 9;
+\lsdpriority39 \lsdlocked0 toc 1;\lsdpriority39 \lsdlocked0 toc 2;\lsdpriority39 \lsdlocked0 toc 3;\lsdpriority39 \lsdlocked0 toc 4;\lsdpriority39 \lsdlocked0 toc 5;\lsdpriority39 \lsdlocked0 toc 6;\lsdpriority39 \lsdlocked0 toc 7;
+\lsdpriority39 \lsdlocked0 toc 8;\lsdpriority39 \lsdlocked0 toc 9;\lsdqformat1 \lsdpriority35 \lsdlocked0 caption;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority10 \lsdlocked0 Title;\lsdpriority1 \lsdlocked0 Default Paragraph Font;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority11 \lsdlocked0 Subtitle;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority22 \lsdlocked0 Strong;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority20 \lsdlocked0 Emphasis;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority59 \lsdlocked0 Table Grid;\lsdunhideused0 \lsdlocked0 Placeholder Text;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority1 \lsdlocked0 No Spacing;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 1;\lsdunhideused0 \lsdlocked0 Revision;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority34 \lsdlocked0 List Paragraph;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority29 \lsdlocked0 Quote;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority30 \lsdlocked0 Intense Quote;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority19 \lsdlocked0 Subtle Emphasis;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority21 \lsdlocked0 Intense Emphasis;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority31 \lsdlocked0 Subtle Reference;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority32 \lsdlocked0 Intense Reference;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority33 \lsdlocked0 Book Title;\lsdpriority37 \lsdlocked0 Bibliography;\lsdqformat1 \lsdpriority39 \lsdlocked0 TOC Heading;}}{\*\datastore 010500000200000018000000
+4d73786d6c322e534158584d4c5265616465722e352e3000000000000000000000060000
+d0cf11e0a1b11ae1000000000000000000000000000000003e000300feff090006000000000000000000000001000000010000000000000000100000feffffff00000000feffffff0000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffdfffffffeffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffff52006f006f007400200045006e00740072007900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000016000500ffffffffffffffffffffffffec69d9888b8b3d4c859eaf6cd158be0f000000000000000000000000e032
+d72f2299c901feffffff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff00000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000105000000000000}}

@@ -1,0 +1,9 @@
+7
+include_anzeige.pb
+..\..\Grafikbeispiel\21_ExampleCarryingObjects.pb
+..\..\Macical Twilight\3D versuch.pb
+include_spieler.pb
+include_animation.pb
+C:\Programme MAX\PureBasic 4.3 BETA\Includes\IrrlichtWrapper_Include.pbi
+C:\Programme MAX\PureBasic 4.3 BETA\Includes\irrlicht_enums.pbi
+..\..\..\Kleines Spiel 01\kleines Spiel_01.pb

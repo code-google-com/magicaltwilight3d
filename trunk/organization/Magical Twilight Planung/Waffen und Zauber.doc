@@ -1,0 +1,148 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1031{\fonttbl{\f0\fswiss\fcharset0 Arial;}{\f1\fnil\fcharset2 Symbol;}}
+{\*\generator Msftedit 5.41.15.1507;}\viewkind4\uc1\pard\f0\fs20\par
+es gibt allgemein 3 Verschiedene Rubriken von Nahkampfwaffen:\par
+\par
+\ul\b Nahkampfwaffenarten:\ulnone\b0\par
+\par
+\pard\tx2982 1. Schwerter\tab sind sehr schnell, haun aber nichtso viel rein\par
+2. St\'e4be\tab sind n\'fctzlich, sich viele Gegner vom Leibe zu halten, und schnell, aber nicht so geziehlt auf einen Gegner wie das Schwert.\par
+3. Rie\'dfen \'c4xte als Zweih\'e4nder.\tab Sind sehr langsam, ziehen aber auch viel ab.\par
+\par
+\ul\b der unterschied ist in Art, wie die Figur sich bewegt beschrieben.\par
+\ulnone\b0\par
+\pard\tx2698\tx2982 1. Schwerter: \tab spielfigur haut schneller, aber gerichteter nach forne.\par
+2. St\'e4be: \tab spielfigur haut eher um sich, wendet sich aber auch an seitlichen gegnern.\par
+3. \'c4xte etc:\tab  der Spieler schl\'e4gt in alle m\'f6glichen richtungen. nat\'fcrlich auch nach forne, hat aber vor allem lauter seitw\'e4rtsschlageinlagen dabei.\par
+\pard\tx2982\par
+\ul\b Schwerter:  ; liste aller Schwerter.\ulnone\b0\par
+\par
+\ul\b St\'e4be:\ulnone\b0\par
+\par
+\ul\b\'c4xte:\ulnone\b0\par
+\par
+\ul\b Fernkampfwaffenarten:\ulnone\b0\par
+\par
+auch 2 Fernkampfwaffenarten haben wir; \par
+\par
+1. Armbrust\tab langsam im Nachladen, wirft den Gegner aber gleich wieder zur\'fcck und zieht viel ab\par
+2. Bogen\tab schneller im Nachladen, aber weniger Effektiv gegen gro\'dfe Gegner.\par
+\pard\tx4828\par
+\ul\b Armbr\'fcste:\ulnone\b0\par
+\par
+\ul\b B\'f6gen:\ulnone\b0\par
+\par
+\ul\b Zauberarten:\par
+\par
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-720\li720\tx2982\tx8094\ulnone\b0 Feuermagie \tab Sehr starke Angriffsmagie,  hat Nachwirkungen beim gegner (er brennt )\par
+{\pntext\f1\'B7\tab}Eismagie\tab verlangsamt den Gegner, zieht weniger Ab, hat langzeitwirkung (weil es ja kalt ist); wenn gegner getroffen, w\'e4chst eiskristallmesh (halbransparent) aus gegner, bis knapp gr\'f6\'dfer als gegner; => gegner kann sich f\'fcr zeit nicht bewegen. wenn dann mit feuerzauber getroffen, ist eiszauberwirkung weg.\par
+{\pntext\f1\'B7\tab}Erd- und Naturmagie\tab m\'e4\'dfige Angriffsmagie, hat keine Nachwirkungen, kann Gruppenst\'e4rkende effekte und Heilen.\par
+{\pntext\f1\'B7\tab}Nekromantie\tab Dient zur Erschaffung von Helferlein, oder umwandlung von Gegnern. kann auch harte offensivzauber\par
+{\pntext\f1\'B7\tab}Blutmagie\tab Die wohl H\'e4rteste Angriffszaubergruppe; Zieht dem Magier Lebensenergie und Mana ab, wirft auch den gr\'f6\'dften Gegner um. kann auch Lebensraub.\par
+\pard\tx4828\par
+\pard\tx1704\tx3834\tx5396\tx6532\tx8094\tx8946\tab\b Name\tab Manakosten\tab Angriff\tab Dauerschaden\tab Dauer\tab Spezialeffekt (Beschreibung)\b0\par
+\par
+Feuermagieen:\par
+\tab AngrX \tab = Feuermagie-Level / 5 * Angriff (als Angriff des Zaubers)\par
+\par
+\tab Feuerlicht\tab 44\tab 5    +AngrX \tab 2+AngrX\tab 2 s\tab Ein kleines Fl\'e4mmchen, das hell leuchtet und m\'e4\'dfig abzieht.\par
+\tab Feuersegen\tab 100\tab 0    +AngrX \tab 5+AngrX\tab 5 s\tab L\'e4sst Zauberer Brennen, erh\'f6ht angriff +5 und ausdauer + 5+ wenn gegner getroffen: Dauerschaden!- er brennt \par
+\tab Verbrennen\tab 130\tab 10   +AngrX\tab 10+AngrX\tab 10\tab l\'e4sst gegner brennen, h\'e4lt Xzeit an.\par
+\tab Feuerschlag\tab 100\tab 20   +AngrX\tab 0\tab 0\tab Feuer "ball" fliegt auf gegner zu\par
+\tab Feuerball\tab 200\tab 30   +AngrX\tab 15+AngrX\tab 8\tab FeuerBall fliegt auf gegner zu...\par
+\tab Feuerschild\tab 190\tab 20   +AngrX\tab 5+AngrX\tab 5\tab Spieler ist in Brennender Kugel, die Gegner schw\'e4cht und gegnerangr. senkt, + alle pfeile blockt.f\'fcr 15 s.\par
+\tab Hitzewelle\tab 210\tab 20   +AngrX\tab 5+AngrX\tab 5\tab wirft alle gegner zur\'fcck und hat m\'e4\'dfigen Schaden.\par
+\tab Feuerschwert\tab 250\tab 30   +AngrX\tab 5+AngrX\tab 5\tab gibt spieler Feuerschwert, f\'fcr Zeit. Wendigkeit + 5 Angriff + 5 Geschicklichkeit + 5\par
+\tab Flammenwind\tab 300\tab 45   +AngrX\tab 10+AngrX\tab 5\tab Flammenwerferm\'e4\'dfig fliegt Feuer auf gegner zu.\par
+\tab Brandbombe\tab 300\tab 60   +AngrX\tab 0\tab 0\tab spieler wirft granaten\'e4hnlich bombe, die nach 3,6 sekund. explodiert.\par
+\tab Lavasto\'df\tab 350\tab 55   +AngrX\tab 10+AngrX\tab 5\tab Lavaschwall fliegt auf gegner zu.\par
+\tab Lavaschlag\tab 400\tab 70   +AngrX\tab 15+AngrX\tab 6\par
+\tab Komet\tab 500\tab 110 +AngrX\tab 0\tab 0\par
+\tab Feuerregen\tab 1200\tab 35   +AngrX\tab 5+AngrX\tab 5\tab im Zielareal (so um den Spieler herum, ca. 81 m\'b2) fliegen viele Feuerb\'e4lle herunter, ziehen nur Gegnern was ab. (15 pro Sek.) , 8 Sek. lang.\par
+\tab Magmawelle\tab 1600\tab 200 +AngrX\tab 20+AngrX\tab 8\tab Wirft gegner 6 Meter zur\'fcck (wirklungsbereich = 6 in alle Richtungen) + verbrennt sie.\par
+\tab Flammenmeer\tab 2000\tab 200 +AngrX\tab 50+AngrX\tab 10\tab L\'e4sst aus dem Boden 7 Meter in alle Richtungen Feuer brechen; h\'e4lt 8 s an, macht alle 2 S erneut vollen Angriff-schaden, nur Gegner\par
+\tab Plasmaschlag\tab 2500\tab 800 +AngrX\tab 0\tab 0\tab\par
+\tab Supernova\tab 3500\tab 700 +AngrX\tab 150+AngrX\tab 10\tab Rie\'dfen Atomexplosion, die selbst Camera kurz wegschleudert, wirkt in 10 m in alle Richtungen, Freunde bekommen Feuerschild, und 10% ihrer Lebenspunkte\par
+Eismagien:\par
+\tab AngrX \tab = Eismagie-Level / 5 * Angriff (als Angriff des Zaubers)\par
+\par
+\tab Eisessen\tab 40\tab 0\tab 0\tab 0\tab l\'e4dt Lebensenergie + 15 + (Eismagie-Level/5 * 15) pro Sekunde wieder auf, w\'e4hrend der Spieler eis isst. er kann dan nicht k\'e4mpfen, aber zauber abbrechen\par
+\tab Eissplitter\tab 100\tab 10 +AngrX\tab\par
+\tab Eisschlag\tab 100\tab\tab\tab\par
+\tab Vereisen\tab\tab\tab\tab\par
+\tab K\'e4ltewelle\tab\tab\tab\tab\par
+\tab Eisskellet\tab\tab\tab\tab\par
+\tab Eisr\'fcstung\tab\tab\tab\tab\par
+\tab Eisschild\tab\tab\tab\tab\par
+\tab Eisbombe\tab\tab\tab\tab\par
+\tab Eiskrieger\tab\tab\tab\tab\par
+\tab Eiswelle\tab\tab\tab\tab\par
+\tab Eiswerfer\tab\tab\tab\tab\par
+\tab Eisschutzkreis\tab\tab\tab\tab\tab macht einen weiteren Kreis um spieler. wenn gegner auf kreis, bekommen sie eisschlag. l\'e4uft nach XZeit ab.\par
+\tab Eismonster\tab\tab\tab\tab\par
+\tab Eisregen\tab\tab\tab\tab\par
+\tab Blizzard\tab\tab\tab\tab\par
+\tab\par
+Erd- und Naturmagie:\par
+\tab Sonnenlicht\par
+\tab Steinschuss\par
+\tab Versteinern\par
+\tab Steinschlag\par
+\tab kleine Heilung\par
+\tab Erdpanzer\par
+\tab Felsschlag\par
+\tab Fliegen\par
+\tab Steinwelle\par
+\tab Erdspalte\par
+\tab Steinbombe\par
+\tab Starke Heilung\par
+\tab Steingolem\par
+\tab Steinigung\par
+\tab Steinregen\par
+\tab Heilende Hand\par
+\tab Steinbrecher\par
+\tab Bergverschlinger\par
+\tab Naturgeister rufen\par
+\tab Erdbeben\par
+\tab Unsterblichkeit\par
+\par
+Nektormantiemagien:\par
+\tab Schmerz\tab\tab\tab\tab\tab hat dauerschaden u. verlangsamt gegner\par
+\tab Pein\tab\tab\tab\tab\tab zieht was ab und hat dauerschaden\par
+\tab Tod\tab\tab\tab\tab\tab zieht sehr ab\par
+\tab Lebensdieb\tab\tab\tab\tab\tab Raubt gegner Leben\par
+\tab Ausl\'f6schen\tab\tab\tab\tab\tab T\'f6tet alle gegner, die weniger als X lebenspunkte haben im Umkreis von Y\par
+\tab Knochenschild\tab\tab\tab\tab\tab F\'e4ngt f\'fcr X sekunden jeden angriff auf.\par
+\tab Skelett erschaffen\tab\tab\tab\tab\tab skelett\par
+\tab Kadaver explosion\tab\tab\tab\tab\tab l\'e4sst einen Toten in N\'e4he explodieren; alle um ihn rum bekommen schaden \par
+\tab Todeskraft\tab\tab\tab\tab\tab L\'e4sst alle Freunde im Umkreis st\'e4rker und ausdauernder werden.\par
+\tab Umwandeln\tab\tab\tab\tab\tab macht Gegner f\'fcr zeit zum Freund\par
+\tab Monster erschaffen\tab\tab\tab\tab\tab erschafft ein Monster\par
+\tab Verwandlung\tab\tab\tab\tab\tab nekromant wird zum D\'e4mon und kann ein wenig fliegen\par
+\tab Todesritter herbeirufen\tab\tab\tab\tab\tab Ruft einen Todesritter f\'fcr X zeit\par
+\tab Wiederauferstehung\tab\tab\tab\tab\tab l\'e4sst einen Toten wiederauferstehen.\par
+\tab Zone der Schw\'e4che\tab\tab\tab\tab\tab schw\'e4cht gegner im Umkreis und verlangsamt sie.\par
+\tab Totenreich rufen\tab\tab\tab\tab\tab ruft eine Armee skelette. pro Level + 1 skelett\par
+\tab Portal zur Unterwelt\tab\tab\tab\tab\tab\'f6ffnet ein Tor , aus dem pro Zeit viecher kommen. nach X zeit geht spalte zu, mit blitz vom himmel\par
+Blutmagien:\par
+\tab Geistverwirren\tab\tab\tab\tab\tab macht gegner f\'fcr zeit kampfunf\'e4hig\par
+\tab Geistbrennen\tab\tab\tab\tab\tab lila-blitz, der leben abzieht\par
+\tab Lebensraub\tab\tab\tab\tab\tab zieht gegner leben ab und gibt spieler 0.5 davon\tab\par
+\tab Seelendieb\tab\tab\tab\tab\tab zieht gegner leben und Mana ab und gibt spieler 0.5 davon\par
+\tab Dornenhagel\tab\tab\tab\tab\tab wirft giftdornen auf gegner im umkreis\par
+\tab Zerschmettern\tab\tab\tab\tab\tab l\'e4sst gegner weit durch luft fliegen + gro\'dfer schaden\par
+\tab Blutschwall\tab\tab\tab\tab\tab zieht Gegner Lebensenergie heraus\par
+\tab Verderben\tab\tab\tab\tab\tab l\'e4sst gegner in n\'e4he jeden angreifen f\'fcr X sekunden\par
+\tab Quietschente herbeirufen\tab\tab\tab\tab bleibt bis "stirbt" wobei es dann wegfliegt.\par
+\tab Blutrausch\tab\tab\tab\tab\tab macht zauberer schild, leben, angriff, geschicklichkeit * (Zauberlevel+4) f\'fcr x zeit\par
+\tab Ausrotten\tab\tab\tab\tab\tab fl\'e4chenwirkend, macht auf jeden Zerschmettern stufe Zauberlevel im Umkreis\par
+\tab Zeitmanipulation\tab\tab\tab\tab\tab macht spieler angriffsrate * (zauberlevel + 1) und beweg/sprunggesch * 2\par
+\tab Kometenhagel\tab\tab\tab\tab\tab l\'e4sst Kometen vom HImmel fallen.\par
+\tab Basilisk herbeirufen\tab\tab\tab\tab\tab ruft basilisken herbei.\tab\par
+\tab Drachen herbeirufen\tab\tab\tab\tab\tab ruft drachen\par
+\tab Natur verenden\tab\tab\tab\tab\tab blockt alle heil und st\'e4rkungsmagien + schw\'e4cht Steinzauber (beschreibung kommt)\par
+\tab Weltuntergang zeigen\tab\tab\tab\tab\tab sonne verdunkelt+ kometen stufe X vom himmel+ Schockwelle um magier+ rote geysiere aus boden+ erdbeben stufe X\par
+\par
+\par
+\par
+}
+ 

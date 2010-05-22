@@ -1,0 +1,15 @@
+====================================================================
+Please convert  first all JPE pictures as TGA.
+Start the program convert.bat around the pictures to convert.
+====================================================================
+
+Only For A6+
+
+
+sky sky_box {
+    type = <xxxxx+6.tga>;
+    flags = cube,visible;
+    
+	layer = 1;
+	}
+
