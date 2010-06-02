@@ -55,6 +55,7 @@ Declare anz_AddBillboard( pfad.s, x.f,y.f,z.f , width.f , height.f , MaterialTyp
 Declare anz_addmesh( pfad.s, x.f,y.f,z.f, texture.s , MaterialType.b , normalmap.s , DirectLoad.b = 0 , IsAnimMesh.i = 0, Collisiondetail.b = #anz_col_box , Collisiontype.b = #anz_ColType_solid , rotx.f=0,roty.f=0,rotz.f=0,scalx.f=1,scaly.f=1,scalz.f=1, islighting.i = 0 , width.f = #meter * 3 , height.f = #meter*4 , Depth.f = #meter * 3)
 Declare anz_freetexture (*anz_texture.anz_texture )  ; erst wenn der zähler wieder auf 0 ist wird Textur gelöscht.
 Declare anz_gettexturebypfad( pfad.s) ; gibt anz_textureID raus, nicht irrtexture!
+Declare anz_GetTextureIrrID ( *anz_texture.anz_texture ) ; gibt die IrrID der textur aus.
 Declare anz_loadtexture( pfad.s,returnIrrID = 0)  ; wenn 2*die gleiche textur: zähler mitlaufen lassen. beim löschen wird erst wenn zähler wieder = 0 -> die textur gelöscht
 Declare anz_freeimage(NR.i)
 Declare anz_hideimage (NR.i , hide.b)
@@ -358,8 +359,8 @@ IncludeFile "include_3DEngine.pb"
  
 ; jaPBe Version=3.9.12.819
 ; Build=1
-; FirstLine=29
-; CursorPosition=36
+; FirstLine=9
+; CursorPosition=33
 ; ExecutableFormat=Windows
 ; Executable=H:\GemuSoft\Gemusoft\max level.exe
 ; DontSaveDeclare

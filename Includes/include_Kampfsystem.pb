@@ -319,12 +319,12 @@
 	; Figur2 = tot.
 ; endwenn
  
-; jaPBe Version=3.9.12.818
+; jaPBe Version=3.9.12.819
 ; FoldLines=0033004000D700E2
 ; Build=0
 ; CompileThis=..\Wegfindung TESTER.pb
-; FirstLine=209
-; CursorPosition=250
+; FirstLine=14
+; CursorPosition=46
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

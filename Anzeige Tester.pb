@@ -48,7 +48,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    ; iInitPhysic  (   )  
    ; iSetPolysPerNode(128)
    ; iSetWorldSize(- #meter*50 , -#meter * 10 , -#meter*50 , #meter*500,#meter*10 , #meter*500)
-   anz_islighting             = 0
+   anz_islighting             = 1
    anz_isfog                  = 0
    ; IrrSetTextureCreationFlag  ( #IRR_ETCF_CREATE_MIP_MAPS       , 1 )
    anz_map_load               ( "max_welt.irr" , "Gfx\maps\Max Welt\") ;Gfx\maps\Max Welt\
@@ -58,7 +58,6 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    *nodeid = spi_GetPlayerNode          ( spi_getcurrentplayer () )
    Position.ivector3 
    iNodePositionP ( *nodeid  , @Position )
-   Debug "pos: " + StrF( Position\y , 2)
    anz_setobjectPos           ( spi_getObject3DID( spi_getcurrentplayer())  , Position\x , Position\y -#meter*2.1 , Position\z)
    
    ; IrrSetTextureCreationFlag  ( #IRR_ETCF_OPTIMIZED_FOr_speed , 1 )
@@ -159,13 +158,13 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
                If Random (1)
                   Item_Add( "Brot" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\Brot.3ds" , "..\..\maps\Max Welt\items\Brot_texture.jpg" , "..\..\maps\Max Welt\items\brot_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Brot , "Leicht angebratenes Brot")
                Else 
-                  Item_Add( "Schriftrolle" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\item\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle , "Gelbliches Dokument")
+                  Item_Add( "Schriftrolle" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\items\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle , "Gelbliches Dokument")
                EndIf 
                ; iTextGUI ( *text , Str( ListSize ( wes_wesen())))
                wes_SetmaxMana         ( *WesenID , 20 )  ; mana setzen + maxmana.
                wes_SetMana            ( *WesenID , 10 )
                *wesen2.wes_wesen      = spi_GetSpielerWesenID( spi_getcurrentplayer())
-               bundnis                = Random(#team_verhaltnis_liebend)
+               bundnis                = Random(#team_verhaltnis_feinde)
                Team_SetTeamVerhaltnis ( *WesenID\Team , *wesen2\Team ,  bundnis )
                
                ; Select bundnis
@@ -190,8 +189,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; jaPBe Version=3.9.12.819
 ; Build=9
 ; Language=0x0000 Language Neutral
-; FirstLine=69
-; CursorPosition=100
+; FirstLine=133
+; CursorPosition=149
 ; EnableXP
 ; ExecutableFormat=Windows
 ; Executable=C:\Users\Walker\Desktop\twilight\MT Projekt\max level_new Engine.exe

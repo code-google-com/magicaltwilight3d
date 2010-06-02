@@ -1458,13 +1458,13 @@ EndMacro
    ; Image management -- complete ;)
    
    Procedure anz_loadimage( NR.i, x.f , y.f , pfad.s, Usealpha.b= 1, ishidden.b = 1 , rectX.f = 0 , rectY.f = 0 , rectwidth.f = -1 , Rectheight.f = -1) ; gibt immer die NR des images heraus! keinen Pointer.
-      Protected anz_image_NotFound.i  , width.l , height.l
-      Static    ZufallsNR.i
+      Protected anz_image_NotFound.i  , width.i , height.i, *anz_texture.anz_texture
+      Static    ZufallsNR.i 
       
       ; use list image.image() 
-       id = anz_loadtexture ( pfad,0) ; id = anz_textureid, nicht textureid!!!!!
+       *anz_texture = anz_loadtexture ( pfad,0) ; id = anz_textureid, nicht irr-textureid!!!!!
        
-       If id 
+       If *anz_texture 
        
            If NR = -1 ; wenn der Benutzer sich seine NR selbst festlegen will..
               ZufallsNR + 1
@@ -1474,7 +1474,7 @@ EndMacro
                  ZufallsNR = NR ; so wird die zufallsNR genauso groß wie die NR. dadurch wird das nächste ZufallsNR NACH dem vom benutzer festgelegten NR-bild gesetzt.
               EndIf 
            EndIf 
-           itexturesize( id , @width , @height ); größe der textur ermitteln zum späteren richrigen anzeigen.
+           itexturesize( *anz_texture\id , @width , @height ); größe der textur ermitteln zum späteren richrigen anzeigen.
            LastElement( anz_image ())
            AddElement ( anz_image ())
              anz_image()\x        = x
@@ -1483,7 +1483,7 @@ EndMacro
              anz_image()\height   = height
              anz_image()\Alpha    = Usealpha
              anz_image()\NR       = NR
-             anz_image()\id       = id
+             anz_image()\id       = *anz_texture
              anz_image()\ishidden = ishidden 
              anz_hideimage        ( NR , ishidden )
              anz_SetImageRect     ( NR , rectX , rectY , rectwidth , Rectheight )
@@ -1509,7 +1509,7 @@ EndMacro
        If width             > -1 ; falls breite nicht verändert werden soll..
           *anz_image\width  = width
        EndIf 
-       If height            = -1 ; falls höhe nicht verändert werden soll. 
+       If height            > -1 ; falls höhe nicht verändert werden soll. 
           *anz_image\height = height 
        EndIf 
        *anz_image\rectX     = rectX
@@ -1523,7 +1523,7 @@ EndMacro
        
        *anz_image           = anz_getimageID ( NR ) 
        If *anz_image        = 0 : ProcedureReturn : EndIf 
-       itexturesize         ( *anz_image\id , @width , @height )
+       itexturesize         ( anz_GetTextureIrrID( *anz_image\id) , @width , @height )
        *anz_image\width     = width
        *anz_image\height    = height 
        *anz_image\rectX     = 0
@@ -1601,12 +1601,12 @@ EndMacro
    
       If ListSize( anz_image())             ; sind überhaupt elemente vorhanden..
       
-         If Not anz_image()\nr = nr         ; schaut, ob's aktuelle bild das gesuchte ist.
+         If Not anz_image()\NR = NR         ; schaut, ob's aktuelle bild das gesuchte ist.
          
             ResetList( anz_image())         ; ansonsten wird gesucht..
             
                While NextElement(anz_image())
-                  If anz_image()\nr = nr
+                  If anz_image()\NR = NR
                      *x = anz_image()\x 
                      *y = anz_image()\y 
                   EndIf 
@@ -1649,12 +1649,12 @@ EndMacro
       
       If ListSize( anz_image())             ; sind überhaupt elemente vorhanden..
       
-         If Not anz_image()\nr = nr         ; schaut, ob's aktuelle bild das gesuchte ist.
+         If Not anz_image()\NR = NR         ; schaut, ob's aktuelle bild das gesuchte ist.
          
             ResetList( anz_image())         ; ansonsten wird gesucht..
             
                While NextElement(anz_image())
-                  If anz_image()\nr = nr
+                  If anz_image()\NR = NR
                       anz_image()\ishidden = hide 
                       ProcedureReturn @anz_image()
                   EndIf 
@@ -1697,17 +1697,18 @@ EndMacro
    Procedure anz_isimagehidden( NR.i)
       Protected *anz_image.anz_image 
       
-      *anz_image      = anz_getimageID ( nr )
+      *anz_image      = anz_getimageID ( NR )
+      If Not *anz_image : ProcedureReturn : EndIf 
       ProcedureReturn *anz_image\ishidden 
       
    EndProcedure
    
-   Procedure anz_getimageNRbyID( id.i) ; gibt die NR des images anhand des irrlichtpointers heraus.
+   Procedure anz_getimageNRbyID( id.i) ; gibt die NR des images anhand des anz_texture Pointers heraus.
       
       ResetList( anz_image())
          While NextElement ( anz_image())
             If anz_image()\id = id 
-               ProcedureReturn anz_image()\nr 
+               ProcedureReturn anz_image()\NR 
             EndIf  
          Wend 
          
@@ -1770,6 +1771,12 @@ EndMacro
          ; ProcedureReturn anz_texture()\id 
       ; 
       ; EndIf 
+   EndProcedure 
+   
+   Procedure anz_GetTextureIrrID ( *anz_texture.anz_texture ) ; gibt die IrrID der textur aus.
+      If *anz_texture > 0 
+         ProcedureReturn *anz_texture\id 
+      EndIf 
    EndProcedure 
    
    Procedure anz_gettexturebypfad( pfad.s) ; gibt textureID raus! nicht irrlicht texture.
@@ -1846,6 +1853,9 @@ EndMacro
       
          If ReadFile     ( 0 , pfad ) = 0 ; mesh prüfen
             pfad         = #pfad_meter 
+            scalx       = 1 ; damit man das überhaupt erkennt und keinen rießen würfel da hat o.O
+            scaly       = 1 
+            scalz       = 1 
          Else 
             CloseFile    ( 0 )
          EndIf 
@@ -3153,12 +3163,16 @@ EndMacro
                                           ReplaceString              ( mesh_pfad         , "/" , "\" ,#PB_String_InPlace )
                                           ReplaceString              ( mesh_texture1     , "/" , "\" ,#PB_String_InPlace )
                                           ReplaceString              ( mesh_texture2     , "/" , "\" ,#PB_String_InPlace )
-                                          Debug "Load Mesh: " + mesh_pfad 
+                                          
                                           If mesh_pfad  ; bei mehreren texturen überspringt er nämlich sonst das setzen von meshpfad, und es werden pro Textur ein extramesh erstellt !!! o_O!
-                                             *mesh   = anz_addmesh      (  mesh_pfad , mesh_x , mesh_y , mesh_z , mesh_texture1 , mesh_materialtype , mesh_texture2 , mesh_directload , 0 , mesh_coldetail , mesh_coltype  , mesh_rotx , mesh_roty , mesh_rotz , mesh_scalex , mesh_scaley , mesh_scalez , mesh_lighting )
+                                             *mesh            = anz_addmesh      (  mesh_pfad , mesh_x , mesh_y , mesh_z , mesh_texture1 , mesh_materialtype , mesh_texture2 , mesh_directload , 0 , mesh_coldetail , mesh_coltype  , mesh_rotx , mesh_roty , mesh_rotz , mesh_scalex , mesh_scaley , mesh_scalez , mesh_lighting )
                                           EndIf 
-                                          mesh_pfad = ""
-                                          nodeData  = ""
+                                          mesh_pfad           = ""
+                                          nodeData            = ""
+                                          mesh_no_textures    = 0 ; muss alles auf 0 gesetzt werden, weils sonst ja immer auf 1 bleibt o.O ;)
+                                          mesh_directload     = 0
+                                          mesh_coldetail      = 0
+                                          mesh_coltype        = 0
                                     EndSelect 
                               
                               ;}
@@ -3451,7 +3465,6 @@ EndMacro
       Static x.f , y.f , z.f  ,vectorStart.IRR_VECTOR ,  vectorEnd.IRR_VECTOR , upx.f,upy.f,upz.f 
     
     If anz_camera 
-       Debug 3421
        E3D_getNodePosition             ( anz_camera , @x,@y,@z)
        e3d_cameraupvector              ( anz_camera , @upx , @upy , @upz )
        iCameraTarget                   ( anz_camera , @vectorEnd)
@@ -4036,7 +4049,7 @@ EndMacro
       If Not irr_Camera 
          ProcedureReturn 0
       EndIf 
-      Debug 4006
+      
       E3D_getNodePosition  ( irr_Camera , @x1 , @y1 , @z1)   ; prüft die Position des spielers. weil aus der include_spieler.pb -> befehle beginnen mit "spi_"
       
       rasterx = Round( x1 / #anz_rasterboxbreite  , 1 )
@@ -4211,7 +4224,6 @@ EndMacro
                              
                              If *anz_mesh\geladen > 0
                                 irr_obj = *anz_mesh\nodeID 
-                                Debug Str(4195) +  "WEsenname: " + wes_getname ( *anz_mesh\WesenID )
                                 E3D_getNodePosition           ( irr_obj , @*p_obj\x , @*p_obj\y , @*p_obj\z )
                              EndIf 
                             ; rady / #meter ist der Faktor, um den alles verkürzt/längert werden muss..
@@ -4268,15 +4280,17 @@ EndMacro
                                  
                                  ; laden, wenn gelöscht. 
                                 
-                                 If Not *anz_mesh\geladen        = 1 And anzahl_zuladendes < 1 And  Not anz_IsObject3dChild( *p_obj )
-                                    anzahl_zuladendes            + 0.2
-                                    irr_obj = anz_reload_object3d( *p_obj)
+                                 If Not *anz_mesh\geladen        = 1  
+                                    If anzahl_zuladendes < 1 And  Not anz_IsObject3dChild( *p_obj )
+                                       anzahl_zuladendes            + 0.2
+                                       irr_obj = anz_reload_object3d( *p_obj)
+                                    Else
+                                       Continue 
+                                    EndIf 
                                  EndIf 
                                  
-                                 irr_obj     = *anz_mesh\nodeID 
                                  ; XYZ -Werte dem Mesh anpassen  ( irrlicht sagt ja, ob es z.b. gegen ne mauer rennt usw.)
                                  If irr_obj > 0
-                                    Debug 4241
                                     E3D_getNodePosition          ( irr_obj , @*p_obj\x , @*p_obj\y , @*p_obj\z )
                                  Else 
                                     Continue  
@@ -4310,9 +4324,13 @@ EndMacro
                                  ;{
                                  
                                  ; laden, wenn gelöscht. 
-                                 If Not *anz_mesh\geladen        = 1 And anzahl_zuladendes < 1 And  Not anz_IsObject3dChild( *p_obj )
-                                    anzahl_zuladendes            + 0.4
-                                    irr_obj = anz_reload_object3d( *p_obj)
+                                 If Not *anz_mesh\geladen        = 1 And  Not anz_IsObject3dChild( *p_obj )
+                                    If And anzahl_zuladendes < 1 
+                                       anzahl_zuladendes            + 0.4
+                                       irr_obj = anz_reload_object3d( *p_obj)
+                                    Else 
+                                       Continue 
+                                    EndIf 
                                  EndIf 
                                  
                                  irr_obj                        = *anz_mesh\nodeID  ; sonst stürtzer uns wieder ab..
@@ -4320,9 +4338,9 @@ EndMacro
                                  If Not irr_obj ; wenns nicht geladen werden konnte.
                                     Continue
                                  EndIf 
-                                 Debug 4285
+
                                  E3D_getNodePosition            ( irr_obj , @*p_obj\x , @*p_obj\y , @*p_obj\z )
-                                 
+
                                  ; material setzen
                                  If Not *anz_mesh\currentmaterialtype = anz_GetMeshMaterialDetail( *anz_mesh , *anz_mesh\irr_emt_materialtype , 0 ,0)  ; irr_shader ist *anz_mesh\materialtype
                                      anz_setMeshMaterial         ( *p_obj\id , *anz_mesh\irr_emt_materialtype ,0,0)
@@ -4347,17 +4365,19 @@ EndMacro
                                  ;{
                                  
                                  ; laden, wenn gelöscht. 
-                                 If Not *anz_mesh\geladen       = 1 And anzahl_zuladendes < 1 And  Not anz_IsObject3dChild( *p_obj )
-                                    anzahl_zuladendes            + 0.4
-                                    irr_obj = anz_reload_object3d( *p_obj)
+                                 If Not *anz_mesh\geladen       = 1 
+                                    If anzahl_zuladendes < 1 And Not anz_IsObject3dChild( *p_obj )
+                                       anzahl_zuladendes            + 0.4
+                                       irr_obj = anz_reload_object3d( *p_obj)
+                                    Else 
+                                       Continue 
+                                    EndIf 
                                  EndIf 
-                                 
-                                 irr_obj                        = *anz_mesh\nodeID  ; sonst stürtzer uns wieder ab..
+                                 *anz_mesh = *p_obj\id 
                                  ; XYZ -Werte dem Mesh anpassen ( irrlicht sagt ja, ob es z.b. gegen ne mauer rennt usw.)
                                  If irr_obj <= 0
                                     Continue 
                                  EndIf 
-                                 Debug 4323
                                  E3D_getNodePosition            ( irr_obj , @*p_obj\x , @*p_obj\y , @*p_obj\z )
                                  
                                  ; material setzen
@@ -4965,21 +4985,20 @@ EndMacro
 ; FoldLines=034C0381038303B303B503FD03FF043D04850494049804B604B804D504D904E6
 ; FoldLines=04E8054404ED0000052900000548055405560558055A055C055E056005620564
 ; FoldLines=0566058305850588058A058C058E05900592059405960598059A059C059E05A1
-; FoldLines=05A305A505A705A905AD05AF05D505D905DF05EE05F005FC05FE06230625063D
-; FoldLines=063F06570659066D066F06850687069E06A006A606A806B106B506EC06EE06FC
-; FoldLines=06FE0706070807240728078B078D07CC07CE07F507F70819081B082D082F08A5
-; FoldLines=083400000859000008620000086F0000087A000008A708B008B208E408E608F6
-; FoldLines=08F80903090509110915093A093C094B094D0959095D0982098409E809EA09F0
-; FoldLines=09F20D250A1500000A1B00000A3D00000A4300000B2400000B9700000C5F0000
-; FoldLines=0CA600000D270D3E0D400D420D460D4F0D510D620D5300000D640D770D790D84
-; FoldLines=0D860EB50DB300000DC400000DDD00000DEA00000DF600000E0200000E0E0000
-; FoldLines=0E2700000E3400000E4100000E4E00000E6100000EB70EC70EC90F6C0ED20000
-; FoldLines=0F6E0FBA0F8900000F9700000FA300000FBC11C70FEF00000FFB0000100F0000
-; FoldLines=1033000010380000103D0000111D000011320000116800001176000011850000
-; FoldLines=118C000011DB11DD11E111E811EA1200122B126B12310000124A000012EC1348
+; FoldLines=05A305A505A705A905AD05AF05D505D905F005FC05FE06230625063D063F0657
+; FoldLines=0659066D066F06850687069E06A006A706A906B206B606ED06EF06F306F50703
+; FoldLines=0705070D070F072B079707D607D807FF0801082308250837083908AF083E0000
+; FoldLines=08630000086C0000087900000884000008B108BA08BC08EE08F009000902090D
+; FoldLines=090F091B091F094409460955095709630967098C09F409FA0A1F0A210A250A43
+; FoldLines=0A470A490A9E0B2A0B2E0B9D0BA10BA30BA70BEA0C6D0CB00CB40CE20D4E0D50
+; FoldLines=0D540D5D0D5F0D700D6100000D720D850D930EC20DC000000DD100000DEA0000
+; FoldLines=0DF700000E0300000E0F00000E1B00000E3400000E4100000E4E00000E5B0000
+; FoldLines=0E6E00000EC40ED40F7B0FC70F9600000FA400000FB000000FFC103C10080000
+; FoldLines=101C000010401041104510461131113A11461195117C0000118A00001199119C
+; FoldLines=11A011D011EF11F111F511FC11FE1214123F127F12450000125E00001300135C
 ; Build=0
-; FirstLine=399
-; CursorPosition=1503
+; FirstLine=1113
+; CursorPosition=3466
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
