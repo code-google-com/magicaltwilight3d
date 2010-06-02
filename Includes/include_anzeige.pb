@@ -1457,12 +1457,11 @@ EndMacro
  
    ; Image management -- complete ;)
    
-   Procedure anz_loadimage( NR.i, x.f , y.f , pfad.s, Usealpha.b, ishidden.b = 1) 
-      Protected anz_image_NotFound.i 
+   Procedure anz_loadimage( NR.i, x.f , y.f , pfad.s, Usealpha.b= 1, ishidden.b = 1 , rectX.f = 0 , rectY.f = 0 , rectwidth.f = -1 , Rectheight.f = -1) ; gibt immer die NR des images heraus! keinen Pointer.
+      Protected anz_image_NotFound.i  , width.l , height.l
       Static    ZufallsNR.i
       
-      ; use list image.image()
-       
+      ; use list image.image() 
        id = anz_loadtexture ( pfad,0) ; id = anz_textureid, nicht textureid!!!!!
        
        If id 
@@ -1475,16 +1474,19 @@ EndMacro
                  ZufallsNR = NR ; so wird die zufallsNR genauso groß wie die NR. dadurch wird das nächste ZufallsNR NACH dem vom benutzer festgelegten NR-bild gesetzt.
               EndIf 
            EndIf 
-           
+           itexturesize( id , @width , @height ); größe der textur ermitteln zum späteren richrigen anzeigen.
            LastElement( anz_image ())
-           AddElement ( anz_image())
+           AddElement ( anz_image ())
              anz_image()\x        = x
              anz_image()\y        = y
+             anz_image()\width    = width
+             anz_image()\height   = height
              anz_image()\Alpha    = Usealpha
              anz_image()\NR       = NR
              anz_image()\id       = id
              anz_image()\ishidden = ishidden 
              anz_hideimage        ( NR , ishidden )
+             anz_SetImageRect     ( NR , rectX , rectY , rectwidth , Rectheight )
              ProcedureReturn NR
              
        Else 
@@ -1497,6 +1499,37 @@ EndMacro
           
        EndIf 
       
+   EndProcedure 
+   
+   Procedure anz_SetImageRect ( NR.i , rectX.f , rectY.f , width.f, height.f ) ; bild wird zugeschnitten und nur ein teil davon angezeigt. wenn width/height = -1, wird das jeweilige teil ignoriert.
+       Protected *anz_image.anz_image , imgwidth.l , imgheight.l
+       
+       *anz_image           = anz_getimageID ( NR ) 
+       If *anz_image        = 0 : ProcedureReturn : EndIf 
+       If width             > -1 ; falls breite nicht verändert werden soll..
+          *anz_image\width  = width
+       EndIf 
+       If height            = -1 ; falls höhe nicht verändert werden soll. 
+          *anz_image\height = height 
+       EndIf 
+       *anz_image\rectX     = rectX
+       *anz_image\rectY     = rectY
+       
+       ProcedureReturn *anz_image 
+   EndProcedure 
+   
+   Procedure anz_RemoveImageRect ( NR.i ); bild wird wieder komplett angezeigt ( nicht mehr zugeschnitten)
+      Protected *anz_image.anz_image , width.l , height.l 
+       
+       *anz_image           = anz_getimageID ( NR ) 
+       If *anz_image        = 0 : ProcedureReturn : EndIf 
+       itexturesize         ( *anz_image\id , @width , @height )
+       *anz_image\width     = width
+       *anz_image\height    = height 
+       *anz_image\rectX     = 0
+       *anz_image\rectY     = 0
+       
+       ProcedureReturn *anz_image 
    EndProcedure 
    
    Procedure anz_setImageForeground ( NR.i )
@@ -1550,14 +1583,14 @@ EndMacro
                   If anz_image()\NR = NR
                      anz_image()\x = x
                      anz_image()\y = y 
-                     ProcedureReturn @anz_image()
+                     ProcedureReturn anz_image()
                   EndIf 
                Wend 
             
          Else 
             anz_image()\x = x
             anz_image()\y = y 
-            ProcedureReturn @anz_image()
+            ProcedureReturn anz_image()
          EndIf 
          
       EndIf 
@@ -4527,8 +4560,8 @@ EndMacro
           While NextElement (anz_image())
              If Not anz_image()\ishidden
                 *anz_texture     = anz_image ()\id 
-                itexturesize     ( *anz_texture\id , @width , @height )
-                iDrawRectImage2D ( *anz_texture\id , anz_image()\x , anz_image()\y , 0,0, width , height, $FFFFFFFF,0,anz_image()\Alpha )
+                ; itexturesize     ( *anz_texture\id , @width , @height )
+                iDrawRectImage2D ( *anz_texture\id , anz_image()\x , anz_image()\y , anz_image()\rectX,anz_image()\rectY, anz_image()\width , anz_image()\height, $FFFFFFFF,0,anz_image()\Alpha )
              EndIf 
           Wend 
           
@@ -4924,7 +4957,7 @@ EndMacro
 ; IDE Options = PureBasic 4.40 (Windows - x86)
 ; CursorPosition = 108
 ; FirstLine = 77 
-; jaPBe Version=3.9.12.818
+; jaPBe Version=3.9.12.819
 ; FoldLines=008900910099009B009D009F00A100A300A500A700A900B100B300BB00E10142
 ; FoldLines=01460194019A019C019E01A001A201A401A601A801AA01AC01BB01C201C401DB
 ; FoldLines=01EA01F101F301FB01FD01FF0201020C020E0219021B02270229022C022F0233
@@ -4932,20 +4965,21 @@ EndMacro
 ; FoldLines=034C0381038303B303B503FD03FF043D04850494049804B604B804D504D904E6
 ; FoldLines=04E8054404ED0000052900000548055405560558055A055C055E056005620564
 ; FoldLines=0566058305850588058A058C058E05900592059405960598059A059C059E05A1
-; FoldLines=05A305A505A705A905AD05AF05D305D705DD06020604061C061E06360638064C
-; FoldLines=064E06640666067D067F06850687069006CD06DB06DD06E50707076A076C07AB
-; FoldLines=07AD07D407D607F807FA080C080E0884081300000838000008410000084E0000
-; FoldLines=085900000886088F089108C308C508D508D708E208E408F008F40919091B092A
-; FoldLines=092C0938096309C709C909CF09F409F609FA0A180A1C0A1E0A220A6F0B030B72
-; FoldLines=0B760B780C3E0C810C850CB30D060D1D0D1F0D210D250D2E0D300D410D320000
-; FoldLines=0D430D560D650E940D9200000DA300000DBC00000DC900000DD500000DE10000
-; FoldLines=0DED00000E0600000E1300000E2000000E2D00000E4000000E960EA60EA80F4B
-; FoldLines=0EB100000F4D0F990F6800000F7600000F8200000FDA0FEA1012101310171018
-; FoldLines=105B108510FC110511111160114700001155000011641167116B119B11A811B6
-; FoldLines=11BA11BC11C011C711C911DF120A124A121000001229000012CB1327
+; FoldLines=05A305A505A705A905AD05AF05D505D905DF05EE05F005FC05FE06230625063D
+; FoldLines=063F06570659066D066F06850687069E06A006A606A806B106B506EC06EE06FC
+; FoldLines=06FE0706070807240728078B078D07CC07CE07F507F70819081B082D082F08A5
+; FoldLines=083400000859000008620000086F0000087A000008A708B008B208E408E608F6
+; FoldLines=08F80903090509110915093A093C094B094D0959095D0982098409E809EA09F0
+; FoldLines=09F20D250A1500000A1B00000A3D00000A4300000B2400000B9700000C5F0000
+; FoldLines=0CA600000D270D3E0D400D420D460D4F0D510D620D5300000D640D770D790D84
+; FoldLines=0D860EB50DB300000DC400000DDD00000DEA00000DF600000E0200000E0E0000
+; FoldLines=0E2700000E3400000E4100000E4E00000E6100000EB70EC70EC90F6C0ED20000
+; FoldLines=0F6E0FBA0F8900000F9700000FA300000FBC11C70FEF00000FFB0000100F0000
+; FoldLines=1033000010380000103D0000111D000011320000116800001176000011850000
+; FoldLines=118C000011DB11DD11E111E811EA1200122B126B12310000124A000012EC1348
 ; Build=0
-; FirstLine=1352
-; CursorPosition=4281
+; FirstLine=399
+; CursorPosition=1503
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

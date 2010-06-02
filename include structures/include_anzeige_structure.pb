@@ -228,10 +228,10 @@ Structure anz_terrain
 EndStructure 
 
 Structure anz_particle 
-   Object3dID.i
+   Object3dID.i                       ; Pointer zu Oject3dID
    art.i                              ; die art von particleemitter. z.b. #anz_particle_art_default
-   nodeID.i
-   geladen.w
+   nodeID.i                           ; die 3D Engine ID des bildes (irrid)
+   geladen.w                          ; ob es geladen ist.
    particlewidth.f
    particleheight.f
    texture1 .s
@@ -245,8 +245,12 @@ Structure anz_particle
 EndStructure 
 
 Structure anz_image
-   x.f
-   y.f
+   x.f          ; bildschirmposition des bildes
+   y.f          
+   rectX.f      ; X-startpunkt falls nur ein Ausschnitt angezeigt werden soll
+   rectY.f      ; Y-Startpunkt
+   width.f      ; breite des ausschnittes bzw. wenn rectX = 0 -> bildbreite.
+   height.f     ; gleiches mit Höhe.
    NR.i         ; Nr. als Hilfe zum löschen und hinzufügen
    id.i         ; textureID
    Alpha.b      ; ob alpha benutzt wird ( bei png-bilder z.b.)
@@ -358,8 +362,8 @@ Global anz_shader_num_mat.l=0
 Global anz_shader_curent_mat.l=0 
 ; jaPBe Version=3.9.12.819
 ; Build=0
-; FirstLine=14
-; CursorPosition=12
+; FirstLine=234
+; CursorPosition=238
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

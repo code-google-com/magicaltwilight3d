@@ -84,7 +84,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    Next 
    item = Item_Add         ( "Ibot" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\item\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle ,"Spezialitem -> " + Chr(10) + "Gibt für 10s +200 leben" + Chr(10) + "Nebeneffekt: kann zu Verdauungsproblemen führen hehe" )
    spi_Inventar_AddItem    ( spi_getcurrentplayer() , item )
-   *FPSgadget              = iAddStaticText("fps" ,5,5,150,20,0,1,0)
+   *FPSgadget              = iAddStaticText("fps" ,5,5,150,20,1,1,1)
    Repeat 
   
       iTimerUpdatePhysic (100)   
@@ -187,11 +187,11 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; IDE Options = PureBasic 4.40 (Windows - x86)
 ; CursorPosition = 24
 ; FirstLine = 14 
-; jaPBe Version=3.9.12.818
+; jaPBe Version=3.9.12.819
 ; Build=9
 ; Language=0x0000 Language Neutral
-; FirstLine=42
-; CursorPosition=52
+; FirstLine=69
+; CursorPosition=100
 ; EnableXP
 ; ExecutableFormat=Windows
 ; Executable=C:\Users\Walker\Desktop\twilight\MT Projekt\max level_new Engine.exe
