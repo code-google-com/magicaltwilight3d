@@ -18,7 +18,6 @@ IncludeFile "include_animation_structure.pb"
 IncludeFile "include_math_structure.pb"
 IncludeFile "include_item_structure.pb"
 
-
 ;{ Declarations Anzeige
 Declare anz_freenode( *p_anz_Object3D.anz_Object3d , ISdeletechildren.i = 1 ) ; löscht nur die Irrlicht sachen, nicht die Nodes. (zum auslagern etc.)
 Declare anz_freemesh( *p_anz_mesh.anz_mesh ) ; gibt das Mesh frei zum späteren Neuladen (Auslagern)
@@ -63,7 +62,9 @@ Declare anz_setImageForeground ( NR.i )
 Declare anz_getimageID( NR.i)
 Declare anz_getimagepos( NR.i ,*x.f,*y.f)
 Declare anz_setimagepos ( NR , x.f,y.f)
-Declare anz_loadimage( NR.i, x.f , y.f , pfad.s, Usealpha.b, ishidden.b = 1) 
+Declare anz_loadimage( NR.i, x.f , y.f , pfad.s, Usealpha.b= 1, ishidden.b = 1 , rectX.f = 0 , rectY.f = 0 , rectwidth.f = -1 , Rectheight.f = -1) ; gibt immer die NR des images heraus! keinen Pointer.
+Declare anz_RemoveImageRect ( NR.i ); bild wird wieder komplett angezeigt ( nicht mehr zugeschnitten)
+Declare anz_SetImageRect( NR.i , rectX.f , rectY.f , width.f, height.f ) ; bild wird zugeschnitten und nur ein teil davon angezeigt. wenn width/height = -1, wird das jeweilige teil ignoriert.
 Declare.f anz_getGravity  ()
 Declare anz_MeshisGeladen ( *anz_mesh.anz_mesh )
 Declare anz_IsParallaxmappingEnabled()
@@ -233,6 +234,7 @@ Declare wes_MoveWesenToWaypoint( *WesenID.wes_wesen , *waypointid.WAYPOINT ) ; b
 Declare wes_is_geladen  ( *WesenID.wes_wesen )
 Declare wes_getposition ( *WesenID.wes_wesen , *x.f , *y.f , *z.f) ; needs @*x , @y,@z.f
 Declare.s wes_getname ( *WesenID.wes_wesen)
+Declare wes_getTeam ( *WesenID.wes_wesen) ; gibt den Pointer zum aktuellen TEAM des wesens aus (falls vorhanden.
 Declare wes_setname ( *WesenID.wes_wesen , Name.s)
 Declare wes_GetWaypointPfadID ( *WesenID.wes_wesen)  ; gibt die WaypointID des aktuellen Ziel-Waypionts aus.
 Declare wes_getNodeID    ( *WesenID.wes_wesen)
@@ -354,10 +356,10 @@ IncludeFile "include_animation.pb"
 IncludeFile "include_math.pb"
 IncludeFile "include_3DEngine.pb"
  
-; jaPBe Version=3.9.12.818
+; jaPBe Version=3.9.12.819
 ; Build=1
-; FirstLine=23
-; CursorPosition=57
+; FirstLine=29
+; CursorPosition=36
 ; ExecutableFormat=Windows
 ; Executable=H:\GemuSoft\Gemusoft\max level.exe
 ; DontSaveDeclare

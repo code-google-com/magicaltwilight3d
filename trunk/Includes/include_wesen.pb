@@ -420,6 +420,11 @@ Procedure wes_getAnzMeshID( *WesenID.wes_wesen) ; gibt die anz_mesh_id heraus.
    ProcedureReturn *WesenID\anz_Mesh_ID 
 EndProcedure 
 
+Procedure wes_getTeam ( *WesenID.wes_wesen) ; gibt den Pointer zum aktuellen TEAM des wesens aus (falls vorhanden.
+   If *WesenID <= 0 : ProcedureReturn : EndIf  
+   ProcedureReturn *WesenID\Team 
+EndProcedure 
+
 ; EXAMINE Wesen 
 
 Procedure.f wes_getReichweite ( *WesenID.wes_wesen ) ; gibt Reichweite des wesens zurück.
@@ -440,6 +445,9 @@ EndProcedure
 
 Procedure wes_Examine_Reset( IrrZentrumNode.i  , only_they_in_view.b = 1 , max_distance.f = #meter * 10  ) ; Überprüft, ob Nodes in der Nähe sind (bzw. alle nodes überhaupt z.b. zum material setzen)
    Protected x1.f , y1.f , z1.f ,  *p_obj.anz_Object3d , ObjectArt.w , irr_obj.i , rasterx.i , rastery.i , rasterz.i , *anz_mesh.anz_mesh    ; wenn Onlywess1_OnlyWesen2 = 1, dann nur wess suchen, wenn =2, dann nur wesen.
+      
+      
+      If IrrZentrumNode <= 0   : ProcedureReturn : EndIf 
       
       ClearList( wes_Examined_node() )
       
@@ -1150,18 +1158,18 @@ Procedure wes_UpdateWesen(*WesenID.wes_wesen) ; regelt Grundverhalten (instinkte
 EndProcedure
 
  
-; jaPBe Version=3.9.12.818
+; jaPBe Version=3.9.12.819
 ; FoldLines=008F00950097009D009F00A500A700B500B700BD00BF00C500C700CD00CF00DC
 ; FoldLines=00DE00E200E400E900EB00F300F501000108010C010E01130115011A011C0121
-; FoldLines=0123012D012F01330135015D015F018E019001960198019D019F01A401A801B6
-; FoldLines=01B801F601F801FA01FC01FE02000202020402060208020A020C021102130218
-; FoldLines=021A021F022102260228022D022F02340236023B023D024202440249024D0257
-; FoldLines=025902760278028402A502B902BB02C60313035603180000032B0000033D0000
-; FoldLines=035A037C03840393039703AF03B303B503B903FF03C5000003D8000004030423
-; FoldLines=0427042E04320439043D044504490450
+; FoldLines=0123012D012F01330135015D015F018E019001960198019D019F01A401AD01BB
+; FoldLines=02000202020402060208020A020C020E0210021202140219021B022002220227
+; FoldLines=0229022E023002350237023C023E02430245024A024C02510255025F0261027E
+; FoldLines=0280028C02AD02C102C302CE031B035E03200000033300000345000003620384
+; FoldLines=038C039B039F03B703BB03BD03C1040703CD000003E00000040B042B042F0436
+; FoldLines=043A04410445044D04510458
 ; Build=0
-; FirstLine=389
-; CursorPosition=1124
+; FirstLine=159
+; CursorPosition=422
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
