@@ -356,12 +356,7 @@ IncludeFile "include_item.pb"
 IncludeFile "include_animation.pb"
 IncludeFile "include_math.pb"
 IncludeFile "include_3DEngine.pb"
- 
-; jaPBe Version=3.9.12.819
-; Build=1
-; FirstLine=9
-; CursorPosition=33
-; ExecutableFormat=Windows
-; Executable=H:\GemuSoft\Gemusoft\max level.exe
-; DontSaveDeclare
-; EOF
+
+; IDE Options = PureBasic 4.40 Beta 3 (Windows - x86)
+; CursorPosition = 5
+; Folding = ---
