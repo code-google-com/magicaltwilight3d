@@ -45,6 +45,16 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    anz_savepreferences        (   )
    
    anz_initstuff              ( 0 )
+   
+   MIN_INIT()
+   
+
+   MIN_AddDot(160,70,"F")
+   MIN_AddDot(60,70,"E")
+   MIN_AddDot(40,80,"Q")
+   MIN_AddDot(60,80,"I")
+   MIN_AddDot(70,80,"E")
+   
    ; iInitPhysic  (   )  
    ; iSetPolysPerNode(128)
    ; iSetWorldSize(- #meter*50 , -#meter * 10 , -#meter*50 , #meter*500,#meter*10 , #meter*500)
@@ -84,6 +94,10 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    item = Item_Add         ( "Ibot" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\item\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle ,"Spezialitem -> " + Chr(10) + "Gibt für 10s +200 leben" + Chr(10) + "Nebeneffekt: kann zu Verdauungsproblemen führen hehe" )
    spi_Inventar_AddItem    ( spi_getcurrentplayer() , item )
    *FPSgadget              = iAddStaticText("fps" ,5,5,150,20,1,1,1)
+   
+   
+   
+   
    Repeat 
   
       iTimerUpdatePhysic (100)   
@@ -96,9 +110,12 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
       anz_updatesound         ()
       anz_updateDeleteAnimator()
       anz_setShownObjects     ( spi_GetPlayerNode( spi_getcurrentplayer()) )
+      MIN_RenderMiniMap()
       anz_updateview          ()
       itextgui                ( *FPSgadget , Str(ifps()))
       gui_updateGUI           ()
+      
+      
       
    If GetAsyncKeyState_( #VK_F5)
       If key_f5 = 0
@@ -185,14 +202,17 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    ForEver ; wird mit end beendet.
 ; IDE Options = PureBasic 4.40 (Windows - x86)
 ; CursorPosition = 24
+; FirstLine = 14
+; IDE Options = PureBasic 4.40 (Windows - x86)
+; CursorPosition = 107
+; FirstLine = 96
+; IDE Options = PureBasic 4.40 Beta 1 (Windows - x86)
+; CursorPosition = 58
 ; FirstLine = 14 
 ; jaPBe Version=3.9.12.819
-; Build=10
-; Language=0x0000 Language Neutral
-; FirstLine=133
-; CursorPosition=157
-; EnableXP
+; Build=0
+; FirstLine=0
+; CursorPosition=29
 ; ExecutableFormat=Windows
-; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\max level_new Engine.exe
 ; DontSaveDeclare
 ; EOF
