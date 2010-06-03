@@ -1,4 +1,4 @@
-9
+0
 ..\Anzeige Tester.pb
 include_wesen.pb
 include_spieler.pb
@@ -33,3 +33,5 @@ D:\Software Entwicklung\Purebasic IRRLICHT 1.4\Examples\sample_n3xtd\includes\n3
 D:\Software Entwicklung\Purebasic IRRLICHT 1.4\Examples\sample_n3xtd\includes\n3xtD_Math.pbi
 D:\Software Entwicklung\Purebasic IRRLICHT 1.4\Examples\sample_n3xtd\017 parallaxmapping.pb
 D:\Software Entwicklung\Purebasic IRRLICHT 1.4\Examples\sample_n3xtd_neu\220_XEffectTest.pb
+D:\Software Entwicklung\Purebasic IRRLICHT 1.4\Includes\n3xtD_Constantes.pbi
+include_GUIs.pb
