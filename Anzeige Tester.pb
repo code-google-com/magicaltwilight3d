@@ -185,14 +185,14 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    ForEver ; wird mit end beendet.
 ; IDE Options = PureBasic 4.40 (Windows - x86)
 ; CursorPosition = 24
-; FirstLine = 14 
+; FirstLine = 14
+; IDE Options = PureBasic 4.40 (Windows - x86)
+; CursorPosition = 107
+; FirstLine = 96 
 ; jaPBe Version=3.9.12.819
-; Build=10
-; Language=0x0000 Language Neutral
-; FirstLine=133
-; CursorPosition=146
-; EnableXP
+; Build=0
+; FirstLine=0
+; CursorPosition=19
 ; ExecutableFormat=Windows
-; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\max level_new Engine.exe
 ; DontSaveDeclare
 ; EOF
