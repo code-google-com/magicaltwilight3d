@@ -17,6 +17,7 @@ IncludeFile "include_kampfsystem_structure.pb"
 IncludeFile "include_animation_structure.pb"
 IncludeFile "include_math_structure.pb"
 IncludeFile "include_item_structure.pb"
+IncludeFile "include_minimap_structure.pb"
 
 ;{ Declarations Anzeige
 Declare anz_freenode( *p_anz_Object3D.anz_Object3d , ISdeletechildren.i = 1 ) ; löscht nur die Irrlicht sachen, nicht die Nodes. (zum auslagern etc.)
@@ -343,6 +344,18 @@ Declare gui_getInventarItemPos ( Itemnr , *itemposx.i , *itemposy.i ) ; pointer 
 
 ;}
 
+;{ Declarations
+Declare MIN_RenderMiniMap()
+Declare MIN_Reset()
+Declare.s MIN_GetDotType(id)
+Declare MIN_SetDotType(id,Type$)
+Declare MIN_GetDotPos(id)
+Declare MIN_SetDotPos(id,x,y)
+Declare MIN_AddDot(x,y,Type$)
+Declare MIN_SetScreenPos(x,y)
+Declare MIN_INIT(x=0,y=0)
+;}
+
 IncludePath "includes\"
 IncludeFile "include_waypoint.pb"
 IncludeFile "include_wesen.pb"
@@ -356,7 +369,11 @@ IncludeFile "include_item.pb"
 IncludeFile "include_animation.pb"
 IncludeFile "include_math.pb"
 IncludeFile "include_3DEngine.pb"
-
-; IDE Options = PureBasic 4.40 Beta 3 (Windows - x86)
-; CursorPosition = 5
-; Folding = ---
+IncludeFile "include_minimap.pb" 
+; jaPBe Version=3.9.12.819
+; Build=0
+; FirstLine=309
+; CursorPosition=348
+; ExecutableFormat=Windows
+; DontSaveDeclare
+; EOF
