@@ -37,7 +37,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; -----------------------------------------------------------------------------------------------------------------------
 ; ------------------------------------------------------ MAIN     ------------------------------------------------------
 ; -----------------------------------------------------------------------------------------------------------------------
-
+   
    anz_setresolution          ( 1280 , 768, 32 ,0)
    anz_enable_normalmapping   ( 0 )
    anz_enable_parallaxmapping ( 1 )
@@ -189,8 +189,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; jaPBe Version=3.9.12.819
 ; Build=10
 ; Language=0x0000 Language Neutral
-; FirstLine=133
-; CursorPosition=148
+; FirstLine=21
+; CursorPosition=39
 ; EnableXP
 ; ExecutableFormat=Windows
 ; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\max level_new Engine.exe
