@@ -21,7 +21,7 @@ Procedure Item_Add (name$, x.f , y.f , z.f , goldwert , ItemArt.w , Betrag.w , G
   *itemID = AddElement( item()) ; deswegen pointer, damit bei evtl multithreading kein Fehler.
   
   If *itemID 
-     *itemID            \Name          = name$
+     *itemID            \name          = name$
      *itemID            \GuiText       = GuiText
      *itemID            \price         = goldwert
      *itemID            \Gewicht       = Gewicht
@@ -51,14 +51,14 @@ Procedure Item_Add (name$, x.f , y.f , z.f , goldwert , ItemArt.w , Betrag.w , G
   
 EndProcedure
 
-Procedure Item_AddDefined ( Name.s , x.f,y.f,z.f , DefinedItemNR.i )  ; erstellt ein vordeffiniertes Item (wichtig, wenn viele Items gleich sind.
+Procedure Item_AddDefined ( name.s , x.f,y.f,z.f , DefinedItemNR.i )  ; erstellt ein vordeffiniertes Item (wichtig, wenn viele Items gleich sind.
    Protected *anz_mesh.anz_mesh 
    
 	If AddElement( item())
       d = DefinedItemNR 
 
       If item_predefined(d)\exist 
-         item           () \Name        = item_predefined(d)\Name 
+         item           () \name        = item_predefined(d)\name 
          item           () \GuiText     = item_predefined(d)\GuiText 
          item           () \price       = item_predefined(d)\price 
          item           () \Gewicht     = item_predefined(d)\Gewicht 
@@ -351,14 +351,14 @@ Procedure Item_GetGoldwert(*itemID.ITEM)
   ProcedureReturn *itemID\price
 EndProcedure
  
-; jaPBe Version=3.9.12.818
-; FoldLines=0006000F0024002E00630065006700A700AB00E600E800EA00EC00EE00F000F2
-; FoldLines=00F400F600F800FC00FE01000104010E0110011A011C01260128013001320136
-; FoldLines=01380143014501550157015B015D015F
+; jaPBe Version=3.9.12.819
+; FoldLines=0006000F0024002E0063006500AB00E600E800EA00EC00EE00F000F200F400F6
+; FoldLines=00F800FC00FE01000104010E0110011A011C0126012801300132013601380143
+; FoldLines=014501550157015B015D015F
 ; Build=0
 ; CompileThis=..\Wegfindung TESTER.pb
-; FirstLine=8
-; CursorPosition=35
+; FirstLine=87
+; CursorPosition=133
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

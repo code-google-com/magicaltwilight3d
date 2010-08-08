@@ -211,8 +211,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; FirstLine = 14 
 ; jaPBe Version=3.9.12.819
 ; Build=0
-; FirstLine=0
-; CursorPosition=29
+; FirstLine=28
+; CursorPosition=42
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
