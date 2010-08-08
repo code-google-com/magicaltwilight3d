@@ -45,26 +45,39 @@ Enumeration
    #edit_gadget_art_checkbox
    #edit_gadget_art_editbox
    #edit_gadget_art_menu
+   #edit_gadget_art_textline ; eine in den code einzufügende textzeile, z.b. "procedure open_window_1()"
 EndEnumeration
 
 
 
 Global NewList gadget. gadget()
+Global NewList main_global.s() ; eine "global" - Zeile.
+
 
 Procedure.s translate (text.s)
    Protected anzahl_returns , procedurecount , line.s , Gadgetart.s , Anzahl_windows ,  output.s , id.i = 0
    
    anzahl_returns = CountString ( text , Chr(10 ))
    
-   For x = 1 To anzahl_returns 
+   For x = 1 To anzahl_returns +1
       
       line.s = ReplaceString ( RemoveString( RemoveString ( RemoveString ( StringField ( text , x , Chr(10)) , " " ) , "if" , #PB_String_NoCase ) , Chr(34) ) , ")" , "," ) ; replacestring, because then the stringfield runs correctly.
       
       ; schaun, ob neue Procedure losgeht.
       If FindString ( LCase(line) , "endprocedure" , 1)
+         AddElement( gadget() )  ; die "open_window_.." procedure beibehalten.
+            gadget()\name = "   EndProcedure" + Chr(10)
+            gadget()\art  = #edit_gadget_art_textline 
+            
          procedurecount - 1
          Continue 
       ElseIf FindString ( LCase (line ) , "procedure" , 1 )
+         AddElement( gadget() )
+            Debug line 
+            gadget()\name = "   Procedure " + Right( line , Len(line)-9)
+            gadget()\name = Left(gadget()\name , Len( gadget()\name ) -2 ) + ")" ; das letzte komma mit klammerzu ersetzen
+            gadget()\art  = #edit_gadget_art_textline
+            
          procedurecount + 1
          Continue 
       EndIf 
@@ -210,6 +223,26 @@ Procedure.s translate (text.s)
 
    ; output schreiben.
    
+   ; erst die globals:
+   
+   output+ Chr(10)
+   output + " ; ---------------------------------------------------------------------------------------------" +Chr(10)
+   output + " ; --- Globals"+Chr(10)
+   output + " ; ---------------------------------------------------------------------------------------------"+Chr(10)+Chr(10)
+   
+   ForEach gadget()
+      If Not gadget()\art = #edit_gadget_art_textline
+          AddElement(main_global())
+             output + "  Global *" + gadget()\name  + Chr(10)
+      EndIf 
+   Next 
+   output + Chr(10)
+   output + " ; ---------------------------------------------------------------------------------------------"+Chr(10)
+   output + " ; --- Commands"+Chr(10)
+   output + " ; ---------------------------------------------------------------------------------------------"+Chr(10) +Chr(10)
+   
+   ; dann die Befehle.
+   
    ResetList ( gadget())
    
       While NextElement (gadget())
@@ -221,7 +254,7 @@ Procedure.s translate (text.s)
             
             Case #edit_gadget_art_button
                
-               output + "  *" +  gadget()\name + " = IrrGuiAddButton( " + Chr(34) + gadget()\text +Chr(34) + " , " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + gadget()\Parent + " , " + Str(id)  + " ) "
+               output + "      *" +  gadget()\name + " = IrrGuiAddButton( " + Chr(34) + gadget()\text +Chr(34) + " , " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + gadget()\Parent + " , " + Str(id)  + " ) "
             
             Case #edit_gadget_art_scrollbar
                
@@ -229,36 +262,40 @@ Procedure.s translate (text.s)
                   horizontal = 1
                EndIf 
                
-               output + "  *" +  gadget()\name + " = IrrGuiAddscrollbar( " + Str(horizontal) +" , " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + gadget()\Parent + " , " + Str(id) + " ) "
+               output + "      *" +  gadget()\name + " = IrrGuiAddscrollbar( " + Str(horizontal) +" , " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + gadget()\Parent + " , " + Str(id) + " ) "
                
             Case #edit_gadget_art_text
             
-               output + "  *" +  gadget()\name + " = IrrGuiAddStaticText( " + Chr(34) + gadget()\text +Chr(34) + " , " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , 1 , 1 , 1 , " + gadget()\Parent + " , " + Str(id) + " ) "
+               output + "      *" +  gadget()\name + " = IrrGuiAddStaticText( " + Chr(34) + gadget()\text +Chr(34) + " , " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , 1 , 1 , 1 , " + gadget()\Parent + " , " + Str(id) + " ) "
                
             Case #edit_gadget_art_image
 
-               output + "  *" +  gadget()\name + " = IrrGuiAddImage( " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + gadget()\Parent + " , " + Str(id) + " ) "
+               output + "      *" +  gadget()\name + " = IrrGuiAddImage( " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + gadget()\Parent + " , " + Str(id) + " ) "
                
             Case #edit_gadget_art_window
                
                If gadget()\Parent = "" : gadget()\Parent = "0" : EndIf 
-               output + "  *" +  gadget()\name + " = IrrGuiAddwindow( " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + Chr(34) + gadget()\text + Chr(34) + " , 0 , " + gadget()\Parent + " , " + Str(id) + " ) "
+               output + "      *" +  gadget()\name + " = IrrGuiAddwindow( " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + Chr(34) + gadget()\text + Chr(34) + " , 0 , " + gadget()\Parent + " , " + Str(id) + " ) "
                
             Case #edit_gadget_art_combobox
             
-               output + "  *" +  gadget()\name + " = IrrGuiAddComboBox( " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + gadget()\Parent + " , " + Str(id) + " ) "
+               output + "      *" +  gadget()\name + " = IrrGuiAddComboBox( " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + gadget()\Parent + " , " + Str(id) + " ) "
                
             Case #edit_gadget_art_checkbox
                
-               output + "  *" +  gadget()\name + " = IrrGuiAddCheckBox( 0 , " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + Chr(34) + gadget()\text + Chr(34) +" , "  + gadget()\Parent + " , " + Str(id) + " ) "
+               output + "      *" +  gadget()\name + " = IrrGuiAddCheckBox( 0 , " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , " + Chr(34) + gadget()\text + Chr(34) +" , "  + gadget()\Parent + " , " + Str(id) + " ) "
                
             Case #edit_gadget_art_editbox
                
-               output + "  *" +  gadget()\name + " = IrrGuiAddEditBox( "  +Chr(34) +  gadget()\text + Chr(34) + " , " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , 1 , "  + gadget()\Parent + " , " + Str(id) + " ) "
+               output + "      *" +  gadget()\name + " = IrrGuiAddEditBox( "  +Chr(34) +  gadget()\text + Chr(34) + " , " +  Str( gadget()\x) + " , " + Str( gadget()\y ) + " , " + Str( gadget()\x2 ) + " , " + Str( gadget()\y2) + " , 1 , "  + gadget()\Parent + " , " + Str(id) + " ) "
                
             Case #edit_gadget_art_menu
             
-               output + "  *" +  gadget()\name + " = irrguiaddmenu( "  + gadget()\Parent + " , " + Str(id) + " ) "
+               output + "      *" +  gadget()\name + " = irrguiaddmenu( "  + gadget()\Parent + " , " + Str(id) + " ) "
+            
+            Case #edit_gadget_art_textline
+               
+               output + gadget()\name
                
          EndSelect 
          
@@ -316,12 +353,12 @@ Procedure Open_Window_translator()
 EndProcedure
 
 Open_Window_translator() 
-; jaPBe Version=3.8.8.716
-; FoldLines=00040011001500170035010D
+; jaPBe Version=3.9.12.819
+; FoldLines=0004001100150017
 ; Build=0
 ; Language=0x0000 Language Neutral
-; FirstLine=0
-; CursorPosition=30
+; FirstLine=290
+; CursorPosition=335
 ; EnableXP
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
