@@ -153,6 +153,7 @@ Declare weg_remove_from_openlist (*knotenID )
 ;{ Declarations math
 Declare math_IrrFaceTargetPerPos ( *src.irr_node, x.f , y.f , z.f )  ; ist hier  in Mathinclude, weil in irrlicht-include des ganze leicht überschrieben wird (z.b. bei neuer irrlicht vers.)
 Declare math_IrrFaceTarget ( *src.irr_node, *target.irr_node)
+Declare.f main_FiByVect( x.f,y.f) ; returns the fi of the vector.
 Declare.f math_FiToRad ( Fi.f)  ; rechnet Grad in RAD um ;)
 Declare.f math_RadToFi ( Rad.f)  ; rechnet RAD in Grad um ;)
 Declare math_iseven(zahl.i)
@@ -185,7 +186,7 @@ Declare spi_move_spielerforward( *SpielerID.spi_spieler , amount.f)  ; anim spie
 Declare spi_GetPlayerNode( *SpielerID.spi_spieler)  ; gibt das irr_node zurück
 Declare spi_GetSpielerWesenID (*SpielerID.spi_spieler )
 Declare spi_getcurrentplayer()   ; gibt den eigenen Spieler zurück.
-Declare spi_addspieler ( x.f,y.f,z.f, leben.w , maxleben.w , mana.w , maxmana.w , Name.s , Team.s , IsCurrentSpieler.b = 1)  ; erstellt neues 3D Wesen!! und den spieler 
+Declare spi_addspieler ( x.f,y.f,z.f, leben.w , maxleben.w , mana.w , maxmana.w , name.s , Team.s , IsCurrentSpieler.b = 1)  ; erstellt neues 3D Wesen!! und den spieler 
 Declare spi_GetSpielerRustung ( *SpielerID.spi_spieler )
 Declare spi_setSpielerRustung ( *SpielerID.spi_spieler , *itemID.ITEM )
 Declare spi_getspielerSchwert ( *SpielerID.spi_spieler ) ; returns ITEMID of current weapon
@@ -372,8 +373,8 @@ IncludeFile "include_3DEngine.pb"
 IncludeFile "include_minimap.pb" 
 ; jaPBe Version=3.9.12.819
 ; Build=0
-; FirstLine=309
-; CursorPosition=348
+; FirstLine=122
+; CursorPosition=155
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

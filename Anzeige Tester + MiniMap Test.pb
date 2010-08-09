@@ -42,24 +42,18 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    anz_enable_normalmapping   ( 0 )
    anz_enable_parallaxmapping ( 1 )
    anz_enable_shadow          ( 0 )
+   anz_enable_fog             ( 1 )
+   anz_enable_lighting        ( 1 )
    anz_savepreferences        (   )
    
    anz_initstuff              ( 0 )
+   MIN_INIT                   ( 845,606  )
    
-   MIN_INIT()
-   
-
-   MIN_AddDot(160,70,"F")
-   MIN_AddDot(60,70,"E")
-   MIN_AddDot(40,80,"Q")
-   MIN_AddDot(60,80,"I")
-   MIN_AddDot(70,80,"E")
    
    ; iInitPhysic  (   )  
    ; iSetPolysPerNode(128)
    ; iSetWorldSize(- #meter*50 , -#meter * 10 , -#meter*50 , #meter*500,#meter*10 , #meter*500)
-   anz_islighting             = 1
-   anz_isfog                  = 0
+   
    ; IrrSetTextureCreationFlag  ( #IRR_ETCF_CREATE_MIP_MAPS       , 1 )
    anz_map_load               ( "max_welt.irr" , "Gfx\maps\Max Welt\") ;Gfx\maps\Max Welt\
    
@@ -99,7 +93,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    
    
    Repeat 
-  
+      
       iTimerUpdatePhysic (100)   
       If item_check_waiter    < ElapsedMilliseconds() 
          Item_FocusItem_Reset ()
@@ -211,8 +205,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; FirstLine = 14 
 ; jaPBe Version=3.9.12.819
 ; Build=0
-; FirstLine=28
-; CursorPosition=42
+; FirstLine=23
+; CursorPosition=41
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

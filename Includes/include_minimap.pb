@@ -249,23 +249,45 @@
   ;===================================================================
   
   Procedure MIN_ExamineMiniMap() ; prüft die umgebung auf gegner.
-     *playerPos.ivector3 
+     Protected playerPos.ivector3 , playerRot.ivector3 , gegnerpos.ivector3 , winkel.f
      
      If *MIN_Init = 1 And spi_getcurrentplayer() > 0 ; wenn die minimap an und ein spieler existent sind.
         
         MIN_Reset()  ; minimap resetten. alles löschen.
         
-        wes_Examine_Reset ( spi_GetPlayerNode     (  spi_getcurrentplayer()) , 1 , #meter * 10)
-        wes_getposition   ( spi_GetSpielerWesenID (  spi_getcurrentplayer()) ,@*playerPos\x , @*playerPos\y , @*playerPos\z )
+        wes_Examine_Reset          ( spi_GetPlayerNode ( spi_getcurrentplayer()) , 1 , #meter * 10)
+        E3D_getNodePosition        ( spi_GetPlayerNode ( spi_getcurrentplayer()) ,@playerPos\x , @playerPos\y , @playerPos\z )
+        E3D_getNoderotation        ( spi_GetPlayerNode ( spi_getcurrentplayer()) ,@playerRot\x , @playerRot\y , @playerRot\z )
         
-         While wes_examine_Next ()
+         While wes_examine_Next    ( )
+            E3D_getNodePosition    ( wes_Examine_get_IrrNode() ,@gegnerpos\x , @gegnerpos\y , @gegnerpos\z )
+            winkel = main_FiByVect(( gegnerpos\x - playerPos\x ) , ( gegnerpos\y - playerPos\y ) )
+            winkel = math_FixFi( winkel + math_FixFi( playerRot\y ) ) ; winkel mit eigenrotation verrechnen.
+             
+             If winkel >= 20000  Or winkel =< -20000 ; wenn leere menge rauskommt, bei acos (was nur bei 180 und 360° der fall ist) 
+                If playerPos\x > gegnerpos\x 
+                   winkel = 180
+                Else 
+                  winkel = 360
+                EndIf 
+             EndIf 
+             Debug "Winkel: " + StrF( winkel ,2)
+             
+            ; ------------------------------------------------------------------------------------------------------
+            ; PAUSE !! ............................---------------------------------
+            ; ------------------------------------------------------------------------------------------------------
+            ; winkel den der gegner um einheit hat zusammenredchnen mit winkel den spieler sich dreht
+            ; spielerdrehung anpassen, sodass spieler immer rücken der 3d figur sieht.
+            
             If team_GetFreundLevel ( wes_Examine_get_Team () , wes_getTeam (spi_GetSpielerWesenID(  spi_getcurrentplayer()))) > 0 ; wesen ist freund
                ; grüne kugel anzeigen 
-               MIN_AddDot( Min_MapWidth / 2 +  wes_Examine_get_Distance()
+               MIN_AddDot( Min_MapWidth / 2 + Cos( math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 20 , Min_MapHeight / 2 + Sin( math_FiToRad( winkel )) *  wes_Examine_get_Distance() / 20  , #MIN_Type_Friend)
             ElseIf team_GetFreundLevel( wes_Examine_get_Team () , wes_getTeam (spi_GetSpielerWesenID(  spi_getcurrentplayer()))) = 0 ; neutral. evtl orange
                ; orange kugel
+               MIN_AddDot( Min_MapWidth / 2 + Cos(  math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 20 , Min_MapHeight / 2 + Sin(  math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 20 , #MIN_Type_Enemy)
             ElseIf team_GetFreundLevel( wes_Examine_get_Team () , wes_getTeam (spi_GetSpielerWesenID(  spi_getcurrentplayer()))) < 0  ; gegner
                   ; rote kugel
+                  MIN_AddDot( Min_MapWidth / 2 + Cos(  math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 20 , Min_MapHeight / 2 + Sin(  math_FiToRad(winkel) ) *  wes_Examine_get_Distance() / 20 , #MIN_Type_Enemy)
             EndIf 
          Wend 
      
@@ -287,12 +309,16 @@
       
       anz_setimageforeground(MIN_GUI_BG)
       
+      If Random(10) = 0
+         MIN_ExamineMiniMap()
+      EndIf 
+      
       ForEach *Min_Dots()
       
         anz_freeimage(*Min_Dots()\ImgID)
       
         If *Min_Dots()\x > *MIN_Position\x And *Min_Dots()\y > *MIN_Position\y
-          If *Min_Dots()\x < *MIN_Position\x + 145 And *Min_Dots()\y < *MIN_Position\y + 150
+          If *Min_Dots()\x < *MIN_Position\x + Min_MapWidth And *Min_Dots()\y < *MIN_Position\y + Min_MapHeight 
       
               *Min_Dots()\ImgID = anz_loadimage(-1,*Min_Dots()\x,*Min_Dots()\y,"..\..\minimap\"+ *Min_Dots()\Type +".png",1,0)
               anz_setimageforeground(*Min_Dots()\ImgID)
@@ -320,8 +346,8 @@
  
 ; jaPBe Version=3.9.12.819
 ; Build=0
-; FirstLine=238
-; CursorPosition=259
+; FirstLine=252
+; CursorPosition=282
 ; EnableXP
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
