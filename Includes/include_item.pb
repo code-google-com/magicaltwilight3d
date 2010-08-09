@@ -128,7 +128,7 @@ Procedure Item_FocusItem_Reset ()  ; überprüft das Fokus-Item
              ; Ydist                  = math_square_distance2d ( py , 0 , piy , 0 ) ; nur der y - Abstand zwischen den beiden Nodes
              Xdist                  = math_distance3d        ( px , pz , 0 , pix , piz , 0 ) ; Xdist = b des cosinussatzes.
              ; dist                   = math_distance3d        ( px , pz , 0 , pix , piz , 0 ) ; nur die 2D - distance. sonst rechung = falsch.
-             dist                   = #meter            ; beliebigen wert= länge von c 
+             dist                   = #meter                 ; beliebigen wert= länge von c 
              Ydist                  = math_distance3d        ( pix , piz , 0 , dist + px , pz , 0) 
              
              If Round( 2* Xdist * dist,0) = 0 : divisioncorrectur = 1 : Else : divisioncorrectur = 0 : EndIf   ; kontrolle, damits nicht division durch null wird.
@@ -357,8 +357,8 @@ EndProcedure
 ; FoldLines=014501550157015B015D015F
 ; Build=0
 ; CompileThis=..\Wegfindung TESTER.pb
-; FirstLine=87
-; CursorPosition=136
+; FirstLine=94
+; CursorPosition=137
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

@@ -153,7 +153,7 @@ Declare weg_remove_from_openlist (*knotenID )
 ;{ Declarations math
 Declare math_IrrFaceTargetPerPos ( *src.irr_node, x.f , y.f , z.f )  ; ist hier  in Mathinclude, weil in irrlicht-include des ganze leicht überschrieben wird (z.b. bei neuer irrlicht vers.)
 Declare math_IrrFaceTarget ( *src.irr_node, *target.irr_node)
-Declare.f main_FiByVect( x.f,y.f) ; returns the fi of the vector.
+Declare.f math_FiByVect( x.f,y.f) ; returns the fi of the vector.
 Declare.f math_FiToRad ( Fi.f)  ; rechnet Grad in RAD um ;)
 Declare.f math_RadToFi ( Rad.f)  ; rechnet RAD in Grad um ;)
 Declare math_iseven(zahl.i)
@@ -302,7 +302,7 @@ Declare Item_Examine_Reset( only_they_in_view.i = 1 , max_distance.f = 3*#meter 
 Declare Item_FocusItem_Reset ()  ; überprüft das Fokus-Item
 Declare Item_getFocusItem()   ; gibt das Item, das direkt vor dem Spieler liegt zurück ( also die ItemID)
 Declare Item_Delete(*itemID.ITEM)
-Declare Item_AddDefined ( Name.s , x.f,y.f,z.f , DefinedItemNR.i )  ; erstellt ein vordeffiniertes Item (wichtig, wenn viele Items gleich sind.
+Declare Item_AddDefined ( name.s , x.f,y.f,z.f , DefinedItemNR.i )  ; erstellt ein vordeffiniertes Item (wichtig, wenn viele Items gleich sind.
 Declare Item_Add (name$, x.f , y.f , z.f , goldwert , ItemArt.w , Betrag.w , Gewicht.f , pfad.s , texture1.s , texture2.s , MaterialType.i , gui_InventarImage.s ,GuiText.s ) ; betrag = z.b. lebensbonus, ; inventarimage = #gui_inventar_image_
 Declare Item_AddWaffe ( *itemID.ITEM , angriff , Reichweite, Waffenart, gui_InventarBigImage.s)
 ;}
@@ -348,6 +348,8 @@ Declare gui_getInventarItemPos ( Itemnr , *itemposx.i , *itemposy.i ) ; pointer 
 ;{ Declarations
 Declare MIN_RenderMiniMap()
 Declare MIN_Reset()
+Declare Min_height() ; gibt die Höhe des HUD-bildes heraus.
+Declare Min_width() ; gibt die Breite des HUD-Bildes heraus.
 Declare.s MIN_GetDotType(id)
 Declare MIN_SetDotType(id,Type$)
 Declare MIN_GetDotPos(id)
@@ -373,8 +375,8 @@ IncludeFile "include_3DEngine.pb"
 IncludeFile "include_minimap.pb" 
 ; jaPBe Version=3.9.12.819
 ; Build=0
-; FirstLine=122
-; CursorPosition=155
+; FirstLine=314
+; CursorPosition=350
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

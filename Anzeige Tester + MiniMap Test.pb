@@ -38,7 +38,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; ------------------------------------------------------ MAIN     ------------------------------------------------------
 ; -----------------------------------------------------------------------------------------------------------------------
 
-   anz_setresolution          ( 1280 , 768, 32 ,0)
+   anz_setresolution          ( 1280 , 768, 32 , 0 )
    anz_enable_normalmapping   ( 0 )
    anz_enable_parallaxmapping ( 1 )
    anz_enable_shadow          ( 0 )
@@ -47,7 +47,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    anz_savepreferences        (   )
    
    anz_initstuff              ( 0 )
-   MIN_INIT                   ( 845,606  )
+   MIN_INIT                   ( anz_getscreenwidth() -Min_width(),anz_getscreenheight() - Min_height() - 10)
    
    
    ; iInitPhysic  (   )  
@@ -166,11 +166,11 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
                wes_setWesenWaffe      ( *WesenID , item )
                
                
-               If Random (1)
-                  Item_Add( "Brot" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\Brot.3ds" , "..\..\maps\Max Welt\items\Brot_texture.jpg" , "..\..\maps\Max Welt\items\brot_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Brot , "Leicht angebratenes Brot")
-               Else 
-                  Item_Add( "Schriftrolle" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\items\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle , "Gelbliches Dokument")
-               EndIf 
+               ; If Random (1)
+                  ; Item_Add( "Brot" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\Brot.3ds" , "..\..\maps\Max Welt\items\Brot_texture.jpg" , "..\..\maps\Max Welt\items\brot_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Brot , "Leicht angebratenes Brot")
+               ; Else 
+                  ; Item_Add( "Schriftrolle" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\items\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle , "Gelbliches Dokument")
+               ; EndIf 
                ; iTextGUI ( *text , Str( ListSize ( wes_wesen())))
                wes_SetmaxMana         ( *WesenID , 20 )  ; mana setzen + maxmana.
                wes_SetMana            ( *WesenID , 10 )
@@ -204,9 +204,10 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; CursorPosition = 58
 ; FirstLine = 14 
 ; jaPBe Version=3.9.12.819
-; Build=0
-; FirstLine=23
-; CursorPosition=41
+; Build=1
+; FirstLine=29
+; CursorPosition=46
 ; ExecutableFormat=Windows
+; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\max level_new Engine.exe
 ; DontSaveDeclare
 ; EOF
