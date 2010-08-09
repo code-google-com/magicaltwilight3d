@@ -358,7 +358,7 @@ EndProcedure
 ; Build=0
 ; CompileThis=..\Wegfindung TESTER.pb
 ; FirstLine=87
-; CursorPosition=133
+; CursorPosition=136
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
