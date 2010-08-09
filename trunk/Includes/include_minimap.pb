@@ -21,7 +21,8 @@
       
     EndIf
     
-     MIN_GUI_BG = anz_loadimage(-1,x,y,"Gfx\minimap\MapBG.png",1,0)
+     MIN_GUI_BG = anz_loadimage(-1,x,y,"Gfx\minimap\Minimap_Back.png",1,0)
+     Min_Gui_FT = anz_loadimage(-1,x+ Min_Image_front_offsetx ,y + Min_Image_front_offsety,"Gfx\minimap\Minimap_Front.png",1,0)
      
     ProcedureReturn #True
     
@@ -42,6 +43,13 @@
   ;
   ;===================================================================
 
+  Procedure Min_width() ; gibt die Breite des HUD-Bildes heraus.
+     ProcedureReturn min_Image_back_width ; da es die gesamte bild-breite des HUD angibt
+  EndProcedure 
+  
+  Procedure Min_height() ; gibt die Höhe des HUD-bildes heraus.
+     ProcedureReturn min_Image_back_height 
+  EndProcedure 
 
   Procedure MIN_SetScreenPos(x,y)
     
@@ -234,6 +242,12 @@
     
     If *MIN_Init = 1
       
+      ; erstmal die anz_images free-en.
+      ForEach *Min_Dots()
+         anz_freeimage(*Min_Dots()\ImgID)
+      Next 
+      
+      ; dann die liste clearen.
       ClearList(*Min_Dots())
       *MIN_ID_Counter = 0
       
@@ -255,23 +269,22 @@
         
         MIN_Reset()  ; minimap resetten. alles löschen.
         
-        wes_Examine_Reset          ( spi_GetPlayerNode ( spi_getcurrentplayer()) , 1 , #meter * 10)
+        wes_Examine_Reset          ( spi_GetPlayerNode ( spi_getcurrentplayer()) , 1 , #meter * 20)
         E3D_getNodePosition        ( spi_GetPlayerNode ( spi_getcurrentplayer()) ,@playerPos\x , @playerPos\y , @playerPos\z )
         E3D_getNoderotation        ( spi_GetPlayerNode ( spi_getcurrentplayer()) ,@playerRot\x , @playerRot\y , @playerRot\z )
         
          While wes_examine_Next    ( )
             E3D_getNodePosition    ( wes_Examine_get_IrrNode() ,@gegnerpos\x , @gegnerpos\y , @gegnerpos\z )
-            winkel = main_FiByVect(( gegnerpos\x - playerPos\x ) , ( gegnerpos\y - playerPos\y ) )
-            winkel = math_FixFi( winkel + math_FixFi( playerRot\y ) ) ; winkel mit eigenrotation verrechnen.
-             
-             If winkel >= 20000  Or winkel =< -20000 ; wenn leere menge rauskommt, bei acos (was nur bei 180 und 360° der fall ist) 
-                If playerPos\x > gegnerpos\x 
-                   winkel = 180
-                Else 
-                  winkel = 360
-                EndIf 
+            winkel = math_FiByVect(( gegnerpos\x - playerPos\x ) , ( gegnerpos\z - playerPos\z ) )
+            winkel = math_FixFi( winkel+math_FixFi( playerRot\y )-90) ; winkel mit eigenrotation verrechnen.
+            
+            If winkel < -2000 Or winkel > 2000
+               winkel = 0
+            EndIf 
+            
+             If Not wes_Examine_get_WesenID() = spi_GetSpielerWesenID( spi_getcurrentplayer())
+                Debug "Winkel: " + StrF( winkel ,2)
              EndIf 
-             Debug "Winkel: " + StrF( winkel ,2)
              
             ; ------------------------------------------------------------------------------------------------------
             ; PAUSE !! ............................---------------------------------
@@ -281,13 +294,13 @@
             
             If team_GetFreundLevel ( wes_Examine_get_Team () , wes_getTeam (spi_GetSpielerWesenID(  spi_getcurrentplayer()))) > 0 ; wesen ist freund
                ; grüne kugel anzeigen 
-               MIN_AddDot( Min_MapWidth / 2 + Cos( math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 20 , Min_MapHeight / 2 + Sin( math_FiToRad( winkel )) *  wes_Examine_get_Distance() / 20  , #MIN_Type_Friend)
+               MIN_AddDot( min_centerx -Cos( math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 8 , min_Centery + Sin( math_FiToRad( winkel )) *  wes_Examine_get_Distance() / 8  , #MIN_Type_Friend)
             ElseIf team_GetFreundLevel( wes_Examine_get_Team () , wes_getTeam (spi_GetSpielerWesenID(  spi_getcurrentplayer()))) = 0 ; neutral. evtl orange
                ; orange kugel
-               MIN_AddDot( Min_MapWidth / 2 + Cos(  math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 20 , Min_MapHeight / 2 + Sin(  math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 20 , #MIN_Type_Enemy)
+               MIN_AddDot( min_centerx  - Cos(  math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 8 , min_Centery  + Sin(  math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 8 , #MIN_Type_Enemy)
             ElseIf team_GetFreundLevel( wes_Examine_get_Team () , wes_getTeam (spi_GetSpielerWesenID(  spi_getcurrentplayer()))) < 0  ; gegner
                   ; rote kugel
-                  MIN_AddDot( Min_MapWidth / 2 + Cos(  math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 20 , Min_MapHeight / 2 + Sin(  math_FiToRad(winkel) ) *  wes_Examine_get_Distance() / 20 , #MIN_Type_Enemy)
+               MIN_AddDot( min_centerx  - Cos(  math_FiToRad(winkel )) *  wes_Examine_get_Distance() / 8 , min_Centery  + Sin(  math_FiToRad(winkel) ) *  wes_Examine_get_Distance() / 8 , #MIN_Type_Enemy)
             EndIf 
          Wend 
      
@@ -307,27 +320,29 @@
     
     If *MIN_Init = 1
       
-      anz_setimageforeground(MIN_GUI_BG)
+      anz_setImageForeground(MIN_GUI_BG)
       
-      If Random(10) = 0
+      If min_rendercounter < ElapsedMilliseconds()
+         min_rendercounter = ElapsedMilliseconds() + 50
          MIN_ExamineMiniMap()
       EndIf 
       
       ForEach *Min_Dots()
       
         anz_freeimage(*Min_Dots()\ImgID)
-      
-        If *Min_Dots()\x > *MIN_Position\x And *Min_Dots()\y > *MIN_Position\y
-          If *Min_Dots()\x < *MIN_Position\x + Min_MapWidth And *Min_Dots()\y < *MIN_Position\y + Min_MapHeight 
-      
-              *Min_Dots()\ImgID = anz_loadimage(-1,*Min_Dots()\x,*Min_Dots()\y,"..\..\minimap\"+ *Min_Dots()\Type +".png",1,0)
-              anz_setimageforeground(*Min_Dots()\ImgID)
-              
-          EndIf
-        EndIf
+        
+          If math_distance3d( *Min_Dots()\x    ,  *Min_Dots()\y  , 0 , min_centerx , min_Centery , 0 ) < Min_DisplayRadius
+              ; offset muss eingesetllt werden, da das auswahlviereck ja weiter links unten liegt, eingebettet im Kreis.
+              *Min_Dots()\ImgID = anz_loadimage(-1,*Min_Dots()\x+*MIN_Position\x ,*Min_Dots()\y+*MIN_Position\y,"..\..\minimap\"+ *Min_Dots()\Type +".png",1,0)
+              anz_setImageForeground(*Min_Dots()\ImgID)
+          EndIf 
+
+
         
       Next
       
+         anz_setImageForeground( Min_Gui_FT ) ; das halbtransparente Bild in den Vordergrund setzen.
+
     EndIf
     
   EndProcedure
@@ -346,8 +361,9 @@
  
 ; jaPBe Version=3.9.12.819
 ; Build=0
-; FirstLine=252
-; CursorPosition=282
+; CompileThis=..\Anzeige Tester + MiniMap Test.pb
+; FirstLine=35
+; CursorPosition=55
 ; EnableXP
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
