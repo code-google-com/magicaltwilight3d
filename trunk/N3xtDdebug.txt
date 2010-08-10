@@ -23,6 +23,7 @@ Could not load a texture for entry in 3ds file: lichtstrahl.
 Loaded mesh: ..\max welt\lichtstrahlen.3ds
 Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\max welt\godrays.jpg
 Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\minimap\F.png
-Loaded mesh: ..\..\meter.3ds
+Could not load a texture for entry in 3ds file: stabwaffe st
+Loaded mesh: ..\..\maps\standard stabwaffe.3ds
 Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\stabwaffe standard.tga
 Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\minimap\E.png
