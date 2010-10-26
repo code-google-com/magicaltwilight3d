@@ -238,7 +238,7 @@ Declare wes_is_geladen  ( *WesenID.wes_wesen )
 Declare wes_getposition ( *WesenID.wes_wesen , *x.f , *y.f , *z.f) ; needs @*x , @y,@z.f
 Declare.s wes_getname ( *WesenID.wes_wesen)
 Declare wes_getTeam ( *WesenID.wes_wesen) ; gibt den Pointer zum aktuellen TEAM des wesens aus (falls vorhanden.
-Declare wes_setname ( *WesenID.wes_wesen , Name.s)
+Declare wes_setname ( *WesenID.wes_wesen , name.s)
 Declare wes_GetWaypointPfadID ( *WesenID.wes_wesen)  ; gibt die WaypointID des aktuellen Ziel-Waypionts aus.
 Declare wes_getNodeID    ( *WesenID.wes_wesen)
 Declare wes_getdistance  ( *wesen1.wes_wesen , *wesen2.wes_wesen)
@@ -253,11 +253,11 @@ Declare wes_setWesenWaffe  ( *WesenID.wes_wesen , *itemID.ITEM )
 Declare wes_removewaffe ( *WesenID.wes_wesen) ; aktuelle Waffe ohne Anim. aus Hand löschen, sofern vorhanden.
 Declare wes_RemoveWesen(*WesenID.wes_wesen)
 Declare wes_KillWesen( *WesenID.wes_wesen)
-Declare wes_AddWesen ( Name.s, x.f , y.f , z.f , Team.s , maxleben.i , speed.f , pfad.s , texture1.s , texture2.s , MaterialType.i , Isdirectload.i = 0 , SpielerID.i = 0 , art.i =#wes_art_schwert , action.i = #wes_action_stand ,  AnimNR.i = 0 , animlist.s = #ani_Animlist_Standard) ; wobei team: siehe #team_wesen_bundnis_...)
+Declare wes_AddWesen ( name.s, x.f , y.f , z.f , Team.s , maxleben.i , speed.f , pfad.s , texture1.s , texture2.s , MaterialType.i , Isdirectload.i = 0 , SpielerID.i = 0 , art.i =#wes_art_schwert , action.i = #wes_action_stand ,  AnimNR.i = 0 , animlist.s = #ani_Animlist_Standard) ; wobei team: siehe #team_wesen_bundnis_...)
 Declare.f wes_getReichweite ( *WesenID.wes_wesen ) ; gibt Reichweite des wesens zurück.
 ;}
 ;{ Declarations team
-Declare team_AddTeam           ( Name.s ) ; fügt ein neues Team hinzu. bzw. wenn schon vorhanden, wirds nur ergänzt.
+Declare team_AddTeam           ( name.s ) ; fügt ein neues Team hinzu. bzw. wenn schon vorhanden, wirds nur ergänzt.
 Declare team_GetFreundLevel    ( *Team1.team , *Team2.team) ; schaut, wie stark man befreundet ist.
 Declare Team_GetFeindLevel     ( *Team1.team , *Team2.team) ; schaut, wie stark man verfeindet ist 
 Declare Team_SetTeamVerhaltnis ( *Team1.team , *Team2.team , Verhaltnis = #team_verhaltnis_neutral ); Freund/feind- Level .. siehe  #team_verhaltnis...
@@ -272,7 +272,7 @@ Declare ani_setanimRangeByNR       ( *p_anz_mesh.anz_mesh , AnimationNR.i , Anim
 Declare ani_setanimranges          ( *p_anz_mesh.anz_mesh , Animationdata.s ) ; an.data =animname.s + "|"+str(startframe) + "|" + str(endframe)+ "|"
 Declare ani_stopanim               (  *p_anz_mesh.anz_mesh ) ; wenn stoppbar, dann result = 1
 Declare ani_Setanimlooped          ( *p_anz_mesh.anz_mesh, islooped)
-Declare ani_GetAnimByName          ( *p_anz_mesh.anz_mesh, Name.s)  ; 
+Declare ani_GetAnimByName          ( *p_anz_mesh.anz_mesh, name.s)  ; 
 Declare ani_GetAnimGesch           ( *p_anz_mesh.anz_mesh)
 Declare ani_setAnimGesch           ( *p_anz_mesh.anz_mesh , gesch.f)
 Declare ani_getCurrentEndframe     ( *p_anz_mesh.anz_mesh) ; benötigt um zu prüfen, ob beim Bogenschießen der bogen schon gespannt ist, etc.
@@ -373,10 +373,10 @@ IncludeFile "include_animation.pb"
 IncludeFile "include_math.pb"
 IncludeFile "include_3DEngine.pb"
 IncludeFile "include_minimap.pb" 
-; jaPBe Version=3.9.12.819
+; jaPBe Version=3.9.12.818
 ; Build=0
-; FirstLine=314
-; CursorPosition=350
+; FirstLine=155
+; CursorPosition=179
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

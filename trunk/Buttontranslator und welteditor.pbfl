@@ -1,12 +1,6 @@
-10
+4
 PBGadget2Irrlicht G translater.pb
-D:\Software Entwicklung\JAPBE1\plugin\Visual Designer\GeneratedIncludeFile.pb
-D:\Software Entwicklung\Purebasic IRRLICHT 1.4\Examples\IrrlichtWrapper\26_Example_IrrlichtGUI.pb
-D:\Software Entwicklung\Purebasic IRRLICHT 1.4\Includes\irrklang_enums.pbi
-D:\Software Entwicklung\Purebasic IRRLICHT 1.4\Includes\irrlicht_enums.pbi
-D:\Software Entwicklung\Purebasic IRRLICHT 1.4\Includes\IrrlichtWrapper_Include.pbi
 3D welt Editor.pb
 Irr Buttons Editor.pb
-D:\Software Entwicklung\JAPBE1\plugin\Visual Designer\GeneratedMainFile.pb
 include structures\include_animation_structure.pb
 include structures\include_teams_structure.pb

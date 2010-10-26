@@ -1,0 +1,25 @@
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\minimap\Minimap_Back.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\minimap\Minimap_Front.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\Max Welt\textures\editor_defaults\default_skybox0.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\Max Welt\textures\editor_defaults\default_skybox2.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\Max Welt\textures\editor_defaults\default_skybox3.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\Max Welt\textures\editor_defaults\default_skybox1.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\Max Welt\textures\editor_defaults\default_skyboxdn.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\Max Welt\textures\editor_defaults\default_skyboxup.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\max welt\wall12.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\max welt\haus.irrmesh.lightmaps\1.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\max welt\wood01.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\max welt\wall02.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\max welt\haus.irrmesh.lightmaps\2.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\max welt\haus.irrmesh.lightmaps\3.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\max welt\wall06.jpg
+Loaded mesh: ..\max welt\haus.irrmesh
+Loaded mesh: ..\..\sydney.md2
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\sydney.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\test\grün.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\einfachesSchwert.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\Schriftrolle.png
+Could not load a texture for entry in 3ds file: lichtstrahl.
+Loaded mesh: ..\max welt\lichtstrahlen.3ds
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\max welt\godrays.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\minimap\F.png
