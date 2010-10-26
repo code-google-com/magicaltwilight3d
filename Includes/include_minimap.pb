@@ -318,7 +318,7 @@
   
   Procedure MIN_RenderMiniMap()
     
-    If *MIN_Init = 1
+    If *MIN_Init = 1 
       
       anz_setImageForeground(MIN_GUI_BG)
       
@@ -359,11 +359,11 @@
 ; End of Code
 
  
-; jaPBe Version=3.9.12.819
+; jaPBe Version=3.9.12.818
 ; Build=0
 ; CompileThis=..\Anzeige Tester + MiniMap Test.pb
-; FirstLine=35
-; CursorPosition=55
+; FirstLine=308
+; CursorPosition=325
 ; EnableXP
 ; ExecutableFormat=Windows
 ; DontSaveDeclare

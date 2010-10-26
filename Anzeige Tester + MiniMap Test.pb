@@ -36,14 +36,14 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    
 ; -----------------------------------------------------------------------------------------------------------------------
 ; ------------------------------------------------------ MAIN     ------------------------------------------------------
-; -----------------------------------------------------------------------------------------------------------------------
+; ----------------------------------------------------------------------------------------------------------------------- 
 
    anz_setresolution          ( 1280 , 768, 32 , 0 )
    anz_enable_normalmapping   ( 0 )
-   anz_enable_parallaxmapping ( 1 )
+   anz_enable_parallaxmapping ( 0 )
    anz_enable_shadow          ( 0 )
-   anz_enable_fog             ( 1 )
-   anz_enable_lighting        ( 1 )
+   anz_enable_fog             ( 0 )
+   anz_enable_lighting        ( 0 )
    anz_savepreferences        (   )
    
    anz_initstuff              ( 0 )
@@ -94,7 +94,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    
    Repeat 
       
-      iTimerUpdatePhysic (100)   
+      ;iTimerUpdatePhysic (100)   
       If item_check_waiter    < ElapsedMilliseconds() 
          Item_FocusItem_Reset ()
          item_check_waiter    = ElapsedMilliseconds() + 100
@@ -104,7 +104,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
       anz_updatesound         ()
       anz_updateDeleteAnimator()
       anz_setShownObjects     ( spi_GetPlayerNode( spi_getcurrentplayer()) )
-      MIN_RenderMiniMap()
+      MIN_RenderMiniMap       ()
       anz_updateview          ()
       itextgui                ( *FPSgadget , Str(ifps()))
       gui_updateGUI           ()
@@ -203,10 +203,10 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; IDE Options = PureBasic 4.40 Beta 1 (Windows - x86)
 ; CursorPosition = 58
 ; FirstLine = 14 
-; jaPBe Version=3.9.12.819
+; jaPBe Version=3.9.12.818
 ; Build=1
-; FirstLine=29
-; CursorPosition=46
+; FirstLine=83
+; CursorPosition=99
 ; ExecutableFormat=Windows
 ; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\max level_new Engine.exe
 ; DontSaveDeclare
