@@ -71,10 +71,10 @@ Global	mox.F, omx.F, moy.l, omy.l
 Global *app.l, Quit.l
 Global camPos.iVECTOR3
 Global camDir.iVECTOR3
-Global position.point
-Global cam_speed.F  = 0.2
+Global Position.POINT
+Global cam_speed.F  = 1
 Global cam_speed_fast.F = 3
-Global cam_speed_slow.F = 0.2
+Global cam_speed_slow.F = 0.5
 Global kistenzahl = 0
 Global Cam_Velocity.iVECTOR3
 Global Cam_FlyMode 
@@ -92,8 +92,8 @@ Global main_screenwidth  = 1600
 Global main_screenheight = 900
 Global NewList main_line3d.main_line3d()
 
-position\x = 500
-position\y = 500
+Position\x = 500
+Position\y = 500
 
 Procedure main_Examine()
    main_mouseUpdate() ; maus updaten
@@ -110,9 +110,9 @@ EndProcedure
 ;{  Mouse Procedures
 
 Procedure main_mouseUpdate()
-   GetCursorPos_(position.point ) 
-   mousedeltax = (position\x - main_screenwidth()/2) 
-   mousedeltay = (position\y - main_screenheight()/2) 
+   GetCursorPos_(Position.POINT ) 
+   mousedeltax = (Position\x - main_screenwidth()/2) 
+   mousedeltay = (Position\y - main_screenheight()/2) 
    SetCursorPos_(main_screenwidth()/2,main_screenheight()/2)
    mousex = main_mousex()
    mousey = main_mousey()
@@ -250,13 +250,19 @@ Procedure AddWaypoint (*LevelBody.IBody , *camera.ICamera , screenx =-1, screeny
     If *Previewcube = 0 ; previewcube basteln
        *Previewcube = iCreateCube( 0.45*#meter )
        iMaterialFlagNode ( *Previewcube , #EMF_LIGHTING , 1 ) 
+       iMaterialFlagNode( *Previewcube , #EMF_NORMALIZE_NORMALS , 1 )
        iEmissiveColorNode(*Previewcube , RGB(25,233,23))
+       iSpecularColorNode(*Previewcube , RGB(25,233,23))
+       iGlobalColorNode  ( *Previewcube , RGB(25,233,23))
     EndIf 
     
     If *previewcube_small = 0 
        *previewcube_small = iCreateCube ( 0.4 * #meter ) 
        iMaterialFlagNode ( *previewcube_small , #EMF_LIGHTING , 1 ) 
+       iMaterialFlagNode( *previewcube_small , #EMF_NORMALIZE_NORMALS , 1 )
        iEmissiveColorNode(*previewcube_small , RGB(23,23,233))
+       iSpecularColorNode(*previewcube_small , RGB(25,233,23))
+       iGlobalColorNode  ( *previewcube_small, RGB(25,233,23))
     EndIf 
     
     *campos  = AllocateMemory( SizeOf ( iVECTOR3))
@@ -297,17 +303,17 @@ Procedure AddWaypoint (*LevelBody.IBody , *camera.ICamera , screenx =-1, screeny
           *cube = iCreateCube( #meter * 0.5 )
           iPositionNode( *cube , *pickpos\x , *pickpos\y , *pickpos\z ) 
           ; dann 3D Umgebung checken; mit einer for-next schleife links rechts vorne hinten etc. suchen.
-          For x = -5 To 5
-            For y = -5 To 5 
-                Vec3_AddF(@start, @start, 0,0,0.15)
-                Vec3_AddF(@eend, @eend, 0,0,0.15)
-                *res.l = iCollideRayCastAll( start\x, start\y, start\z, eend\x, eend\y, eend\z, 1, @dist)
-                If *res ; waypoint gefunden sozusagen.
-                  
-                EndIf
-              
-              Next 
-          Next 
+          ; For x = -5 To 5
+            ; For y = -5 To 5 
+                ; Vec3_AddF(@start, @start, 0,0,0.15)
+                ; Vec3_AddF(@eend, @eend, 0,0,0.15)
+                ; *res.l = iCollideRayCastAll( start\x, start\y, start\z, eend\x, eend\y, eend\z, 1, @dist)
+                ; If *res ; waypoint gefunden sozusagen.
+                  ; 
+                ; EndIf
+              ; 
+              ; Next 
+          ; Next 
      EndIf 
      
 EndProcedure 
@@ -341,7 +347,9 @@ EndProcedure
 
 ;----------------------------------------------------------
 ; open n3xt-D screen
-*app = iCreateGraphics3D(main_screenwidth(),main_screenheight(),32)
+iinitengine()
+
+*app = iCreateGraphics3D(main_screenwidth(),main_screenheight(),32,0 ,1,#EDT_DIRECT3D9) ; 32 bit, isfullscreen, double precision, graphics renderer.
 ; << OR >>
 ;*app = iCreateGraphics3D(800,600, 32, #False, #True, #EDT_DIRECT3D9)
 If *app= #Null
@@ -370,7 +378,7 @@ EndIf
   *mesh.IMesh = iCreateMeshInOctree(*obj)
   iNodeBoundingBox(*mesh,  @ab)
 ; set global physical dimension scene 
-  ; iSetWorldSize(ab\MinEdge\x, ab\MinEdge\y, ab\MinEdge\z, ab\MaxEdge\x, ab\MaxEdge\y, ab\MaxEdge\z)
+  iSetWorldSize(ab\MinEdge\x, ab\MinEdge\y, ab\MinEdge\z, ab\MaxEdge\x, ab\MaxEdge\y, ab\MaxEdge\z)
   ;iGravityForce( 0,-9.81*#meter,0)
   
 ; now, we can set body scene
@@ -402,14 +410,17 @@ Global *font.IGUIFont = iGetFont()
 ; ---------------------------------------
      iNodePosition(*cam, @camPos\x)
      ; create mesh to shoot
-     *cam_cubemesh.IMesh = icreatesphere(2 , 10)
+     *cam_cubemesh.IMesh = icreatesphere(3 , 10)
      iLoadTextureNode(*cam_cubemesh, "wcrate.bmp") 
      iPositionNode(*cam_cubemesh, camPos\x,camPos\y,camPos\z)
      iRotateNode(*cam_cubemesh, Random(180),Random(180),Random(180))    
+     
      ; create body
      iSetCollideForm(#BOX_PRIMITIVE)
      *cam_cube.IBodySceneNode = iCreateBody(*cam_cubemesh)
-     
+     iMassBody( *cam_cube , 0.001)
+     iPositionNode ( *cam , camPos\x , camPos\y + 20 , camPos\z)
+     ; iFrictionPhysicMaterial ( *cam_cube , 
      
      
 Repeat
@@ -445,7 +456,7 @@ Repeat
    
    ;{ cubehaufen schießen
    
-   If getasynckeystate_(#vk_2 )
+   If getasynckeystate_(#VK_2 )
      For x = -2 To 2
         For y = -2 To 2
           For z = -2 To 2
@@ -484,6 +495,13 @@ Repeat
    ;{ camera bewegen etc.
  
  If Cam_FlyMode = #cam_flymodus_fps 
+      
+      ; PAUSE:
+      ; --- 
+      ; einen gesamtvektor einbauen, in den down/right/left etc. eingebaut wird.
+      ; dann soll  ivelocitybody mit diesem vektor laufen. damit man auch schräg vorwärtsgehen kann.
+      ; außerdem probieren, dass bewegen mit kollisionsvektor zu machen. kollision gegenüber dem boden....
+      
       iNodePosition( *cam_cubemesh , camPos)
       iPositionNode( *cam , camPos\x , camPos\y , camPos\z)
       ibodyvelocity( *cam_cube   , Cam_Velocity )
@@ -491,21 +509,29 @@ Repeat
       iNodeDirection(*cam, @camDir\x)
       If iGetKeyDown(#KEY_ARROW_UP) Or iGetKeyDown ( #KEY_KEY_W)
         If camDir\y < 0 : camDir\y = 0 : EndIf 
-        iVelocityBody(*cam_cube,  camDir\x*cam_speed*20, Cam_Velocity\y + camDir\y*cam_speed*20,  camDir\z*cam_speed*20)
+        iVelocityBody(*cam_cube,  camDir\x*cam_speed*20,  Cam_Velocity\y ,  camDir\z*cam_speed*20)
       EndIf
       If iGetKeyDown(#KEY_ARROW_DOWN)  Or iGetKeyDown ( #KEY_KEY_S)
         If camDir\y < 0 : camDir\y = 0 : EndIf 
         camDir\x * -1
         camDir\y * -1
         camDir\z * -1
-        iVelocityBody(*cam_cube,  camDir\x*cam_speed*20, Cam_Velocity\y + camDir\y*cam_speed*20, camDir\z*cam_speed*20)
+        iVelocityBody(*cam_cube,  camDir\x*cam_speed*20,  camDir\y*cam_speed*20, camDir\z*cam_speed*20)
       EndIf 
       
       If iGetKeyDown(#KEY_ARROW_right)  Or iGetKeyDown ( #KEY_KEY_D)
-        iVelocityBody(*cam_cube, Cam_Velocity\x + camDir\x *cam_speed*20, Cam_Velocity\y +camDir\y  , Cam_Velocity\z + camDir\z)
+        ; iVelocityBody(*cam_cube, Cam_Velocity\x + camDir\x *cam_speed*20, Cam_Velocity\y +camDir\y  , Cam_Velocity\z + camDir\z)
+        Debug "camdir: " + StrF(camDir\x ,2) + " y: " + StrF( camDir\y ,2) + " z: " + StrF( camDir\z ,2) 
+        iTurnNode ( *cam , 0 , 90 , 0 )
+        iNodeDirection(*cam, @camDir\x)
+        iVelocityBody(*cam_cube,  camDir\x*cam_speed*20,  Cam_Velocity\y , camDir\z*cam_speed*20)
+        iTurnNode ( *cam , 0 , -90 , 0 )
       EndIf 
       If iGetKeyDown(#KEY_ARROW_LEFT) Or iGetKeyDown ( #KEY_KEY_A)
-        iVelocityBody(*cam_cube, Cam_Velocity\x + camDir\x*cam_speed*20 , Cam_Velocity\y +camDir\y, Cam_Velocity\z + camDir\z)
+        iTurnNode ( *cam , 0 , -90 , 0 )
+        iNodeDirection(*cam, @camDir\x)
+        iVelocityBody(*cam_cube,  camDir\x*cam_speed*20,  Cam_Velocity\y , camDir\z*cam_speed*20)
+        iTurnNode ( *cam , 0 , 90 , 0 )
       EndIf 
       
       
@@ -536,7 +562,7 @@ Repeat
   ;}
   
   ; speed umschalten
-  If getasynckeystate_( #vk_shift )
+  If getasynckeystate_( #VK_SHIFT )
      cam_speed = cam_speed_fast 
   Else 
      cam_speed = cam_speed_slow 
@@ -546,12 +572,15 @@ Repeat
   iTurnNode(*cam, main_MouseGetDeltay()/4, main_MouseGetDeltax()/4,0)
 
   ;3d punkte hinzufügen (waypoints)
-  If main_MouseButton(1) = #main_mouse_tipped
-     AddWaypoint (*mesh, *cam,-1,-1,1 )
-  Else
-     AddWaypoint( *mesh, *cam) 
+  
+  If Cam_FlyMode = #cam_flymodus_freefly ; nur wenn die Camera frei fliegt soll soll ding angezeigt werde
+      If main_MouseButton(1) = #main_mouse_tipped
+         AddWaypoint (*mesh, *cam,-1,-1,1 )
+      Else
+         AddWaypoint( *mesh, *cam) 
+      EndIf 
   EndIf 
-
+  
 	; if Escape Key, exit	
   If iGetKeyDown(#KEY_ESCAPE)
     Quit=1
@@ -580,14 +609,15 @@ iFreeEngine()
 ; ExecutableFormat = Console
 ; CursorPosition = 84
 ; FirstLine = 81 
-; jaPBe Version=3.9.12.818
-; FoldLines=006500670069006B00AE00B000B200B400B600B800BA00BC00BE00C000C200C4
-; FoldLines=00C600C800CA00CC00DA00F300DC000000EA000001BD01D501D701E101E30215
-; Build=1
-; FirstLine=217
-; CursorPosition=271
+; jaPBe Version=3.9.12.819
+; FoldLines=006500670069006B006D00D8006F000000AE000000B2000000B6000000BA0000
+; FoldLines=00BE000000C2000000C6000000CA000000DA00F300DC000000EA000001B001C6
+; FoldLines=01C801E0
+; Build=3
+; FirstLine=300
+; CursorPosition=503
 ; EnableXP
 ; ExecutableFormat=Windows
-; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Waypoint EDITOR.exe
+; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Waypoint EDITOR.exe
 ; DontSaveDeclare
 ; EOF
