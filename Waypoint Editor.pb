@@ -608,7 +608,7 @@ iFreeEngine()
 ; IDE Options = PureBasic 4.40 Beta 5 (Windows - x86)
 ; ExecutableFormat = Console
 ; CursorPosition = 84
-; FirstLine = 81 
+; FirstLine = 81
 ; jaPBe Version=3.9.12.819
 ; FoldLines=006500670069006B006D00D8006F000000AE000000B2000000B6000000BA0000
 ; FoldLines=00BE000000C2000000C6000000CA000000DA00F300DC000000EA000001B001C6
