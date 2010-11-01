@@ -91,6 +91,8 @@ Global main_mousebutton3
 Global main_screenwidth  = 1600
 Global main_screenheight = 900
 Global NewList main_line3d.main_line3d()
+Global *anim.IAnimatorCollisionResponse
+Global key_space
 
 Position\x = 500
 Position\y = 500
@@ -411,7 +413,7 @@ Global *font.IGUIFont = iGetFont()
      iNodePosition(*cam, @camPos\x)
      ; create mesh to shoot
      *cam_cubemesh.IMesh = icreatesphere(3 , 10)
-     iLoadTextureNode(*cam_cubemesh, "wcrate.bmp") 
+     iLoadTextureNode(*cam_cubemesh, "wcrate.png") 
      iPositionNode(*cam_cubemesh, camPos\x,camPos\y,camPos\z)
      iRotateNode(*cam_cubemesh, Random(180),Random(180),Random(180))    
      
@@ -421,7 +423,6 @@ Global *font.IGUIFont = iGetFont()
      iMassBody( *cam_cube , 0.001)
      iPositionNode ( *cam , camPos\x , camPos\y + 20 , camPos\z)
      ; iFrictionPhysicMaterial ( *cam_cube , 
-     
      
 Repeat
 
@@ -502,45 +503,34 @@ Repeat
       ; dann soll  ivelocitybody mit diesem vektor laufen. damit man auch schräg vorwärtsgehen kann.
       ; außerdem probieren, dass bewegen mit kollisionsvektor zu machen. kollision gegenüber dem boden....
       
-      iNodePosition( *cam_cubemesh , camPos)
-      iPositionNode( *cam , camPos\x , camPos\y , camPos\z)
-      ibodyvelocity( *cam_cube   , Cam_Velocity )
-      ; move camera with dir key and mouse (left click)
-      iNodeDirection(*cam, @camDir\x)
-      If iGetKeyDown(#KEY_ARROW_UP) Or iGetKeyDown ( #KEY_KEY_W)
-        If camDir\y < 0 : camDir\y = 0 : EndIf 
-        iVelocityBody(*cam_cube,  camDir\x*cam_speed*20,  Cam_Velocity\y ,  camDir\z*cam_speed*20)
-      EndIf
-      If iGetKeyDown(#KEY_ARROW_DOWN)  Or iGetKeyDown ( #KEY_KEY_S)
-        If camDir\y < 0 : camDir\y = 0 : EndIf 
-        camDir\x * -1
-        camDir\y * -1
-        camDir\z * -1
-        iVelocityBody(*cam_cube,  camDir\x*cam_speed*20,  camDir\y*cam_speed*20, camDir\z*cam_speed*20)
+      ; collisionsanimator einschalten und springen einbaun .
+      If *anim = 0 
+          *anim = iCreateCollisionResponseAnimator(*mesh , *cam  , 3,5,3  )
+          iAddCollisionResponse(*cam, *anim)
       EndIf 
       
-      If iGetKeyDown(#KEY_ARROW_right)  Or iGetKeyDown ( #KEY_KEY_D)
-        ; iVelocityBody(*cam_cube, Cam_Velocity\x + camDir\x *cam_speed*20, Cam_Velocity\y +camDir\y  , Cam_Velocity\z + camDir\z)
-        Debug "camdir: " + StrF(camDir\x ,2) + " y: " + StrF( camDir\y ,2) + " z: " + StrF( camDir\z ,2) 
-        iTurnNode ( *cam , 0 , 90 , 0 )
-        iNodeDirection(*cam, @camDir\x)
-        iVelocityBody(*cam_cube,  camDir\x*cam_speed*20,  Cam_Velocity\y , camDir\z*cam_speed*20)
-        iTurnNode ( *cam , 0 , -90 , 0 )
-      EndIf 
-      If iGetKeyDown(#KEY_ARROW_LEFT) Or iGetKeyDown ( #KEY_KEY_A)
-        iTurnNode ( *cam , 0 , -90 , 0 )
-        iNodeDirection(*cam, @camDir\x)
-        iVelocityBody(*cam_cube,  camDir\x*cam_speed*20,  Cam_Velocity\y , camDir\z*cam_speed*20)
-        iTurnNode ( *cam , 0 , 90 , 0 )
-      EndIf 
-      
-      
-      If iGetKeyDown( #KEY_SPACE)
-        iVelocityBody(*cam_cube, 0,cam_speed*3,0)
+      If iGetKeyDown( #KEY_SPACE) And *anim > 0 
+         If key_space = 0
+            key_space = 1 
+            iJumpCollisionResponse( *anim , 2 )
+         Else 
+            key_space = 2
+         EndIf 
+      Else 
+         key_space = 0
       EndIf 
   ElseIf Cam_FlyMode = #cam_flymodus_freefly 
       
-      If iGetKeyDown ( #KEY_ARROW_UP) Or iGetKeyDown ( #KEY_KEY_W) 
+      ; collisionsanimator ausschalten.
+      If *anim > 0 
+         iRemoveAnimatorNode ( *cam , *anim )
+         *anim = 0 
+      EndIf 
+      
+  EndIf 
+  
+  ; bewegen der Camera!
+     If iGetKeyDown ( #KEY_ARROW_UP) Or iGetKeyDown ( #KEY_KEY_W) 
          iMoveNode ( *cam , 0 , 0 , cam_speed)
       EndIf 
       
@@ -555,8 +545,6 @@ Repeat
       If iGetKeyDown( #KEY_ARROW_right ) Or iGetKeyDown ( #KEY_KEY_D)
           iMoveNode ( *cam , cam_speed , 0 , 0)
       EndIf 
-      
-  EndIf 
   ;}
   
   ;}
@@ -608,16 +596,16 @@ iFreeEngine()
 ; IDE Options = PureBasic 4.40 Beta 5 (Windows - x86)
 ; ExecutableFormat = Console
 ; CursorPosition = 84
-; FirstLine = 81
-; jaPBe Version=3.9.12.819
-; FoldLines=006500670069006B006D00D8006F000000AE000000B2000000B6000000BA0000
-; FoldLines=00BE000000C2000000C6000000CA000000DA00F300DC000000EA000001B001C6
-; FoldLines=01C801E0
-; Build=3
-; FirstLine=300
-; CursorPosition=503
+; FirstLine = 81 
+; jaPBe Version=3.9.12.818
+; FoldLines=00670069006B006D006F00DA0071000000B0000000B4000000B8000000BC0000
+; FoldLines=00C0000000C4000000C8000000CC000000DC00F500DE000000EC000001B101C7
+; FoldLines=01C901E1
+; Build=5
+; FirstLine=369
+; CursorPosition=556
 ; EnableXP
 ; ExecutableFormat=Windows
-; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Waypoint EDITOR.exe
+; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Waypoint EDITOR.exe
 ; DontSaveDeclare
 ; EOF
