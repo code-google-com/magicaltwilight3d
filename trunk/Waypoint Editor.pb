@@ -252,10 +252,7 @@ Procedure AddWaypoint (*LevelBody.IBody , *camera.ICamera , screenx =-1, screeny
     If *Previewcube = 0 ; previewcube basteln
        *Previewcube = iCreateCube( 0.45*#meter )
        iMaterialFlagNode ( *Previewcube , #EMF_LIGHTING , 1 ) 
-       iMaterialFlagNode( *Previewcube , #EMF_NORMALIZE_NORMALS , 1 )
        iEmissiveColorNode(*Previewcube , RGB(25,233,23))
-       iSpecularColorNode(*Previewcube , RGB(25,233,23))
-       iGlobalColorNode  ( *Previewcube , RGB(25,233,23))
     EndIf 
     
     If *previewcube_small = 0 
@@ -599,11 +596,11 @@ iFreeEngine()
 ; FirstLine = 81 
 ; jaPBe Version=3.9.12.818
 ; FoldLines=00670069006B006D006F00DA0071000000B0000000B4000000B8000000BC0000
-; FoldLines=00C0000000C4000000C8000000CC000000DC00F500DE000000EC000001B101C7
-; FoldLines=01C901E1
+; FoldLines=00C0000000C4000000C8000000CC000000DC00F500DE000000EC000000F7013D
+; FoldLines=013F014401AE01C401C601DE
 ; Build=5
-; FirstLine=369
-; CursorPosition=557
+; FirstLine=0
+; CursorPosition=15
 ; EnableXP
 ; ExecutableFormat=Windows
 ; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Waypoint EDITOR.exe
