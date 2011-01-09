@@ -384,7 +384,7 @@ EndIf
   ; set collide form
   iSetCollideForm(#COMPLEX_PRIMITIVE_SURFACE)
   ; create body, no dynamique
-  iCreateBody(*mesh, #False)
+  ; iCreateBody(*mesh, #False)
 ;-----------------------------------
 
 
@@ -597,10 +597,10 @@ iFreeEngine()
 ; jaPBe Version=3.9.12.818
 ; FoldLines=00670069006B006D006F00DA0071000000B0000000B4000000B8000000BC0000
 ; FoldLines=00C0000000C4000000C8000000CC000000DC00F500DE000000EC000000F7013D
-; FoldLines=013F014401AE01C401C601DE
+; FoldLines=013F014401AE01C401C601DE01E001EA
 ; Build=5
-; FirstLine=0
-; CursorPosition=15
+; FirstLine=154
+; CursorPosition=360
 ; EnableXP
 ; ExecutableFormat=Windows
 ; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Waypoint EDITOR.exe

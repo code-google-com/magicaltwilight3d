@@ -521,10 +521,10 @@ If IrrStartEx(#IRR_EDT_DIRECT3D9 , ScreenWidth , ScreenHeight , 0, 1,1,32,1,0,1,
 EndIf
 
 End 
-; jaPBe Version=3.9.12.819
+; jaPBe Version=3.9.12.818
 ; Build=1
-; FirstLine=473
-; CursorPosition=489
+; FirstLine=0
+; CursorPosition=7
 ; ExecutableFormat=Windows
 ; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Welteditor.exe
 ; DontSaveDeclare
