@@ -599,8 +599,8 @@ iFreeEngine()
 ; FoldLines=00C0000000C4000000C8000000CC000000DC00F500DE000000EC000000F7013D
 ; FoldLines=013F014401AE01C401C601DE01E001EA
 ; Build=5
-; FirstLine=154
-; CursorPosition=360
+; FirstLine=183
+; CursorPosition=411
 ; EnableXP
 ; ExecutableFormat=Windows
 ; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Waypoint EDITOR.exe
