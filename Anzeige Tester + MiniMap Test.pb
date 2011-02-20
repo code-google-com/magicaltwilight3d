@@ -206,7 +206,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; jaPBe Version=3.9.12.818
 ; Build=1
 ; FirstLine=83
-; CursorPosition=99
+; CursorPosition=94
 ; ExecutableFormat=Windows
 ; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\max level_new Engine.exe
 ; DontSaveDeclare
