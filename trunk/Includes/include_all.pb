@@ -204,7 +204,9 @@ Declare spi_revive  ( *SpielerID.spi_spieler , x.f , y.f , z.f ) ; Wiederbelebun
 Declare spi_SetSpielerTargetnodeRot ( Rot.f ) ; dreht das Targetnode des Hauptspielers um XX grad.
 Declare.f spi_GetSpielerTargetNodeRot (  ) 
 Declare spi_SetSpielerTargetnodeMotion ( speed.f) ; bewegung of the player's main figure 
-
+Declare spi_SetCameraFirstPerson(IsFirstPerson = 1) 
+Declare spi_SetCamera3rdPerson (Is3rdPerson= 1) ; ändert die camera in die 3rd, oder firstperson modus.
+Declare spi_IsCameraFirstPerson() ; wenn 1 dann fps cam, ansonsten 4rd person camera.
 ;}
 ;{ Declarations wesen
 Declare wes_UpdateWesen(*WesenID.wes_wesen) ; regelt Grundverhalten (instinkte) und komplette Animation der Wesen. + bewegen, kämpfen, etc
@@ -375,8 +377,8 @@ IncludeFile "include_3DEngine.pb"
 IncludeFile "include_minimap.pb" 
 ; jaPBe Version=3.9.12.818
 ; Build=0
-; FirstLine=155
-; CursorPosition=179
+; FirstLine=161
+; CursorPosition=175
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

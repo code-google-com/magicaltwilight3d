@@ -250,13 +250,13 @@
       spi_camera\motionspeed = speed 
    EndProcedure 
    
-   Procedure spi_addspieler ( x.f,y.f,z.f, leben.w , maxleben.w , mana.w , maxmana.w , Name.s , Team.s , IsCurrentSpieler.b = 1) ; erstellt neues 3D Wesen!! und den spieler 
+   Procedure spi_addspieler ( x.f,y.f,z.f, leben.w , maxleben.w , mana.w , maxmana.w , name.s , Team.s , IsCurrentSpieler.b = 1) ; erstellt neues 3D Wesen!! und den spieler 
       Protected *spieler.spi_spieler , *WesenID.wes_wesen , *light 
       *spieler                        = AddElement   ( spi_spieler ())
          
          If *spieler                  ; wenn noch genug ram da.
             *spieler\InventarID       = AddElement   ( spi_inventar())
-            *spieler\WesenID          = wes_AddWesen ( Name , x , y , z , Team , maxleben , #spi_standard_speed , #pfad_spieler_mesh , #pfad_spieler_texture , #pfad_spieler_texture2 , #EMT_NORMAL_MAP_SOLID ,1 , *spieler) ; wesen hinzufügen.
+            *spieler\WesenID          = wes_AddWesen ( name , x , y , z , Team , maxleben , #spi_standard_speed , #pfad_spieler_mesh , #pfad_spieler_texture , #pfad_spieler_texture2 , #EMT_NORMAL_MAP_SOLID ,1 , *spieler) ; wesen hinzufügen.
             *spieler\exist            = 1
             *spieler\Anzahl_Sacke     = 3 ; 1 Sack amm anfang.. inventarsack ;)
             *WesenID                  = *spieler\WesenID 
@@ -426,7 +426,39 @@
      Protected px.f, py.f, pz.f
      spi_camera\targetnode = *node
    EndProcedure
-
+   
+   Procedure spi_IsCameraFirstPerson() ; wenn 1 dann fps cam, ansonsten 4rd person camera.
+      ProcedureReturn spi_camera\IsFPS
+   EndProcedure 
+   
+   Procedure spi_SetCameraFirstPerson(IsFirstPerson = 1) 
+      Protected Rot.ivector3 
+      ; die allgemeine variable setzen (damit die cam frei wird. 
+      ; dann playernode hiden, nicht löschen! wird nach wie vor benutzt nur eben ohne gesehn zu werden..
+      ; dann camera reinfliegen lassen zur alten spielerposition, etwa auf augenhöhe (1,5 meter über boden so..)
+      spi_camera\IsFPS = IsFirstPerson
+      
+      If spi_camera\targetnode = 0 : ProcedureReturn : EndIf 
+      
+      If IsFirstPerson 
+         iVisibleNode   ( spi_camera\targetnode  , 0   )
+      Else  ; zurück zur 3rd person
+         inoderotation  ( spi_camera\targetnode  , Rot ) 
+         irotatenode    ( spi_camera\targetnode  , 0 , Rot\y+90 , 0)
+         iVisibleNode   ( spi_camera\targetnode  , 1 )
+      EndIf 
+   EndProcedure 
+   
+   Procedure spi_SetCamera3rdPerson (Is3rdPerson= 1) ; ändert die camera in die 3rd, oder firstperson modus.
+      If Is3rdPerson = 0
+         Is3rdPerson = 1 
+      Else 
+         Is3rdPerson = 0
+      EndIf 
+      
+      spi_SetCameraFirstPerson(Is3rdPerson)
+   EndProcedure 
+   
    ; Diese Funktion ändert die Entfernung der spi_camera zum Modell
    Procedure spi_SetCameraDistance(distance.f)
      If distance < 10
@@ -460,91 +492,136 @@
    
    Procedure spi_ExamineCamera() 
     
-     Protected ax.f, ay.f, az.f, px.f, py.f, pz.f, camx.f, camy.f, camz.f
+     Protected ax.f, ay.f, az.f, px.f, py.f, pz.f, camx.f, camy.f, camz.f , Vvector.ivector3 , campos.ivector3 
      ; Drehung des Zielnodes ermitteln
-     If spi_camera\targetnode
-         E3D_getNoderotation   (spi_camera\targetnode, @ax, @ay, @az)
-         ay - spi_camera\relative_rotation  ; wenn spielerfigur sich nach rechts/links dreht, ist winkel ja anders !
-         ; Position des Zielnodes ermitteln
-         E3D_getNodePosition   (spi_camera\targetnode, @px, @py, @pz)
-         ; neue Position der spi_camera bestimmen
-         ay - 90 
-         ; Debug spi_camera\anglevert
-         camx = Sin(ay*#PI/180)              *           spi_camera\distance+px
-         camy = Sin(spi_camera\anglevert     * #PI/180)* spi_camera\distance+py
-         camz = Cos(ay*#PI/180)              *           spi_camera\distance+pz
-         ; spi_camera an neue Position bewegen
-         iPositionNode   (spi_camera\pointer, camx, camy, camz)
-         ; spi_camera auf das Ziel ausrichten
-         iTargetAndRotationCamera ( spi_camera\pointer , 1)
-         ; e3d_targetCamera (spi_camera\pointer, px, py, pz)
-         iPointTargetNode ( spi_camera\pointer , px , py + #meter , pz )
-         ; IrrGetNodeRotation(spi_camera\pointer, @ax, @ay, @az)
+     If spi_camera\IsFPS = 0  ; 3rd person.
+        If spi_camera\targetnode
+            E3D_getNoderotation       (   spi_camera\targetnode, @ax, @ay, @az)
+            ay - spi_camera\relative_rotation  ; wenn spielerfigur sich nach rechts/links dreht, ist winkel ja anders !
+            ; Position des Zielnodes ermitteln
+            E3D_getNodePosition       (   spi_camera\targetnode, @px, @py, @pz)
+            iNodePositionP            (   spi_camera\pointer , campos )
+            ; neue Position der spi_camera bestimmen
+            ay      - 90 
+            ; Debug spi_camera\anglevert
+            camx    = Sin(ay*#PI/180)              *           spi_camera\distance+px
+            camy    = Sin(spi_camera\anglevert     * #PI/180)* spi_camera\distance+py
+            camz    = Cos(ay*#PI/180)              *           spi_camera\distance+pz
+            ; spi_camera an neue Position bewegen
+            camx    = ( camx - campos\x ) *0.6  + campos\x
+            camy    = ( camy - campos\y ) *0.6 + campos\y
+            camz    = ( camz - campos\z ) *0.6 + campos\z
+            iPositionNode   (spi_camera\pointer, camx, camy, camz)
+            ; spi_camera auf das Ziel ausrichten
+            iTargetAndRotationCamera ( spi_camera\pointer , 1)
+            ; e3d_targetCamera (spi_camera\pointer, px, py, pz)
+            iPointTargetNode ( spi_camera\pointer , px , py + #meter , pz )
+        EndIf 
+     Else
+        ; drehung des spielers mit camera mitmachen.
+        iTargetAndRotationCamera  (   spi_camera\pointer , 0 )
+        ay - spi_camera\relative_rotation  ; wenn spielerfigur sich nach rechts/links dreht, ist winkel ja anders !
+        ; Position des Zielnodes ermitteln
+        E3D_getNodePosition       (   spi_camera\targetnode, @px, @py, @pz)
+        iNodePositionP            (   spi_camera\pointer , campos )
+        ; spitze minus fuß.. verschiebungsvektor ausrechnen und um die hälfte kürzen.
+        
+        Vvector\x  = ( px - campos\x ) *0.6 + campos\x
+        Vvector\y  = ( py - campos\y ) *0.6 + campos\y +#meter 
+        Vvector\z  = ( pz - campos\z ) *0.6 + campos\z
+        
+        
+        iPositionNode ( spi_camera\pointer , Vvector\x , Vvector\y , Vvector\z )
+        
      EndIf 
-     
    EndProcedure
 
    Procedure.i DMX_Freelook(action.i, MXS.f , MYS.f ,  Velocity.f=1.01, speed.f=0.05, Damping.f=5.0) ; bewegt den Spiel-helden auch vorwärts, dreht ihn, dreht die camera etcetc ;)
       
-       Protected x.f,y.f,z.f
+       Protected x.f,y.f,z.f 
+       Protected nx.f , ny.f , nz.f , bewegx.f , bewegy.f , bewegz.f , piover180.f , up.f , Forward.f , Rot.ivector3 , pos.ivector3 
        ; Static MXS.f, MYS.f
        Static Pitch.f, Yaw.f , firststart.w
        Static UpDown.f, LeftRight.f
        Static VelocityX.f, VelocityZ.f
-       
-       MXS * -1
-       MYS * -0.4
        
        If firststart
           E3D_getNoderotation  ( spi_camera\targetnode , @x, @y, @z)
           LeftRight          = y 
        EndIf 
     
-       If (action = #True)        
-        
-           ;-Camera rotation
-        
-        ; Pitch                       / 2.5
-           spi_camera\anglevert    + ( ( Pitch - spi_camera\anglevert   ) / (Damping))
-        
-           Yaw                         + ( MXS / 1.5)
-           LeftRight                   + ( ( Yaw   - LeftRight                  ) / (Damping))
-           
-           If spi_camera\targetnode    ; wenn überhaupt ein node deffiniert ist.
-           
-               E3D_getNoderotation   ( spi_camera\targetnode , @x, @y        , @z)
-               irotatenode           ( spi_camera\targetnode ,  x, LeftRight + spi_camera\relative_rotation ,  z)
-               If Not spi_camera      \ motionspeed =0
-                  anz_moveObject  ( anz_getobject3dByNodeID( spi_camera\targetnode ) , spi_camera\motionspeed  , 0 ,0)
-                  spi_camera      \motionspeed = 0
-               EndIf 
-               
-           EndIf 
-           
-    ; camera rauf/runter
-   
-     If spi_camera\anglevert > 80
-        If MYS   < 0
-           Pitch + ( MYS / 1.5)
-        Else 
-           Pitch = spi_camera\anglevert
-        EndIf 
-     ElseIf spi_camera\anglevert < 0
-        If MYS  > 0
-           Pitch+(MYS / 1.5)
-        Else 
-           Pitch = 0
-        EndIf 
-     Else  ; wenn istgleich
-        Pitch+(MYS / 1.5)
-     EndIf 
-     
-     If spi_camera\anglevert     > 85
-       spi_camera\anglevert      = 85
-     ElseIf spi_camera\anglevert < 0
-       spi_camera\anglevert      = 0
-     EndIf
-     
+       If (action = #True )
+              If  spi_IsCameraFirstPerson() = 0
+                
+                  ;-Camera rotation
+                  
+                  MXS * -0.8
+                  MYS * -0.4
+                ; Pitch                       / 2.5
+                  spi_camera\anglevert    + ( ( Pitch - spi_camera\anglevert   ) / (Damping))
+                
+                  Yaw                         + ( MXS / 1.5)
+                  LeftRight                   + ( ( Yaw   - LeftRight                  ) / (Damping))
+                  
+                  If spi_camera\targetnode    ; wenn überhaupt ein node definiert ist.
+                  
+                      E3D_getNoderotation   ( spi_camera\targetnode , @x, @y        , @z)
+                      irotatenode           ( spi_camera\targetnode ,  x, LeftRight + spi_camera\relative_rotation ,  z)
+                      If Not spi_camera     \ motionspeed =0
+                          anz_moveObject    ( anz_getobject3dByNodeID( spi_camera\targetnode ) , spi_camera\motionspeed  , 0 ,0)
+                          spi_camera        \ motionspeed = 0
+                      EndIf 
+                      
+                  EndIf 
+                  
+            ; camera rauf/runter
+          
+            If spi_camera\anglevert > 80
+                If MYS   < 0
+                  Pitch + ( MYS / 1.5)
+                Else 
+                  Pitch = spi_camera\anglevert
+                EndIf 
+            ElseIf spi_camera\anglevert < 0
+                If MYS  > 0
+                  Pitch+(MYS / 1.5)
+                Else 
+                  Pitch = 0
+                EndIf 
+            Else  ; wenn istgleich
+                Pitch+(MYS / 1.5)
+            EndIf 
+            
+            If spi_camera\anglevert      > 85
+              spi_camera\anglevert       = 85
+              Pitch                      = 85
+            ElseIf spi_camera\anglevert  < 12
+              spi_camera\anglevert       = 12
+              Pitch                      = 12
+            EndIf
+            
+              
+              
+          Else  ; Camerasteuerung der FPS cam
+                       Yaw = LeftRight  
+                       Pitch = spi_camera\anglevert 
+                        ; drehen der camera 
+                        E3D_getNoderotation   ( spi_camera\pointer , @x, @y        , @z)
+                        x                     + MYS *-0.4
+                        LeftRight             + MXS *-0.4
+                        irotatenode           ( spi_camera\pointer ,  x, LeftRight +90,  z)
+                        irotatenode           ( spi_camera\targetnode , x , LeftRight+ spi_camera\relative_rotation  , z )
+                        ; bewegen
+                        
+                        If Not spi_camera      \ motionspeed =0 ; also bewegen.
+                            ; wenn Objekt nicht da  , Werte von Referenzen holen.
+                            anz_raster_Unregister(  anz_getobject3dByNodeID( spi_camera\targetnode ) )
+                            iMoveNode          ( spi_camera\targetnode  , spi_camera\motionspeed , 0 , 0 )
+                            anz_Raster_Register( anz_getobject3dByNodeID ( spi_camera\targetnode) ) 
+                            spi_camera         \ motionspeed = 0
+                        EndIf 
+          EndIf 
+          
        EndIf
    EndProcedure 
 
@@ -557,12 +634,13 @@
 ; CursorPosition = 220
 ; FirstLine = 189 
 ; jaPBe Version=3.9.12.818
-; FoldLines=0008000E0010001400160029002B003D003F004A004C0058005A0069006B00BD
-; FoldLines=00BF00D100D500D700D900DD00E400E600EA00F000F200F600F800FA01260132
-; FoldLines=0134013A013C014001420144016C016F01710179017B018C
+; FoldLines=0010001400160029002B003D003F004A004C0058005A0069006B00BD00BF00D1
+; FoldLines=00D500D700D900DD00E400E600F200F600F800FA00FC0124012601320134013A
+; FoldLines=013C014001420144015A01610163016A016C016F01710179017B018C01C301CB
+; FoldLines=01CE01D501D801EA02740276
 ; Build=0
-; FirstLine=16
-; CursorPosition=76
+; FirstLine=259
+; CursorPosition=602
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

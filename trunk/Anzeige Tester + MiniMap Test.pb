@@ -37,8 +37,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; -----------------------------------------------------------------------------------------------------------------------
 ; ------------------------------------------------------ MAIN     ------------------------------------------------------
 ; ----------------------------------------------------------------------------------------------------------------------- 
-
-   anz_setresolution          ( 1280 , 768, 32 , 0 )
+   
+   anz_setresolution          ( 1240 , 768, 32 , 0 )
    anz_enable_normalmapping   ( 0 )
    anz_enable_parallaxmapping ( 0 )
    anz_enable_shadow          ( 0 )
@@ -151,6 +151,18 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
       If GetAsyncKeyState_(#VK_F3)
          anz_updateview()
       EndIf 
+      If GetAsyncKeyState_(#VK_f1)
+         If key_f1 = 0
+            key_f1 = 1 
+            If spi_IsCameraFirstPerson()
+               spi_SetCameraFirstPerson (0)
+            Else 
+               spi_SetCameraFirstPerson (1)
+            EndIf  
+         EndIf 
+      Else 
+         key_f1 = 0
+      EndIf 
       If GetAsyncKeyState_    ( #VK_RETURN )
          If key_return        = 0
             key_return        = 1
@@ -204,10 +216,10 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; CursorPosition = 58
 ; FirstLine = 14 
 ; jaPBe Version=3.9.12.818
-; Build=1
-; FirstLine=83
-; CursorPosition=94
+; Build=2
+; FirstLine=86
+; CursorPosition=110
 ; ExecutableFormat=Windows
-; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\max level_new Engine.exe
+; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\max level_new Engine.exe
 ; DontSaveDeclare
 ; EOF

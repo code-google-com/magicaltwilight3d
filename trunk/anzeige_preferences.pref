@@ -1,9 +1,9 @@
 ﻿
-resolutionx = 1280
+resolutionx = 1240
 resolutiony = 768
 resolutiondepth = 32
 IsShadow = 0
 isnormalmapping = 0
-isparallaxmapping = 1
-islighting = 1
-isfog = 1
+isparallaxmapping = 0
+islighting = 0
+isfog = 0

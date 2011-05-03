@@ -3443,7 +3443,7 @@ EndMacro
    Procedure anz_updateview()   ; anzeigen der Welt, Gui usw. rendern. (irrlicht-based.)
              ; setzt voraus, dass irrrunning() erfolgreich aufgerufen wird!!
              If anz_IsPauseGame         () = 0 ; wenn game NICHT pausiert ist.
-               DMX_Freelook             (1 , anz_mousedeltax , anz_mousedeltay )  ; camera drehen
+               DMX_Freelook             (1 , anz_mousedeltax , anz_mousedeltay , 0.6 , 0.00005 , 2 )  ; camera drehen
                spi_ExamineCamera        ()                         ; camera bewegen
              EndIf 
              
@@ -4182,7 +4182,7 @@ EndMacro
                                *p_obj\y          = vector_pos\y 
                                *p_obj\z          = vector_pos\z
                                If *anz_mesh\WesenID > 0
-                                  If wes_UpdateWesen( *anz_mesh\WesenID ) = #wes_action_die 
+                                  If wes_UpdateWesen( *anz_mesh\WesenID ) = #wes_action_die ; wenn eine einheit stirbt wird alles abgebrochen..
                                      ProcedureReturn   
                                   EndIf 
                                EndIf 
@@ -4190,7 +4190,7 @@ EndMacro
                                
                                EndIf 
                             EndIf  
-                              
+                            
                             ;{ entfernung zum objekt mit radius 
                             
                                If Not anz_IsObject3dChild( *p_obj) ; wenn es ein child ist, wird node nicht gelöscht etc.
@@ -4219,6 +4219,9 @@ EndMacro
                                     rady    = 0 
                                EndIf 
                                
+                               If *anz_mesh\WesenID  = spi_GetSpielerWesenID ( spi_getcurrentplayer()) ; der Hauptspieler ist von der Anzeigeengine komplett ausgenommen!..
+                                  Continue 
+                               EndIf 
 
                             ;}
                              
@@ -4977,28 +4980,29 @@ EndMacro
 ; IDE Options = PureBasic 4.40 (Windows - x86)
 ; CursorPosition = 108
 ; FirstLine = 77 
-; jaPBe Version=3.9.12.819
-; FoldLines=008900910099009B009D009F00A100A300A500A700A900B100B300BB00E10142
-; FoldLines=01460194019A019C019E01A001A201A401A601A801AA01AC01BB01C201C401DB
-; FoldLines=01EA01F101F301FB01FD01FF0201020C020E0219021B02270229022C022F0233
-; FoldLines=0235024C024E026302650269026B026F02710294029802C302C502EA02EC034A
-; FoldLines=034C0381038303B303B503FD03FF043D04850494049804B604B804D504D904E6
-; FoldLines=04E8054404ED0000052900000548055405560558055A055C055E056005620564
-; FoldLines=0566058305850588058A058C058E05900592059405960598059A059C059E05A1
-; FoldLines=05A305A505A705A905AD05AF05D505D905F005FC05FE06230625063D063F0657
-; FoldLines=0659066D066F06850687069E06A006A706A906B206B606ED06EF06F306F50703
-; FoldLines=0705070D070F072B079707D607D807FF0801082308250837083908AF083E0000
-; FoldLines=08630000086C0000087900000884000008B108BA08BC08EE08F009000902090D
-; FoldLines=090F091B091F094409460955095709630967098C09F409FA0A1F0A210A250A43
-; FoldLines=0A470A490A9E0B2A0B2E0B9D0BA10BA30BA70BEA0C6D0CB00CB40CE20D4E0D50
-; FoldLines=0D540D5D0D5F0D700D6100000D720D850D930EC20DC000000DD100000DEA0000
-; FoldLines=0DF700000E0300000E0F00000E1B00000E3400000E4100000E4E00000E5B0000
-; FoldLines=0E6E00000EC40ED40F7B0FC70F9600000FA400000FB000000FFC103C10080000
-; FoldLines=101C000010401041104510461131113A11461195117C0000118A00001199119C
-; FoldLines=11A011D011EF11F111F511FC11FE1214123F127F12450000125E00001300135C
+; jaPBe Version=3.9.12.818
+; FoldLines=008900910099009B009D009F00A100A300A500A700A900B100B300BB00D10198
+; FoldLines=019A019C019E01A001A201A401A601A801AA01AC01BB01C201C401DB01EA01F1
+; FoldLines=01F301FB01FD01FF020E0219021B02270229022C022F02330235024C024E0263
+; FoldLines=02650269026B026F02710294029802C302C502EA02EC034A034C0381038303B3
+; FoldLines=03B503FD03FF043D04850494049804B604B804D504D904E604E8054404ED0000
+; FoldLines=052900000548055405560558055A055C055E0560056205640566058305850588
+; FoldLines=058A058C058E05900592059405960598059A059C059E05A105A305A505A705A9
+; FoldLines=05AD05AF05B305DD05D5000005F005FC05FE06230625063D063F06570659066D
+; FoldLines=066F06850687069E06A006A706A906B206B606ED06EF06F306F507030705070D
+; FoldLines=070F072B079707D607D807FF0801082308250837083908AF083E000008630000
+; FoldLines=086C0000087900000884000008B108BA08BC08EE08F009000902090D090F091B
+; FoldLines=091F094409460955095709630967098C09F409FA0A1F0A210A250A430A470A49
+; FoldLines=0A9E0B2A0B2E0B9D0BA10BA30BA70BEA0C6D0CB00CB40CE20D4E0D500D540D5D
+; FoldLines=0D5F0D700D6100000D720D850D870D910DC00DCF0DD10DE80DEA0DF50DF70DFC
+; FoldLines=0E030E0D0E0F0E190E1B0E320E340E3F0E410E4C0E4E0E590E5B0E680E6E0EC0
+; FoldLines=0EC40ED40ED60F790F7B0FC70F9600000FA400000FB000000FFC103C10080000
+; FoldLines=101C00001040104110451046108B10B510B910E210E6110B110F11301134113D
+; FoldLines=11491198117F0000118D0000119C119F11A311D311E011EE11F211F411F811FF
+; FoldLines=120112171242128212480000126100001303135F
 ; Build=0
-; FirstLine=175
-; CursorPosition=209
+; FirstLine=1079
+; CursorPosition=3489
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
