@@ -81,12 +81,18 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
       spi_Inventar_AddItem   ( spi_getcurrentplayer() , item )
    Next 
    
+   *item.ITEM =Item_Add( "Seifenblasenwaffe" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\seifenblasenwaffe.b3d" , "" , "" , #EMT_SOLID , Gui_Inventar_Image_Brot ,"Kinderspielzeug, dass Seifenblasen verschießt" +Chr(10) + "Kann Monster töten")
+   Item_AddWaffe ( *item , 12 , #meter*2 , #item_waffe_fernkampf , Gui_Inventar_Image_Brot )
+   spi_Inventar_AddItem   ( spi_getcurrentplayer() , *item )
+   
    For x = 1 To 20
       item = Item_Add         ( "Schriftrolle" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\item\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle ,"Brief an Genesis..")
        spi_Inventar_AddItem   ( spi_getcurrentplayer() , item )
    Next 
    item = Item_Add         ( "Ibot" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\item\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle ,"Spezialitem -> " + Chr(10) + "Gibt für 10s +200 leben" + Chr(10) + "Nebeneffekt: kann zu Verdauungsproblemen führen hehe" )
    spi_Inventar_AddItem    ( spi_getcurrentplayer() , item )
+   *item.ITEM =Item_Add( "Pacman Geist" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\Pacman_ghost.b3d" , "" , "" , #EMT_SOLID , Gui_Inventar_Image_Brot ,"Pacmantier")
+   spi_Inventar_AddItem    ( spi_getcurrentplayer() , *item )
    *FPSgadget              = iAddStaticText("fps" ,5,5,150,20,1,1,1)
    
    
@@ -131,7 +137,9 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
      iNodePosition(*cam, @camPos\x)
      iNodeDirection(*cam, @camDir\x)
      wes_getposition        ( spi_GetSpielerWesenID( spi_getcurrentplayer()) , @test_x , @test_y , @test_z)
-     *item.ITEM = Item_Add( "Brot" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\Brot.3ds" , "..\..\maps\Max Welt\items\Brot_texture.jpg" , "..\..\maps\Max Welt\items\brot_normal.jpg" , #EMT_PARALLAX_MAP_SOLID , Gui_Inventar_Image_Brot ,"Brot mit bisschen Salz")
+     *item.ITEM =Item_Add( "Seifenblasenwaffe" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\seifenblasenwaffe.b3d" , "" , "" , #EMT_SOLID , Gui_Inventar_Image_Brot ,"Seifenblasenwaffe")
+     
+     ;*item.ITEM = Item_Add( "Brot" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\Brot.3ds" , "..\..\maps\Max Welt\items\Brot_texture.jpg" , "..\..\maps\Max Welt\items\brot_normal.jpg" , #EMT_PARALLAX_MAP_SOLID , Gui_Inventar_Image_Brot ,"Brot mit bisschen Salz")
      
      Debug "pos: " + Str( camPos\x ) + " y " + Str( camPos\y ) + " z " + Str( camPos\z )
      ; create mesh to shoot
@@ -217,8 +225,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; FirstLine = 14 
 ; jaPBe Version=3.9.12.818
 ; Build=2
-; FirstLine=86
-; CursorPosition=110
+; FirstLine=68
+; CursorPosition=89
 ; ExecutableFormat=Windows
 ; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\max level_new Engine.exe
 ; DontSaveDeclare

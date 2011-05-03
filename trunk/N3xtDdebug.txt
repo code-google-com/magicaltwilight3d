@@ -18,8 +18,19 @@ Loaded mesh: ..\..\sydney.md2
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\sydney.jpg
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\test\grün.png
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\einfachesSchwert.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\brot.png
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\Schriftrolle.png
 Could not load a texture for entry in 3ds file: lichtstrahl.
 Loaded mesh: ..\max welt\lichtstrahlen.3ds
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\max welt\godrays.jpg
+Resizing window (1240 768)
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\minimap\F.png
+Could not open file of texture: packman_ghost_texture.jpg
+Loaded mesh: ..\..\maps\Max Welt\Items\Pacman_ghost.b3d
+Could not load a texture for entry in 3ds file: stabwaffe st
+Loaded mesh: ..\..\maps\standard stabwaffe.3ds
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\stabwaffe standard.tga
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\minimap\E.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\Max Welt\Items\seifenblasenwaffe_gelb_texture.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\Max Welt\Items\seifenblasenwaffe_rot_texture.tga
+Loaded mesh: ..\..\maps\Max Welt\Items\seifenblasenwaffe.b3d

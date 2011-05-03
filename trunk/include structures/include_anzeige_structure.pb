@@ -360,10 +360,10 @@ Global anz_mouseWheel.f
 Global Dim anz_shader_proctest.anz_shader_Processing(5)
 Global anz_shader_num_mat.l=0
 Global anz_shader_curent_mat.l=0 
-; jaPBe Version=3.9.12.819
+; jaPBe Version=3.9.12.818
 ; Build=0
-; FirstLine=234
-; CursorPosition=238
+; FirstLine=35
+; CursorPosition=60
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

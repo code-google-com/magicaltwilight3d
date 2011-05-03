@@ -555,8 +555,8 @@
                 
                   ;-Camera rotation
                   
-                  MXS * -0.8
-                  MYS * -0.4
+                  MXS * -0.4
+                  MYS * -0.2
                 ; Pitch                       / 2.5
                   spi_camera\anglevert    + ( ( Pitch - spi_camera\anglevert   ) / (Damping))
                 
@@ -607,8 +607,8 @@
                        Pitch = spi_camera\anglevert 
                         ; drehen der camera 
                         E3D_getNoderotation   ( spi_camera\pointer , @x, @y        , @z)
-                        x                     + MYS *-0.4
-                        LeftRight             + MXS *-0.4
+                        x                     + MYS *-0.1
+                        LeftRight             + MXS *-0.1
                         irotatenode           ( spi_camera\pointer ,  x, LeftRight +90,  z)
                         irotatenode           ( spi_camera\targetnode , x , LeftRight+ spi_camera\relative_rotation  , z )
                         ; bewegen
@@ -639,8 +639,8 @@
 ; FoldLines=013C014001420144015A01610163016A016C016F01710179017B018C01C301CB
 ; FoldLines=01CE01D501D801EA02740276
 ; Build=0
-; FirstLine=259
-; CursorPosition=602
+; FirstLine=198
+; CursorPosition=552
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
