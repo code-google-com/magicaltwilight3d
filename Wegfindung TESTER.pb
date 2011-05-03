@@ -566,7 +566,7 @@ IncludeFile "includes\include_all.pb"
      
      
    ForEver  
-; jaPBe Version=3.9.12.819
+; jaPBe Version=3.9.12.818
 ; FoldLines=007A00B300B500D000D200E3014D016601B301CB01CD01DE
 ; Include=SoundPlus.pbi
 ; Build=8
@@ -575,7 +575,6 @@ IncludeFile "includes\include_all.pb"
 ; FirstLine=292
 ; CursorPosition=460
 ; EnableUnicode
-; EnableCustomSubSystem
 ; EnableXP
 ; ExecutableFormat=Windows
 ; Executable=C:\Users\Krieger Drauf\Desktop\Gemusoft\waypoint example.exe
