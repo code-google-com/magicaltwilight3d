@@ -28,6 +28,10 @@
    
    Procedure ani_SetAnim                ( *p_anz_mesh.anz_mesh , AnimationNR , islooped.w = 0 , animationgesch.f = 1.0 , waitiffinished.w = 0 )
       
+       If AnimationNR = 0 ; 
+          AnimationNR = 1
+       EndIf 
+       
        If ( Not *p_anz_mesh\anim_currentanim     = StringField(StringField( *p_anz_mesh\anim_list ,AnimationNR , "|") ,  1 , ",") ) Or *p_anz_mesh\anim_try_to_end = 2; wenn die animation gerade noch NICHT läuft oder sie schon beendet ist:
           If *p_anz_mesh\anim_islocked           And  *p_anz_mesh\anim_try_to_end         <> 2 ; wenn animation gesperrt und nicht freigegeben, kann man keine andere einwerfen
              *p_anz_mesh\anim_try_to_end         = 1 ; sagt, dass animation gestoppt werden soll, wenn möglich
@@ -53,6 +57,10 @@
    
    Procedure ani_SetAnimSettings        ( *p_anz_mesh.anz_mesh , AnimationNR , islooped.w = 0, animationgesch.f = 1.0 , waitiffinished.w = 0 , animlist.s = "" ) ; p_anz_node = listiD von anz_mesh
       
+      If AnimationNR <= 0 ; 
+          AnimationNR = 1
+       EndIf 
+       
        If animlist > ""
           *p_anz_mesh\anim_list            = animlist ;evt lstandardlist? 
        ElseIf *p_anz_mesh\anim_list        = ""       ; wenn aber noch gar keine anim gesetzt ist
@@ -229,12 +237,12 @@
 
  
 ; jaPBe Version=3.9.12.818
-; FoldLines=004D004F00510053005500570059005B005D005F0061006300650069006B006F
-; FoldLines=00710079007B007F008100850087008B008D00AF00B100B500B700BB00BD00C3
-; FoldLines=00C700E3
+; FoldLines=005500570059005B005D005F00610063006500670069006B006D007100730077
+; FoldLines=00790081008300870089008D008F0093009500B700B900BD00BF00C300C500CB
+; FoldLines=00CF00EB
 ; Build=0
-; FirstLine=20
-; CursorPosition=68
+; FirstLine=85
+; CursorPosition=121
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
