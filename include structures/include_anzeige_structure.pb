@@ -59,7 +59,7 @@ EndEnumeration
 #anz_pause_Menu     = %00000010 ; Hauptmenü löst pause aus.
 #anz_pause_Sequenze = %00000100 ; Video Sequence causes Pause.
    
-#anz_meter            = 34.511627                 ; ein Meter ist demnach XX Pixel groß
+#anz_meter            = 1.2 ;34.511627                 ; ein Meter ist demnach XX Pixel groß
 #meter                = #anz_meter                ; weil oft aus versehen #Meter eingebaut wurde.. naja kann man nicht verdenken, 
 #anz_Walkspeed        = #anz_meter /14            ; im Meter pro 60-tel Sekunde (Frame) . wie weit der spieler pro durchlauf geht.. 
 #anz_raster_maxrasterelements = 200    ;
@@ -331,7 +331,8 @@ Global anz_isparallaxmapping     .w
 Global anz_resolutionx           .w
 Global anz_resolutiony           .w
 Global anz_resolutiondepth       .w
-Global anz_CollisionMeta_solid   .i
+Global anz_CollisionMeta_solid   .i  ; die aktuelle Kollisions-level meta
+Global *anz_CollisionMeta_anzMesh .anz_mesh ; das aktuelle kollisionlevel-mesh
 Global anz_examined_node_ID      .i  ; Pointer zum aktuellen examined Listelement
 Global anz_pause.i
 
@@ -359,11 +360,12 @@ Global anz_mouseWheel.f
 ; shader globals
 Global Dim anz_shader_proctest.anz_shader_Processing(5)
 Global anz_shader_num_mat.l=0
-Global anz_shader_curent_mat.l=0 
+Global anz_shader_curent_mat.l=0
+ 
 ; jaPBe Version=3.9.12.818
 ; Build=0
-; FirstLine=35
-; CursorPosition=60
+; FirstLine=314
+; CursorPosition=331
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

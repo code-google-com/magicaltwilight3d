@@ -55,8 +55,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    ; iSetWorldSize(- #meter*50 , -#meter * 10 , -#meter*50 , #meter*500,#meter*10 , #meter*500)
    
    ; IrrSetTextureCreationFlag  ( #IRR_ETCF_CREATE_MIP_MAPS       , 1 )
-   anz_map_load               ( "max_welt.irr" , "Gfx\maps\Max Welt\") ;Gfx\maps\Max Welt\
-   
+   anz_map_load               ( "max_welt.irr" , "Gfx\maps\Max Welt\" , 1/34*#meter) ;früher war der meter ca. 34.. dewegen ist die alte welt zu groß --> also rescalieren!!!!! 
    
    gui_setGUI                 ( #Gui_Status_HUD )
    *nodeid = spi_GetPlayerNode          ( spi_getcurrentplayer () )
@@ -95,12 +94,15 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    spi_Inventar_AddItem    ( spi_getcurrentplayer() , *item )
    *FPSgadget              = iAddStaticText("fps" ,5,5,150,20,1,1,1)
    
+; ----------------------------------------------------------------------------------------------   
+; -- Hauptschleife
+; ----------------------------------------------------------------------------------------------
    
-   
+   iTimerUpdatePhysic (30) 
    
    Repeat 
-      
-      ;iTimerUpdatePhysic (100)   
+
+        
       If item_check_waiter    < ElapsedMilliseconds() 
          Item_FocusItem_Reset ()
          item_check_waiter    = ElapsedMilliseconds() + 100
@@ -224,9 +226,9 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; CursorPosition = 58
 ; FirstLine = 14 
 ; jaPBe Version=3.9.12.818
-; Build=2
-; FirstLine=68
-; CursorPosition=89
+; Build=3
+; FirstLine=75
+; CursorPosition=87
 ; ExecutableFormat=Windows
 ; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\max level_new Engine.exe
 ; DontSaveDeclare

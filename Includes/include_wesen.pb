@@ -20,7 +20,7 @@
 
 ; Add Remove
 
-Procedure wes_AddWesen ( Name.s, x.f , y.f , z.f , Team.s , maxleben.i , speed.f , pfad.s , texture1.s , texture2.s , MaterialType.i , Isdirectload.i = 0 , SpielerID.i = 0 , art.i =#wes_art_schwert , action.i = #wes_action_stand ,  AnimNR.i = 0 , animlist.s = #ani_Animlist_Standard) ; wobei team: siehe #team_wesen_bundnis_...)
+Procedure wes_AddWesen ( name.s, x.f , y.f , z.f , Team.s , maxleben.i , speed.f , pfad.s , texture1.s , texture2.s , MaterialType.i , Isdirectload.i = 0 , SpielerID.i = 0 , art.i =#wes_art_schwert , action.i = #wes_action_stand ,  AnimNR.i = 0 , animlist.s = #ani_Animlist_Standard) ; wobei team: siehe #team_wesen_bundnis_...)
   Protected *anz_mesh.anz_mesh , *currentwesen.wes_wesen , *newwesen.wes_wesen 
    
    ; ----------------------------------------------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ Procedure wes_AddWesen ( Name.s, x.f , y.f , z.f , Team.s , maxleben.i , speed.f
   If *newwesen 
     
      *newwesen\art            = art
-     *newwesen\Name           = Name
+     *newwesen\name           = name
      *newwesen\maxleben       = maxleben
      *newwesen\leben          = maxleben
      *newwesen\mana           = maxmana 
@@ -226,7 +226,7 @@ Procedure.s wes_getname ( *WesenID.wes_wesen)
    EndIf 
 EndProcedure 
 
-Procedure wes_setname ( *WesenID.wes_wesen , Name.s )
+Procedure wes_setname ( *WesenID.wes_wesen , name.s )
    If *WesenID > 0
       *WesenID\Name = Name
       ProcedureReturn 1
@@ -710,11 +710,10 @@ Procedure wes_jump  ( *WesenID.wes_wesen , jumpart = #wes_action_jump_start )
    If Not *WesenID 
       ProcedureReturn 0
    EndIf 
-   If *WesenID\action = #wes_action_die 
-      ProcedureReturn 0
-   EndIf 
-   
+   ; nur beim bewegen oder gehen darf gesprungen werden.
+   If *WesenID\action = #wes_action_moveAttack Or *WesenID\action = #wes_action_stand Or *WesenID\action = #wes_action_move 
       *WesenID\action              = jumpart 
+   EndIf 
    
 EndProcedure 
 
@@ -733,7 +732,7 @@ Procedure wes_UpdateWesen(*WesenID.wes_wesen) ; regelt Grundverhalten (instinkte
    If Not *WesenID > 0  
       ProcedureReturn 0
    EndIf 
-   If GetAsyncKeyState_(#VK_1) And *WesenID\Name = "tom"
+   If GetAsyncKeyState_(#VK_1) And *WesenID\name = "tom"
       *spielerwesen = spi_GetSpielerWesenID( spi_getcurrentplayer() )
       Debug "leben: " + StrF( wes_GetLeben( *spielerwesen ) ,2 )
       Debug "isfreund: " + Str(team_IsFreund( *spielerwesen\Team , *WesenID\Team  ))
@@ -1071,9 +1070,14 @@ Procedure wes_UpdateWesen(*WesenID.wes_wesen) ; regelt Grundverhalten (instinkte
          
          ;{ starten des springens
             
-            ani_SetAnim                  ( *WesenID\anz_Mesh_ID   , #ani_animNR_jump_start ,0 , 0.4 , 1) ; setzt die sprung anim.. unterbrechbar, damit flugrolle unterbrechen kann!
+            ani_SetAnim                  ( *WesenID\anz_Mesh_ID   , #ani_animNR_jump_start ,0 , 0.6 , 1) ; setzt die sprung anim.. unterbrechbar, damit flugrolle unterbrechen kann!
             If ani_getCurrentAnimationNR ( *WesenID\anz_Mesh_ID ) = #ani_animNR_jump_start
-               anz_moveObject            ( anz_getobject3dByAnzID(*WesenID\anz_Mesh_ID) ,0,0,#meter * 1.3 )
+               anz_raster_Unregister     ( anz_getobject3dByAnzID(*WesenID\anz_Mesh_ID))
+               If anz_CollisionMeta_solid
+                  Debug "JUMP"
+                  iJumpCollisionResponse ( anz_CollisionMeta_solid, #meter*0.2)
+               EndIf 
+               anz_Raster_Register       ( anz_getobject3dByAnzID(*WesenID\anz_Mesh_ID))
                *WesenID\action           = #wes_action_jump_land 
             EndIf 
          ;}
@@ -1158,17 +1162,17 @@ Procedure wes_UpdateWesen(*WesenID.wes_wesen) ; regelt Grundverhalten (instinkte
 EndProcedure
 
  
-; jaPBe Version=3.9.12.819
+; jaPBe Version=3.9.12.818
 ; FoldLines=008F00950097009D009F00A500A700B500B700BD00BF00C500C700CD00CF00DC
-; FoldLines=00DE00E200E400E900EB00F300F501000108010C010E01130115011A011C0121
-; FoldLines=0123012D012F01330135015D019001960198019D019F01A401AD01BB02000202
-; FoldLines=020402060208020A020C020E0210021202140219021B0220022202270229022E
-; FoldLines=023002350237023C023E02430245024A024C02510255025F0261027E0280028C
-; FoldLines=02AD02C102C302CE0320032F0333034103620384038C039B039F03B703BB03BD
-; FoldLines=03C1040703CD000003E00000040B042B042F0436043A04410445044D04510458
+; FoldLines=00DE00E200E400E900EB00F300F50100010201060108010C010E01130115011A
+; FoldLines=011C01210123012D012F01330135015D015F018E019001960198019D019F01A4
+; FoldLines=01AD01BB02000202020402060208020A020C020E0210021202140219021B0220
+; FoldLines=022202270229022E023002350237023C023E02430245024A024C02510255025F
+; FoldLines=0261027E0280028C02AD02C1031F032E0332034003610383038B039A039E03B6
+; FoldLines=03BA03BC03C0040603CC000003DF0000040A042A043E0445044904510455045C
 ; Build=0
-; FirstLine=449
-; CursorPosition=844
+; FirstLine=481
+; CursorPosition=1073
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

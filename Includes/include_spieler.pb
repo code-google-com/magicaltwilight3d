@@ -268,8 +268,8 @@
             iambientlight             ( $DDDDDDDD)
             ifallofflight             ( *light , 11 )
             ; nur zum debuggen:
-            *anz_billboard.anz_billboard = anz_AddBillboard       ( "..\..\test\grün.png" , 0,#meter *1.7,0,10,10 , #IRR_EMT_TRANSPARENT_ALPHA_CHANNEL,1 )
-               anz_attachobject( anz_getobject3dByAnzID (wes_getAnzMeshID(*WesenID) ) ,anz_getobject3dByAnzID( *anz_billboard , #anz_art_billboard ) , 0,#meter * 1,0)
+            *anz_billboard.anz_billboard = anz_AddBillboard       ( "..\..\test\grün.png" , 0,#meter *1.7,0,0.2*#meter,0.2*#meter , #IRR_EMT_TRANSPARENT_ALPHA_CHANNEL,1 )
+               anz_attachobject( anz_getobject3dByAnzID (wes_getAnzMeshID(*WesenID) ) ,anz_getobject3dByAnzID( *anz_billboard , #anz_art_billboard ) , 0,#meter * 1, 0)
             ; -- 
             ; wenn spieler = current spieler (camera erstellen)
          
@@ -282,7 +282,8 @@
                irotatenode               ( anz_camera   , rotx , roty , rotz)
                spi_DefinePlayerCamera    ( anz_camera ) 
                spi_FixCamera             ( wes_getNodeID( *spieler\WesenID ))
-               spi_SetCameraDistance     ( 5.5 * #anz_meter )                
+               spi_SetCameraDistance     ( 5.0 * #meter )                
+               iNearValueCamera          ( anz_camera , 0.001 )
                iFarValueCamera           ( anz_camera                 , 150 * #meter)
                
             EndIf
@@ -329,6 +330,9 @@
    Procedure spi_move_spielerforward   ( *SpielerID.spi_spieler , amount.f)  ; anim spieler + bewegen 
       Protected *WesenID.wes_wesen     , *anz_Mesh_ID.anz_mesh , drehgrad.f
       *WesenID                         = *SpielerID \WesenID
+      If Not *WesenID\action           = #wes_action_stand 
+         ProcedureReturn 
+      EndIf
       *WesenID\action                  = #wes_action_move
       
       If amount < 0 ; spielerfigur um 180° drehen, beim rückwärtsgehen.
@@ -347,6 +351,9 @@
    Procedure spi_move_spielerright     ( *SpielerID.spi_spieler,amount.f) ; anim +move
       Protected *WesenID.wes_wesen     , *anz_Mesh_ID.anz_mesh 
       *WesenID                         = *SpielerID \WesenID
+      If Not *WesenID\action           = #wes_action_stand 
+         ProcedureReturn 
+      EndIf
       *WesenID\action                  = #wes_action_move
       spi_SetSpielerTargetnodeRot      ( 90 )
       spi_SetSpielerTargetnodeMotion   ( amount )
@@ -355,7 +362,11 @@
 
    Procedure spi_move_spielerleft      ( *SpielerID.spi_spieler , amount.f) ; anim +move 
       Protected *WesenID.wes_wesen     , *anz_Mesh_ID.anz_mesh 
+      
       *WesenID                         = *SpielerID \WesenID
+      If Not *WesenID\action           = #wes_action_stand 
+         ProcedureReturn 
+      EndIf
       *WesenID\action                  = #wes_action_move
       spi_SetSpielerTargetnodeRot      ( -90 )
       spi_SetSpielerTargetnodeMotion   ( amount )
@@ -433,16 +444,22 @@
    
    Procedure spi_SetCameraFirstPerson(IsFirstPerson = 1) 
       Protected Rot.ivector3 
+      Static modelscale.ivector3 
       ; die allgemeine variable setzen (damit die cam frei wird. 
       ; dann playernode hiden, nicht löschen! wird nach wie vor benutzt nur eben ohne gesehn zu werden..
       ; dann camera reinfliegen lassen zur alten spielerposition, etwa auf augenhöhe (1,5 meter über boden so..)
       spi_camera\IsFPS = IsFirstPerson
       
       If spi_camera\targetnode = 0 : ProcedureReturn : EndIf 
-      
+         
       If IsFirstPerson 
-         iVisibleNode   ( spi_camera\targetnode  , 0   )
+          If modelscale\x = 0
+              iNodeScale ( spi_camera\targetnode , @modelscale )
+          EndIf 
+          iScaleNode     ( spi_camera\targetnode  , 1000,1000,1000)
+          iVisibleNode   ( spi_camera\targetnode  , 1   ) ; wird aber im programm vor collision immer wieder angezeigt kur zund gehidden (3d engine merkt davon nichts, offizell allso gehidden)
       Else  ; zurück zur 3rd person
+         iScaleNode     ( spi_camera\targetnode  , modelscale\x , modelscale\y  , modelscale\z)
          inoderotation  ( spi_camera\targetnode  , Rot ) 
          irotatenode    ( spi_camera\targetnode  , 0 , Rot\y+90 , 0)
          iVisibleNode   ( spi_camera\targetnode  , 1 )
@@ -568,7 +585,7 @@
                       E3D_getNoderotation   ( spi_camera\targetnode , @x, @y        , @z)
                       irotatenode           ( spi_camera\targetnode ,  x, LeftRight + spi_camera\relative_rotation ,  z)
                       If Not spi_camera     \ motionspeed =0
-                          anz_moveObject    ( anz_getobject3dByNodeID( spi_camera\targetnode ) , spi_camera\motionspeed  , 0 ,0)
+                          anz_moveObject    ( anz_getobject3dByNodeID( spi_camera\targetnode ) , spi_camera\motionspeed  , -#meter*0.03 ,0)
                           spi_camera        \ motionspeed = 0
                       EndIf 
                       
@@ -616,7 +633,7 @@
                         If Not spi_camera      \ motionspeed =0 ; also bewegen.
                             ; wenn Objekt nicht da  , Werte von Referenzen holen.
                             anz_raster_Unregister(  anz_getobject3dByNodeID( spi_camera\targetnode ) )
-                            iMoveNode          ( spi_camera\targetnode  , spi_camera\motionspeed , 0 , 0 )
+                            iMoveNode          ( spi_camera\targetnode  , spi_camera\motionspeed , -#meter*0.03 , 0 )
                             anz_Raster_Register( anz_getobject3dByNodeID ( spi_camera\targetnode) ) 
                             spi_camera         \ motionspeed = 0
                         EndIf 
@@ -635,12 +652,11 @@
 ; FirstLine = 189 
 ; jaPBe Version=3.9.12.818
 ; FoldLines=0010001400160029002B003D003F004A004C0058005A0069006B00BD00BF00D1
-; FoldLines=00D500D700D900DD00E400E600F200F600F800FA00FC0124012601320134013A
-; FoldLines=013C014001420144015A01610163016A016C016F01710179017B018C01C301CB
-; FoldLines=01CE01D501D801EA02740276
+; FoldLines=00D500D700D900DD00E400E600F200F6012701330135013B013D014101430145
+; FoldLines=0177017A017C01840186019701D401DC01DF01E601E901FB01FD022902850287
 ; Build=0
-; FirstLine=198
-; CursorPosition=552
+; FirstLine=257
+; CursorPosition=587
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
