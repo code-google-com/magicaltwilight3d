@@ -16,7 +16,7 @@
 ;- Macros
 ; --------------------------------------------------------------------
 
-   Macro anz_setShownObjects_loadMesh()
+   Macro anz_setShownObjects_loadMesh()  ; if "loadmesh_scale_meshbuffer = 1" then it scales the meshbuffer
                                   
                                  ; irr_obj ist die ID des irrlicht- objekts (eigendlich: anz_mesh()\nodeID
                                  ; mesh neuladen, wenn gelöscht
@@ -26,12 +26,22 @@
                                      anz_mesh()\meshID     = iLoad3DObject     ( anz_mesh()\pfad )    ; laden
                                      ChangeCurrentElement( anz_Object3d () , anz_mesh()\Object3dID )  ; zur sicherheit.. 
                                      
+                                     ; check if it is loadable
                                      If anz_mesh()\meshID = 0
                                         
                                         DeleteElement ( anz_Object3d ()) 
                                         DeleteElement ( anz_mesh() )
+                                        loadmesh_scale_meshbuffer = 0
                                         ProcedureReturn 0
                                      EndIf 
+                                     
+                                     ; check if scale meshbuffer
+                                     If loadmesh_scale_meshbuffer = 1
+                                        *geo.i = iobjectgeometry ( anz_mesh()\meshID )
+                                        iScaleMeshBuffer( *geo ,anz_mesh()\scalex , anz_mesh()\scaley , anz_mesh()\scalez )
+                                     EndIf 
+                                     
+                                     
                                      If anz_mesh()\anim_IsAnimMesh 
                                         anz_mesh()\nodeID  = iCreateAnimation  ( anz_mesh()\meshID )
                                      Else 
@@ -66,7 +76,9 @@
                                         ; mesh verschieben, rotaten, scalieren.
                                         iPositionNode( anz_mesh()\nodeID , anz_Object3d()\x  , anz_Object3d()\y  , anz_Object3d()\z)
                                         irotatenode  ( anz_mesh()\nodeID , anz_mesh()\rotx   , anz_mesh()\roty   , anz_mesh()\rotz)
-                                        iScaleNode   ( anz_mesh()\nodeID , anz_mesh()\scalex , anz_mesh()\scaley , anz_mesh()\scalez)
+                                        If loadmesh_scale_meshbuffer = 0
+                                           iScaleNode   ( anz_mesh()\nodeID , anz_mesh()\scalex , anz_mesh()\scaley , anz_mesh()\scalez)
+                                        EndIf 
                                         debugcounter + 1 :  Debug debugcounter
                                         ; breite, höhe und tiefe berechnen
                                         v_rad.ivector3 
@@ -75,6 +87,8 @@
                                         anz_mesh()\width   = v_rad\x 
                                         anz_mesh()\height  = v_rad\y 
                                         anz_mesh()\Depth   = v_rad\z
+                                        Debug " newmesh_ breite: " + StrF( v_rad\x ,1 ) + " hohe " + StrF( v_rad\y,1) + " lange: " + StrF( v_rad\z , 1) 
+                                        
                                         debugcounter + 1 :  Debug debugcounter
                                         ; evtl beim rotieren 3 mal IrrRotateNodeByCenter( 
                                         ; mesh verwaltung
@@ -95,7 +109,7 @@
                                                  ElseIf anz_mesh()\Collisiondetail  =  #anz_col_box 
                                                         iSetCollideForm             (  #BOX_PRIMITIVE )
                                                  EndIf 
-                                                 ; anz_mesh()\collisionNodeID         =  iCreateBody(anz_mesh()\nodeID , #False) ; nicht bewegbar, deswegen #false.
+                                                 anz_mesh()\collisionNodeID         =  iCreateBody(anz_mesh()\nodeID , #False) ; nicht bewegbar, deswegen #false.
                                         ElseIf          anz_mesh()\Collisiontype    = #anz_ColType_movable 
                                                  ; mesh collision - setzten
                                                  If     anz_mesh()\Collisiondetail  = #anz_col_mesh  ; wird hier immer neugeladen, weil das node ja auch neu ist ;) 
@@ -103,7 +117,7 @@
                                                  ElseIf anz_mesh()\Collisiondetail  =  #anz_col_box 
                                                         iSetCollideForm             (  #BOX_PRIMITIVE )
                                                  EndIf 
-                                                 ; anz_mesh()\collisionNodeID         =  iCreateBody(anz_mesh()\nodeID , #True) ; bewegbar, deswegen true. automatisch ist bounding box außenrum; masse = 1... Pause: später evtl masse einstellbar.
+                                                 anz_mesh()\collisionNodeID         =  iCreateBody(anz_mesh()\nodeID , #True) ; bewegbar, deswegen true. automatisch ist bounding box außenrum; masse = 1... Pause: später evtl masse einstellbar.
                                         EndIf 
                                         debugcounter + 100 :  Debug debugcounter
                                      Else  ;Objekt war nicht ladbar (evtl falscher pfad usw.)
@@ -124,15 +138,16 @@
                                         ; collision zum Meta hinzufügen
                                         If anz_mesh()\Collisiontype        = #anz_ColType_solid 
                                               ; objekt ist Gebäude         , berg etc.
-                                              ; anz_mesh()\collisionNodeID = iCreateBody(anz_mesh()\nodeID , #False )
+                                              anz_mesh()\collisionNodeID = iCreateBody(anz_mesh()\nodeID , #False )
                                         ElseIf anz_mesh()\Collisiontype    = #anz_ColType_movable 
                                               ; Objekt ist Lebewesen.      -> collisionsanimator ;)
-                                              ; anz_mesh()\collisionNodeID = iCreateBody(anz_mesh()\nodeID , #True)
+                                              anz_mesh()\collisionNodeID = iCreateBody(anz_mesh()\nodeID , #True)
                                         EndIf 
                                         debugcounter + 10 :  Debug debugcounter
                                      EndIf 
                                  EndIf 
                                  debugcounter + 1 :  Debug debugcounter
+                                 loadmesh_scale_meshbuffer = 0
 EndMacro 
 
    Macro anz_updateinput_UseSchnellwahl ( SchnellwahlKey )
@@ -1093,7 +1108,6 @@ EndMacro
       If anz_getobject3dIsGeladen( *Object3dID)
          ; werte direkt von Irrlicht holen
          *irrNode                = anz_getObject3DIrrNode(*Object3dID)
-         Debug 1096
          E3D_getNodePosition     ( *irrNode , @px , @py , @pz ) ; startposition
          iMoveNode               ( *irrNode , Forward , right , up )
          E3D_getNodePosition     ( *irrNode , @nx , @ny , @nz ) ; endposition für start-endraster berechnung, um zu sehen, ob raster wechselt.
@@ -1837,8 +1851,8 @@ EndMacro
    
    ; load things 
    
-   Procedure anz_addmesh( pfad.s, x.f,y.f,z.f, texture.s , MaterialType.b , normalmap.s , DirectLoad.b = 0 , IsAnimMesh.i = 0, Collisiondetail.b = #anz_col_box , Collisiontype.b = #anz_ColType_solid , rotx.f=0,roty.f=0,rotz.f=0,scalx.f=1,scaly.f=1,scalz.f=1, islighting.i = 0 , width.f = #meter * 3 , height.f = #meter*4 , Depth.f = #meter * 3)
-      Protected currentlistenobject.i , *anz_mesh.anz_mesh , currentobj3d.i
+   Procedure anz_addmesh( pfad.s, x.f,y.f,z.f, texture.s , MaterialType.b , normalmap.s , DirectLoad.b = 0 , IsAnimMesh.i = 0, Collisiondetail.b = #anz_col_box , Collisiontype.b = #anz_ColType_solid , rotx.f=0,roty.f=0,rotz.f=0,scalx.f=1,scaly.f=1,scalz.f=1, islighting.i = 0 , width.f = #meter * 3 , height.f = #meter*4 , Depth.f = #meter * 3, IsScaleMeshbuffer.i = 0)
+      Protected currentlistenobject.i , *anz_mesh.anz_mesh , currentobj3d.i 
       Protected x1.f , y1.f, z1.f , x2.f , y2.f , z2.f
       
       If ListSize                      ( anz_mesh ()) > 0
@@ -1872,8 +1886,15 @@ EndMacro
          ; Else 
             ; CloseFile    ( 0 )
          ; EndIf 
-      
-      
+         
+         
+         ; DEBUG:.... eingebaut um das zoomzeugs zu normalisieren:
+         If GetFilePart(pfad ) = "sydney.md2"
+             scalx = 1/34*#meter  ; früher war die welt einfach 30  px groß, jetzt ist sie ca. 1 px groß
+             scaly = 1/34*#meter
+             scalz = 1/34*#meter
+         EndIf 
+            
       ; mesh laden 
       
          *anz_mesh                     =  AddElement( anz_mesh())
@@ -1920,6 +1941,7 @@ EndMacro
                
          If DirectLoad = 1  ; gleich in irrlicht einladen.
             
+            loadmesh_scale_meshbuffer = IsScaleMeshbuffer  ; for the world,that the collision will function properly
             anz_setShownObjects_loadMesh()
          
          EndIf 
@@ -2554,12 +2576,12 @@ EndMacro
       
    EndProcedure 
    
-   Procedure anz_XMLLoadMap(*CurrentNode.i , map_pfad.s )  ; Funktion für anz_map_load; nicht für eigennutzen gedacht.
+   Procedure anz_XMLLoadMap(*CurrentNode.i , map_pfad.s ,scale.f=1)  ; Funktion für anz_map_load; nicht für eigennutzen gedacht.
       Static anz_reader.i  , nodeName.s , nodeData.s , nodeart.s , Dim map_skybox_texture.s (6) , map_skybox_texture_counter
       Static sound.anz_sound3d 
       Static terrain_x.f , terrain_y.f , terrain_z.f , terrain_rotx.f , terrain_roty.f , terrain_rotz.f , terrain_scalex.f , terrain_scaley.f , terrain_scalez.f , terrain_pfad.s  , terrain_Texturescale1.f , terrain_Texturescale2.f , terrain_materialtype.i , terrain_texture1.s , terrain_texture2.s 
       Static particle_x.f , particle_y.f , particle_z.f , particle_rotx.f , particle_roty.f , particle_rotz.f , particle_scalex.f , particle_scaley.f , particle_scalez.f , particle_width.f , particle_height.f , particle_art.w , particle_boxwidth.f , particle_boxheight.f , particle_boxdepth.f , particle_direction_x.f , particle_direction_y.f , particle_direction_z.f , particle_minpersecond.f , particle_maxpersecond.f , particle_minstartcolor.f , particle_maxstartcolor.f , particle_minlifetime.f , particle_maxlifetime.f , particle_maxangledegrees.f , particle_materialtype.i , particle_texture1.s , particle_texture2.s , particle_lighting.i 
-      Static anim_mesh_x.f , anim_mesh_y.f , anim_mesh_z.f , anim_mesh_rotx.f , anim_mesh_roty.f , anim_mesh_rotz.f , anim_mesh_scalex.f , anim_mesh_scaley.f , anim_mesh_scalez.f , anim_mesh_pfad.s  , anim_mesh_materialtype.i , anim_mesh_texture1.s , anim_mesh_texture2.s , anim_mesh_looping.i , *anim_mesh.anz_mesh ,anim_mesh_animationlist.s , anim_mesh_coltype.i , anim_mesh_coldetail.i 
+      Static *mesh_geo.i ,mesh_save_scalex.f , mesh_save_scaley.f , mesh_save_scalez.f ,mesh_is_collisionanimator.i ,anim_mesh_x.f , anim_mesh_y.f , anim_mesh_z.f , anim_mesh_rotx.f , anim_mesh_roty.f , anim_mesh_rotz.f , anim_mesh_scalex.f , anim_mesh_scaley.f , anim_mesh_scalez.f , anim_mesh_pfad.s  , anim_mesh_materialtype.i , anim_mesh_texture1.s , anim_mesh_texture2.s , anim_mesh_looping.i , *anim_mesh.anz_mesh ,anim_mesh_animationlist.s , anim_mesh_coltype.i , anim_mesh_coldetail.i 
       Static light_x.f , light_y.f , light_z.f , light_rotx.f , light_roty.f , light_rotz.f , light_scalex.f , light_scaley.f , light_scalez.f , light_ambient_r.f , light_ambient_g.f , light_ambient_b.f  , light_ambient_a.f , light_range.f  , light_diffuse_r.f , light_diffuse_g.f , light_diffuse_b.f , light_diffuse_a.f , light_specular_r.f , light_specular_g.f , light_specular_b.f , light_specular_a.f , *anz_light.anz_light 
       Static mesh_directload.i , mesh_no_textures.i , mesh_x.f , mesh_y.f , mesh_z.f , mesh_rotx.f , mesh_roty.f , mesh_rotz.f , mesh_scalex.f , mesh_scaley.f , mesh_scalez.f , mesh_pfad.s  , mesh_materialtype.i , mesh_texture1.s , mesh_texture2.s , *mesh.anz_mesh , mesh_coltype.i , mesh_coldetail.i
       Static sound_path.s , sound_maxdistance.f , sound_mindistance.f , sound_playmode.w , sound_x.f , sound_y.f , sound_z.f 
@@ -2569,7 +2591,7 @@ EndMacro
       ; Ignore anything except normal nodes. See the manual for
       ; XMLNodeType() for an explanation of the other node types.
       ;
-      
+
       If XMLNodeType(*CurrentNode) = #PB_XML_Normal
       
          ; Add this node to the tree. Add name and attributes
@@ -2644,9 +2666,9 @@ EndMacro
                                           
                                           NextXMLAttribute( *CurrentNode)
                                           nodeData.s      = LCase ( XMLAttributeValue(*CurrentNode))
-                                          terrain_x       = ValF(StringField( nodeData , 1 , ", "))
-                                          terrain_y       = ValF(StringField( nodeData , 2 , ", "))
-                                          terrain_z       = ValF(StringField( nodeData , 3 , ", "))
+                                          terrain_x       = ValF(StringField( nodeData , 1 , ", ")) *scale ; scale ist die scalierung der ganzen welt
+                                          terrain_y       = ValF(StringField( nodeData , 2 , ", "))*scale
+                                          terrain_z       = ValF(StringField( nodeData , 3 , ", "))*scale
                                        
                                        Case "rotation"
                                        
@@ -2660,9 +2682,9 @@ EndMacro
                                        
                                           NextXMLAttribute     ( *CurrentNode)
                                           nodeData.s           = LCase ( XMLAttributeValue(*CurrentNode) )
-                                          terrain_scalex       = ValF(StringField( nodeData , 1 , ", "))
-                                          terrain_scaley       = ValF(StringField( nodeData , 2 , ", "))
-                                          terrain_scalez       = ValF(StringField( nodeData , 3 , ", "))
+                                          terrain_scalex       = ValF(StringField( nodeData , 1 , ", "))*scale
+                                          terrain_scaley       = ValF(StringField( nodeData , 2 , ", "))*scale
+                                          terrain_scalez       = ValF(StringField( nodeData , 3 , ", "))*scale
                                           
                                        Case "heightmap"
                                           
@@ -2672,7 +2694,7 @@ EndMacro
                                        Case "texturescale1"
                                           
                                           NextXMLAttribute      ( *CurrentNode )
-                                          terrain_Texturescale1 = Val (XMLAttributeValue(*CurrentNode))
+                                          terrain_Texturescale1 = Val (XMLAttributeValue(*CurrentNode)) ; hier kein *scale, da das relativ zum terrain ist.
                                           
                                        Case "texturescale2"
                                        
@@ -2725,9 +2747,9 @@ EndMacro
                                           
                                           NextXMLAttribute ( *CurrentNode)
                                           nodeData.s       = LCase ( XMLAttributeValue(*CurrentNode))
-                                          particle_x       = ValF(StringField( nodeData , 1 , ", "))
-                                          particle_y       = ValF(StringField( nodeData , 2 , ", "))
-                                          particle_z       = ValF(StringField( nodeData , 3 , ", "))
+                                          particle_x       = ValF(StringField( nodeData , 1 , ", ")) *scale
+                                          particle_y       = ValF(StringField( nodeData , 2 , ", ")) *scale
+                                          particle_z       = ValF(StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "rotation"
                                        
@@ -2741,9 +2763,9 @@ EndMacro
                                        
                                           NextXMLAttribute ( *CurrentNode)
                                           nodeData.s           = LCase ( XMLAttributeValue(*CurrentNode))
-                                          particle_scalex      = ValF(StringField( nodeData , 1 , ", "))
-                                          particle_scaley      = ValF(StringField( nodeData , 2 , ", "))
-                                          particle_scalez      = ValF(StringField( nodeData , 3 , ", "))
+                                          particle_scalex      = ValF(StringField( nodeData , 1 , ", ")) *scale
+                                          particle_scaley      = ValF(StringField( nodeData , 2 , ", ")) *scale
+                                          particle_scalez      = ValF(StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "particlewidth"
                                        
@@ -2774,17 +2796,17 @@ EndMacro
                                           
                                           NextXMLAttribute ( *CurrentNode)
                                           nodeData.s           = XMLAttributeValue(*CurrentNode)
-                                          particle_boxwidth    = ValF(StringField( nodeData , 1 , ", "))
-                                          particle_boxheight   = ValF(StringField( nodeData , 2 , ", "))
-                                          particle_boxdepth    = ValF(StringField( nodeData , 3 , ", "))
+                                          particle_boxwidth    = ValF(StringField( nodeData , 1 , ", ")) *scale
+                                          particle_boxheight   = ValF(StringField( nodeData , 2 , ", ")) *scale
+                                          particle_boxdepth    = ValF(StringField( nodeData , 3 , ", ")) *scale
                                           
                                        Case "direction" 
                                           
                                           NextXMLAttribute ( *CurrentNode)
                                           nodeData.s           = XMLAttributeValue(*CurrentNode)
-                                          particle_direction_x = ValF(StringField( nodeData , 1 , ", "))
-                                          particle_direction_y = ValF(StringField( nodeData , 2 , ", "))
-                                          particle_direction_z = ValF(StringField( nodeData , 3 , ", "))
+                                          particle_direction_x = ValF(StringField( nodeData , 1 , ", ")) *scale
+                                          particle_direction_y = ValF(StringField( nodeData , 2 , ", ")) *scale
+                                          particle_direction_z = ValF(StringField( nodeData , 3 , ", ")) *scale
                                           
                                        Case "minparticlespersecond"
                                           
@@ -2910,9 +2932,9 @@ EndMacro
                                           
                                           NextXMLAttribute        ( *CurrentNode )
                                           nodeData.s          = XMLAttributeValue ( *CurrentNode)
-                                          anim_mesh_x         = ValF(StringField( nodeData , 1 , ", "))
-                                          anim_mesh_y         = ValF(StringField( nodeData , 2 , ", "))
-                                          anim_mesh_z         = ValF(StringField( nodeData , 3 , ", "))
+                                          anim_mesh_x         = ValF(StringField( nodeData , 1 , ", ")) *scale
+                                          anim_mesh_y         = ValF(StringField( nodeData , 2 , ", ")) *scale
+                                          anim_mesh_z         = ValF(StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "rotation"
                                        
@@ -2926,9 +2948,9 @@ EndMacro
                                        
                                           NextXMLAttribute         ( *CurrentNode )
                                           nodeData.s           = XMLAttributeValue ( *CurrentNode)
-                                          anim_mesh_scalex     = ValF(StringField( nodeData , 1 , ", "))
-                                          anim_mesh_scaley     = ValF(StringField( nodeData , 2 , ", "))
-                                          anim_mesh_scalez     = ValF(StringField( nodeData , 3 , ", "))
+                                          anim_mesh_scalex     = ValF(StringField( nodeData , 1 , ", ")) *scale
+                                          anim_mesh_scaley     = ValF(StringField( nodeData , 2 , ", ")) *scale
+                                          anim_mesh_scalez     = ValF(StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "mesh"
                                           
@@ -2989,9 +3011,9 @@ EndMacro
                                           
                                           NextXMLAttribute( *CurrentNode )
                                           nodeData.s      = XMLAttributeValue( *CurrentNode )
-                                          light_x         = ValF  ( StringField( nodeData , 1 , ", "))
-                                          light_y         = ValF  ( StringField( nodeData , 2 , ", "))
-                                          light_z         = ValF  ( StringField( nodeData , 3 , ", "))
+                                          light_x         = ValF  ( StringField( nodeData , 1 , ", ")) *scale
+                                          light_y         = ValF  ( StringField( nodeData , 2 , ", ")) *scale
+                                          light_z         = ValF  ( StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "rotation"
                                        
@@ -3005,9 +3027,9 @@ EndMacro
                                        
                                           NextXMLAttribute ( *CurrentNode )
                                           nodeData.s       = XMLAttributeValue( *CurrentNode )
-                                          light_scalex     = ValF  ( StringField( nodeData , 1 , ", "))
-                                          light_scaley     = ValF  ( StringField( nodeData , 2 , ", "))
-                                          light_scalez     = ValF  ( StringField( nodeData , 3 , ", "))
+                                          light_scalex     = ValF  ( StringField( nodeData , 1 , ", ")) *scale
+                                          light_scaley     = ValF  ( StringField( nodeData , 2 , ", ")) *scale
+                                          light_scalez     = ValF  ( StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "ambientcolor"
                                           
@@ -3079,6 +3101,10 @@ EndMacro
                                              mesh_coldetail = #anz_col_box
                                           EndIf 
                                           
+                                          ; IsCollisionMainLevel.. für collisionanimator..
+                                          If FindString ( nodeData , "is_collisionanimator" , 1 )
+                                             mesh_is_collisionanimator = 1
+                                          EndIf 
                                           ; Textures
                                           If FindString  ( nodeData , "no_textures" , 1)
                                              mesh_no_textures = 1
@@ -3093,9 +3119,10 @@ EndMacro
                                           
                                           NextXMLAttribute ( *CurrentNode )
                                           nodeData.s     = XMLAttributeValue( *CurrentNode )
-                                          mesh_x         = ValF  ( StringField( nodeData , 1 , ", "))
-                                          mesh_y         = ValF  ( StringField( nodeData , 2 , ", "))
-                                          mesh_z         = ValF  ( StringField( nodeData , 3 , ", "))
+                                          Debug "scale: " + StrF( scale,2)
+                                          mesh_x         = ValF  ( StringField( nodeData , 1 , ", ")) *scale
+                                          mesh_y         = ValF  ( StringField( nodeData , 2 , ", ")) *scale
+                                          mesh_z         = ValF  ( StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "rotation"
                                        
@@ -3109,9 +3136,9 @@ EndMacro
                                        
                                           NextXMLAttribute( *CurrentNode )
                                           nodeData.s      = XMLAttributeValue( *CurrentNode )
-                                          mesh_scalex     = ValF  ( StringField( nodeData , 1 , ", "))
-                                          mesh_scaley     = ValF  ( StringField( nodeData , 2 , ", "))
-                                          mesh_scalez     = ValF  ( StringField( nodeData , 3 , ", "))
+                                          mesh_scalex     = ValF  ( StringField( nodeData , 1 , ", ")) *scale
+                                          mesh_scaley     = ValF  ( StringField( nodeData , 2 , ", ")) *scale
+                                          mesh_scalez     = ValF  ( StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "mesh"
                                           
@@ -3164,15 +3191,47 @@ EndMacro
                                           ReplaceString              ( mesh_texture1     , "/" , "\" ,#PB_String_InPlace )
                                           ReplaceString              ( mesh_texture2     , "/" , "\" ,#PB_String_InPlace )
                                           
-                                          If mesh_pfad  ; bei mehreren texturen überspringt er nämlich sonst das setzen von meshpfad, und es werden pro Textur ein extramesh erstellt !!! o_O!
-                                             *mesh            = anz_addmesh      (  mesh_pfad , mesh_x , mesh_y , mesh_z , mesh_texture1 , mesh_materialtype , mesh_texture2 , mesh_directload , 0 , mesh_coldetail , mesh_coltype  , mesh_rotx , mesh_roty , mesh_rotz , mesh_scalex , mesh_scaley , mesh_scalez , mesh_lighting )
+                                          If mesh_is_collisionanimator = 1 
+                                             mesh_directload = 1 
                                           EndIf 
-                                          mesh_pfad           = ""
-                                          nodeData            = ""
-                                          mesh_no_textures    = 0 ; muss alles auf 0 gesetzt werden, weils sonst ja immer auf 1 bleibt o.O ;)
-                                          mesh_directload     = 0
-                                          mesh_coldetail      = 0
-                                          mesh_coltype        = 0
+                                          
+                                          ;{ load mesh
+                                          
+                                          If mesh_pfad  ; bei mehreren texturen überspringt er nämlich sonst das setzen von meshpfad, und es werden pro Textur ein extramesh erstellt !!! o_O!
+                                             *mesh                          = anz_addmesh      (  mesh_pfad , mesh_x , mesh_y , mesh_z , mesh_texture1 , mesh_materialtype , mesh_texture2 , mesh_directload , 0 , mesh_coldetail , mesh_coltype  , mesh_rotx , mesh_roty , mesh_rotz , mesh_scalex , mesh_scaley , mesh_scalez , mesh_lighting , #meter*3 , #meter * 4 , #meter * 3 , mesh_is_collisionanimator)
+                                          EndIf 
+                                          ;}
+                                           
+                                          ;{ collision settings, there MUST NOT be another collisionanimator
+                                              If mesh_is_collisionanimator      = 1 And *mesh > 0 And *anz_CollisionMeta_anzMesh = 0
+                                                  *anz_CollisionMeta_anzMesh    = *mesh ; ist ein anz_mesh, kein irrmesh.
+                                                  
+                                                  ; weltgröße anpassen
+                                                  If *mesh\nodeID > 0
+                                                      iNodeBoundingBox ( *mesh\nodeID ,  @mesh_ab.AABBOX) 
+                                                      iSetWorldSize    ( mesh_ab\MinEdge\x, mesh_ab\MinEdge\y, mesh_ab\MinEdge\z, mesh_ab\MaxEdge\x, mesh_ab\MaxEdge\y, mesh_ab\MaxEdge\z)
+                                                  EndIf 
+                                                  
+                                                  
+                                                ; wenn camera schon da--> collisionanimator setzen
+                                                If spi_getcurrentplayer() > 0
+                                                    iSetCollideForm          ( #COMPLEX_PRIMITIVE_SURFACE)
+                                                    anz_CollisionMeta_solid     = iCreateCollisionResponseAnimator  (*anz_CollisionMeta_anzMesh\nodeID , spi_GetPlayerNode( spi_getcurrentplayer()) ,#meter*0.4 , #meter*0.6 , #meter*0.4 , 0 ,-0.5*#meter, 0 ,0 , -#meter , 0 )
+                                                    *CollisionResponse       = iAddCollisionResponse             (spi_GetPlayerNode( spi_getcurrentplayer()),anz_CollisionMeta_solid) 
+                                                EndIf 
+                                              EndIf 
+                                          ;}
+                                          
+                                          ;{ delete variables
+                                            mesh_is_collisionanimator = 0
+                                            mesh_pfad                 = ""
+                                            nodeData                  = ""
+                                            mesh_no_textures          = 0 ; muss alles auf 0 gesetzt werden, weils sonst ja immer auf 1 bleibt o.O ;)
+                                            mesh_directload           = 0
+                                            mesh_coldetail            = 0
+                                            mesh_coltype              = 0
+                                          ;}
+                                          
                                     EndSelect 
                               
                               ;}
@@ -3187,9 +3246,9 @@ EndMacro
                                           
                                           NextXMLAttribute( *CurrentNode )
                                           nodeData.s      = XMLAttributeValue( *CurrentNode )
-                                          sound_x         = ValF  ( StringField( nodeData , 1 , ", "))
-                                          sound_y         = ValF  ( StringField( nodeData , 2 , ", "))
-                                          sound_z         = ValF  ( StringField( nodeData , 3 , ", "))
+                                          sound_x         = ValF  ( StringField( nodeData , 1 , ", ")) *scale
+                                          sound_y         = ValF  ( StringField( nodeData , 2 , ", ")) *scale
+                                          sound_z         = ValF  ( StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "soundfilename"
                                        
@@ -3258,19 +3317,19 @@ EndMacro
                                           
                                           NextXMLAttribute    ( *CurrentNode )
                                           nodeData.s          = XMLAttributeValue( *CurrentNode )
-                                          billboard_x         = ValF  ( StringField( nodeData , 1 , ", "))
-                                          billboard_y         = ValF  ( StringField( nodeData , 2 , ", "))
-                                          billboard_z         = ValF  ( StringField( nodeData , 3 , ", "))
+                                          billboard_x         = ValF  ( StringField( nodeData , 1 , ", ")) *scale
+                                          billboard_y         = ValF  ( StringField( nodeData , 2 , ", ")) *scale
+                                          billboard_z         = ValF  ( StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "width" 
                                           
                                           NextXMLAttribute      ( *CurrentNode )
-                                          billboard_width       = ValF ( XMLAttributeValue( *CurrentNode ))
+                                          billboard_width       = ValF ( XMLAttributeValue( *CurrentNode )) *scale
                                        
                                        Case "height" 
                                           
                                           NextXMLAttribute      ( *CurrentNode )
-                                          billboard_height      = ValF ( XMLAttributeValue( *CurrentNode ))
+                                          billboard_height      = ValF ( XMLAttributeValue( *CurrentNode )) *scale
                                           
                                        Case "type" ; materialtype
                                        
@@ -3308,9 +3367,9 @@ EndMacro
                                           
                                           NextXMLAttribute ( *CurrentNode )
                                           nodeData.s       = XMLAttributeValue( *CurrentNode )
-                                          camera_x         = ValF  ( StringField( nodeData , 1 , ", "))
-                                          camera_y         = ValF  ( StringField( nodeData , 2 , ", "))
-                                          camera_z         = ValF  ( StringField( nodeData , 3 , ", "))
+                                          camera_x         = ValF  ( StringField( nodeData , 1 , ", ")) *scale
+                                          camera_y         = ValF  ( StringField( nodeData , 2 , ", ")) *scale
+                                          camera_z         = ValF  ( StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "rotation"
                                        
@@ -3324,9 +3383,9 @@ EndMacro
                                        
                                           NextXMLAttribute  ( *CurrentNode )
                                           nodeData.s        = XMLAttributeValue( *CurrentNode )
-                                          camera_scalex     = ValF  ( StringField( nodeData , 1 , ", "))
-                                          camera_scaley     = ValF  ( StringField( nodeData , 2 , ", "))
-                                          camera_scalez     = ValF  ( StringField( nodeData , 3 , ", "))
+                                          camera_scalex     = ValF  ( StringField( nodeData , 1 , ", ")) *scale
+                                          camera_scaley     = ValF  ( StringField( nodeData , 2 , ", ")) *scale
+                                          camera_scalez     = ValF  ( StringField( nodeData , 3 , ", ")) *scale
                                        
                                        Case "upvector"
                                           
@@ -3336,7 +3395,7 @@ EndMacro
                                        Case "fovy" ; FieldOfView
                                        
                                           NextXMLAttribute   ( *CurrentNode )
-                                          camera_fieldofview  = ValF( XMLAttributeValue( *CurrentNode ))
+                                          camera_fieldofview  = ValF( XMLAttributeValue( *CurrentNode )) *scale
                                           
                                        Case "aspect"
                                           
@@ -3346,17 +3405,24 @@ EndMacro
                                        Case "znear"
                                           
                                           NextXMLAttribute  ( *CurrentNode )
-                                          camera_Znear      = ValF( XMLAttributeValue( *CurrentNode ))
+                                          camera_Znear      = ValF( XMLAttributeValue( *CurrentNode )) *scale
                                           
                                        Case "zfar" ; 
                                           
                                           NextXMLAttribute   ( *CurrentNode )
-                                          camera_Zfar        = ValF( XMLAttributeValue( *CurrentNode ))
+                                          camera_Zfar        = ValF( XMLAttributeValue( *CurrentNode )) *scale
                                           ; jetz sin alle Daten da --> erstellen v. camera
                                           Debug " SUCCESS -- Create Now PlayeR! "
+                                          ; lol it's only about xyz.. I ignore all the rest.. (and try to write english from now on..)
                                           spi_addspieler     ( camera_x , camera_y , camera_z , #spi_standard_leben , #spi_standard_maxleben , #spi_standard_mana , #spi_standard_maxmana , #spi_standard_name , #spi_standard_team , 1 ) 
-      
                                           
+                                          ; collision des levels auf die neue camera da draufbauen.
+                                          If *anz_CollisionMeta_anzMesh > 0
+                                              iSetCollideForm             ( #COMPLEX_PRIMITIVE_SURFACE)
+                                              anz_CollisionMeta_solid     = iCreateCollisionResponseAnimator  (*anz_CollisionMeta_anzMesh\nodeID , spi_GetPlayerNode( spi_getcurrentplayer()) ,#meter*0.4 , #meter*0.6 , #meter*0.4 , 0 ,-0.8*#meter, 0 ,0 , -#meter , 0 )
+                                              *CollisionResponse          = iAddCollisionResponse             ( spi_GetPlayerNode( spi_getcurrentplayer()) , anz_CollisionMeta_solid) 
+                                          EndIf 
+                                        
                                     EndSelect 
       
                               ;}
@@ -3371,7 +3437,7 @@ EndMacro
          ; Loop through all available child nodes and call this procedure again
          ;
          While *ChildNode <> 0
-            anz_XMLLoadMap(*ChildNode , map_pfad )      
+            anz_XMLLoadMap(*ChildNode , map_pfad ,scale )      
             *ChildNode = NextXMLNode(*ChildNode)
          Wend        
       
@@ -3379,7 +3445,7 @@ EndMacro
    
    EndProcedure
 
-   Procedure anz_map_load( pfad.s , map_pfad.s = #pfad_maps)
+   Procedure anz_map_load( pfad.s , map_pfad.s = #pfad_maps,mapscale.f=1)
       
       iTextureCreation   ( #ETCF_CREATE_MIP_MAPS       , 1 )
       
@@ -3393,7 +3459,8 @@ EndMacro
            EndIf 
            
            anz_reader = MainXMLNode(0) 
-           anz_XMLLoadMap( anz_reader , map_pfad)
+           Debug "anz_map_load scale: " + StrF( mapscale ,2 )
+           anz_XMLLoadMap( anz_reader , map_pfad,mapscale)
         
         
         EndIf 
@@ -4055,7 +4122,7 @@ EndMacro
       rasterx = Round( x1 / #anz_rasterboxbreite  , 1 )
       rastery = Round( y1 / #anz_rasterboxhohe    , 1 )
       rasterz = Round( z1 / #anz_rasterboxbreite  , 1 )
-      anzahl_zuladendes -0.4 ; man darf nur maximal einen Wert von 1 neuladen (= 1 Mesh pro Zyklus)
+      anzahl_zuladendes - 1.4 ; man darf nur maximal einen Wert von 1 neuladen (= 1 Mesh pro Zyklus)
 
     For x_for = -5 To 5
          For y_for = -4 To 4
@@ -4217,6 +4284,10 @@ EndMacro
                                     rady    / 2                             ; rady ist jetzt radius.. 
                                Else 
                                     rady    = 0 
+                               EndIf 
+                               
+                               If *anz_CollisionMeta_anzMesh = *anz_mesh And *anz_CollisionMeta_anzMesh > 0 ; wenn das mesh ein metamesh ist wirds weder gelöscht noch neugeladen etc.. 
+                                  Continue            ; es bleibt praktisch unverändert da.... . . .
                                EndIf 
                                
                                If *anz_mesh\WesenID  = spi_GetSpielerWesenID ( spi_getcurrentplayer()) ; der Hauptspieler ist von der Anzeigeengine komplett ausgenommen!..
@@ -4407,7 +4478,8 @@ EndMacro
                                  If *anz_mesh\geladen And Not wes_getSpielerID(*anz_mesh\WesenID ) > 0 ; spieler werden nicht gelöscht! ma kann ja schlecht ohne Körper rumlaufen, als spieler.. 
                                     
                                     If Not anz_IsObject3dChild ( *p_obj ) ; children werden nur von den eltern gelöscht!
-                                       anz_freemesh            ( *anz_mesh)
+                                       ; kein mesh wird je gefreed..
+                                       ; anz_freemesh            ( *anz_mesh)
                                     EndIf 
                                     
                                  EndIf 
@@ -4981,28 +5053,30 @@ EndMacro
 ; CursorPosition = 108
 ; FirstLine = 77 
 ; jaPBe Version=3.9.12.818
-; FoldLines=008900910099009B009D009F00A100A300A500A700A900B100B300BB019A019C
-; FoldLines=019E01A001A201A401A601A801AA01AC01BB01C201C401DB01EA01F101F301FB
-; FoldLines=01FD01FF020E0219021B02270229022C022F02330235024C024E026302650269
-; FoldLines=026B026F02710294029802C302C502EA02EC034A034C0381038303B303B503FD
-; FoldLines=03FF043D04850494049804B604B804D504D904E604E8054404ED000005290000
-; FoldLines=0548055405560558055A055C055E0560056205640566058305850588058A058C
-; FoldLines=058E05900592059405960598059A059C059E05A105A305A505A705A905AD05AF
-; FoldLines=05B305DD05D5000005F005FC05FE06230625063D063F06570659066D066F0685
-; FoldLines=0687069E06A006A706A906B206B606ED06EF06F306F507030705070D070F072B
-; FoldLines=079707D607D807FF0801082308250837083908AF083E000008630000086C0000
-; FoldLines=087900000884000008B108BA08BC08EE08F009000902090D090F091B091F0944
-; FoldLines=09460955095709630967098C09F409FA0A1F0A210A250A430A470A490A9E0B2A
-; FoldLines=0B2E0B9D0BA10BA30BA70BEA0C6D0CB00CB40CE20D4E0D500D540D5D0D5F0D70
-; FoldLines=0D6100000D720D850D870D910DD10DE80DEA0DF50DF70DFC0E0F0E190E340E3F
-; FoldLines=0E410E4C0E4E0E590E5B0E680E6E0EC00EC40ED40ED60F790F7B0FC70F960000
-; FoldLines=0FA400000FB000000FFC103C10080000101C00001040104110451046108B10B5
-; FoldLines=10B910E210E6110B110F11301134113D11491198117F0000118D0000119C119F
-; FoldLines=11A311D311E011EE11F211F411F811FF12011217124212821248000012610000
-; FoldLines=1303135F
+; FoldLines=009800A000A800AA00AC00AE00B000B200B400B600B800C000C200CA00CC00DC
+; FoldLines=00E001A700F000000155000001A901AB01AD01AF01B101B301B501B701B901BB
+; FoldLines=01BF01C801CA01D101D301EA01EC01F701F902000202020A020C020E0210021B
+; FoldLines=021D0228022A02360238023B023E02420244025B025D027202740278027A027E
+; FoldLines=028002A302A702D202D402F902FB0359035B0390039203C203C4040C040E044C
+; FoldLines=044E0491049304A204A604C404C604E304E704F404F6055204FB000005370000
+; FoldLines=05560562056405660568056A056C056E0570057205740591059305960598059A
+; FoldLines=059C059E05A005A205A405A605A805AA05AC05AF05B105B305B505B705BB05BD
+; FoldLines=05C105EB05E3000005ED05FC05FE060A060C06310633064B064D06650667067B
+; FoldLines=067D0693069506AC06AE06B506B706C006C406FB06FD0701070307110713071B
+; FoldLines=071D0739073D07AB07AD07EC07EE081508170839083B084D084F08C508540000
+; FoldLines=0879000008820000088F0000089A000008C708D008D209040906091609180923
+; FoldLines=092509310935095A095C096B096D0979097D09A209A40A080A0A0A100A350A37
+; FoldLines=0A3B0A590A5D0A5F0A630AB00AB40B400B440BB30BB70BB90BBD0C000C980CA0
+; FoldLines=0CA80CEB0CEF0D1D0D770D8F0D910D930D970DA00DA20DB30DA400000DB50DC8
+; FoldLines=0DCA0DD40DD60F050E2D00000E3A00000E4600000E5200000E5E00000E770000
+; FoldLines=0E8400000E9100000E9E00000EB100000F070F170F190FBC0FBE100A0FD90000
+; FoldLines=0FE700000FF30000100C1226103F00001083000010880000108D0000112D0000
+; FoldLines=11560000117B00001191000011C7000011D5000011E4000011EB000012281236
+; FoldLines=123A123C124012471249125F12611288128A12CA1290000012A9000012BD0000
+; FoldLines=12CC1349134B13A7
 ; Build=0
-; FirstLine=184
-; CursorPosition=238
+; FirstLine=647
+; CursorPosition=3419
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

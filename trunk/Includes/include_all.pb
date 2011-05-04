@@ -35,8 +35,8 @@ Declare anz_updatesound()
 Declare anz_updateview()   ; anzeigen der Welt, Gui usw. rendern. (irrlicht-based.)
 Declare anz_updateparticles() ; schaut, ob Clouds, Staub, Feuer etc stimmt, oder gelöscht werden bzw. verschoben werden muss.
 Declare anz_map_save (pfad.s)
-Declare anz_map_load( pfad.s , map_pfad.s = #pfad_maps)
-Declare anz_XMLLoadMap(*CurrentNode , map_pfad.s  )  ; Funktion für anz_map_load; nicht für eigennutzen gedacht.
+Declare anz_map_load( pfad.s , map_pfad.s = #pfad_maps,mapscale.f=1)
+Declare anz_XMLLoadMap(*CurrentNode , map_pfad.s ,scale.f=1 )  ; Funktion für anz_map_load; nicht für eigennutzen gedacht.
 Declare.s anz_peeks ( *p_text.i ) ; procedur, die vorher prüft, ob der pointer nicht 0 ist ;) 
 Declare anz_Map_MaterialtypeFromText ( text.s )
 Declare anz_initstuff(IsFullscreen ) ; auflösung usw. wird aus anzeige_preferences.pref gelesen.
@@ -53,7 +53,7 @@ Declare anz_setwater( *p_obj3d.anz_Object3d, waveHeight.f , waveSpeed.f,waveLeng
 Declare anz_addsound3d ( pfad.s, x.f,y.f,z.f,maxdistance.f,mindistance.f , looped.i = 1) 
 Declare anz_addlight( RGBcolor.i, x.f,y.f,z.f, range.f)
 Declare anz_AddBillboard( pfad.s, x.f,y.f,z.f , width.f , height.f , MaterialType.i = #IRR_EMT_TRANSPARENT_ADD_COLOR , DirectLoad.i = 0)
-Declare anz_addmesh( pfad.s, x.f,y.f,z.f, texture.s , MaterialType.b , normalmap.s , DirectLoad.b = 0 , IsAnimMesh.i = 0, Collisiondetail.b = #anz_col_box , Collisiontype.b = #anz_ColType_solid , rotx.f=0,roty.f=0,rotz.f=0,scalx.f=1,scaly.f=1,scalz.f=1, islighting.i = 0 , width.f = #meter * 3 , height.f = #meter*4 , Depth.f = #meter * 3)
+Declare anz_addmesh( pfad.s, x.f,y.f,z.f, texture.s , MaterialType.b , normalmap.s , DirectLoad.b = 0 , IsAnimMesh.i = 0, Collisiondetail.b = #anz_col_box , Collisiontype.b = #anz_ColType_solid , rotx.f=0,roty.f=0,rotz.f=0,scalx.f=1,scaly.f=1,scalz.f=1, islighting.i = 0 , width.f = #meter * 3 , height.f = #meter*4 , Depth.f = #meter * 3 , IsScaleMeshbuffer.i = 0)
 Declare anz_freetexture (*anz_texture.anz_texture )  ; erst wenn der zähler wieder auf 0 ist wird Textur gelöscht.
 Declare anz_gettexturebypfad( pfad.s) ; gibt anz_textureID raus, nicht irrtexture!
 Declare anz_GetTextureIrrID ( *anz_texture.anz_texture ) ; gibt die IrrID der textur aus.
@@ -377,8 +377,8 @@ IncludeFile "include_3DEngine.pb"
 IncludeFile "include_minimap.pb" 
 ; jaPBe Version=3.9.12.818
 ; Build=0
-; FirstLine=161
-; CursorPosition=175
+; FirstLine=11
+; CursorPosition=41
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
