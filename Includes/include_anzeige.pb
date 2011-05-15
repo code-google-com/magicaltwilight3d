@@ -2436,8 +2436,8 @@ EndMacro
       ; preferences
       anz_loadpreferences      ()
       ; 3d screen
-      If Not iCreateScreen     ( #EDT_OPENGL , anz_getscreenwidth() , anz_getscreenheight(), 0 , anz_getscreendepth() , IsFullscreen  , anz_IsShadowEnabled() , 1 )
-         MessageRequester      ( #programmname + " Error" , "Konnte die 3D Engine auf ihrem Computer nicht ausführen. Eventuell hilft ein DirectX update von Microsoft. Fragen sie hierzu bitte einen Administrator" , #MB_SYSTEMMODAL )
+      If Not iCreateScreen     ( #EDT_OPENGL , anz_getscreenwidth() , anz_getscreenheight(), 1 , anz_getscreendepth() , IsFullscreen  , anz_IsShadowEnabled() , 1 )
+         MessageRequester      ( #programmname + " Error" , "Konnte die 3D Engine auf ihrem Computer nicht ausführen. Eventuell unterstützt Ihre Grafikkarte kein OpenGL 2.0 . Fragen sie hierzu bitte einen Administrator" , #MB_SYSTEMMODAL )
          End 
       EndIf 
       ; 3d sound
@@ -3514,17 +3514,24 @@ EndMacro
                spi_ExamineCamera        ()                         ; camera bewegen
              EndIf 
              
-             iBeginScene                (255,255,100)
-                ; element of scene render 
-				         iRenderTarget              ( anz_shader_proctest(0)\firstmap , #True,  #True,  $FF660000)
-             iDrawScene                 ()
- 
-                ; effect render
-              iRenderTarget             ( #Null , #True,  #True,  0)
-              anz_shader_EffectRender   (0) 
-              anz_displayImages         ()    ; 2d images (gui elemente)
-              iDrawGUI                  ()
-              iEndScene                 ()
+                iBeginScene                (255,255,100)
+                
+                    ; element of scene render 
+                    If anz_isPostProcessing
+                      iRenderTarget              ( anz_shader_proctest(0)\firstmap , #True,  #True,  $FF660000)
+                    EndIf 
+                    
+                    iDrawScene                 () 
+                    
+                    ; effect render
+                    If anz_isPostProcessing
+                      iRenderTarget             ( #Null , #True,  #True,  0)
+                      anz_shader_EffectRender   (0) 
+                    EndIf 
+                    
+                    anz_displayImages         ()    ; 2d images (gui elemente)
+                    iDrawGUI                  ()
+                  iEndScene                 ()
   
    EndProcedure 
    
@@ -5065,18 +5072,18 @@ EndMacro
 ; FoldLines=067D0693069506AC06AE06B506B706C006C406FB06FD0701070307110713071B
 ; FoldLines=071D0739073D07AB07AD07EC07EE081508170839083B084D084F08C508540000
 ; FoldLines=0879000008820000088F0000089A000008C708D008D209040906091609180923
-; FoldLines=092509310935095A095C096B096D0979097D09A209A40A080A0A0A100A350A37
-; FoldLines=0A3B0A590A5D0A5F0A630AB00AB40B400B440BB30BB70BB90BBD0C000C980CA0
-; FoldLines=0CA80CEB0CEF0D1D0D770D8F0D910D930D970DA00DA20DB30DA400000DB50DC8
-; FoldLines=0DCA0DD40DD60F050E2D00000E3A00000E4600000E5200000E5E00000E770000
-; FoldLines=0E8400000E9100000E9E00000EB100000F070F170F190FBC0FBE100A0FD90000
-; FoldLines=0FE700000FF30000100C1226103F00001083000010880000108D0000112D0000
-; FoldLines=11560000117B00001191000011C7000011D5000011E4000011EB000012281236
-; FoldLines=123A123C124012471249125F12611288128A12CA1290000012A9000012BD0000
-; FoldLines=12CC1349134B13A7
+; FoldLines=092509310935095A095C096B096D097909A40A080A0A0A100A120D750A350000
+; FoldLines=0A3B00000A5D00000A6300000AB400000B4400000BB700000BBD00000C040000
+; FoldLines=0C9800000CA800000CEF00000D2100000D770D8F0D910D930D970DA00DA20DB3
+; FoldLines=0DA400000DD10DDB0DDD0F0C0E3400000E4100000E4D00000E5900000E650000
+; FoldLines=0E7E00000E8B00000E9800000EA500000EB800000F0E0F1E0F200FC30FC51011
+; FoldLines=0FE000000FEE00000FFA00001013122D10460000108A0000108F000010940000
+; FoldLines=11340000115D0000118200001198000011CE000011DC000011EB000011F20000
+; FoldLines=122F123D124112431247124E125012661268128F129112D11297000012B00000
+; FoldLines=12C4000012D31350135213AE
 ; Build=0
-; FirstLine=647
-; CursorPosition=3419
+; FirstLine=361
+; CursorPosition=2439
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

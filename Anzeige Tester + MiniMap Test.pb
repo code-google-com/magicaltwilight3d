@@ -54,8 +54,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    ; iSetPolysPerNode(128)
    ; iSetWorldSize(- #meter*50 , -#meter * 10 , -#meter*50 , #meter*500,#meter*10 , #meter*500)
    
-   ; IrrSetTextureCreationFlag  ( #IRR_ETCF_CREATE_MIP_MAPS       , 1 )
-   anz_map_load               ( "max_welt.irr" , "Gfx\maps\Max Welt\" , 1/34*#meter) ;früher war der meter ca. 34.. dewegen ist die alte welt zu groß --> also rescalieren!!!!! 
+   ; IrrSetTextureCreationFlag  ( #IRR_ETCF_CREATE_MIP_MAPS       , 1 )  ; bei mx_world: 1/33*#meter
+   anz_map_load               ( "level_kim.irr" , "Gfx\maps\level_kim\" , 1/80*#meter) ;früher war der meter ca. 34.. dewegen ist die alte welt zu groß --> also rescalieren!!!!! 
    
    gui_setGUI                 ( #Gui_Status_HUD )
    *nodeid = spi_GetPlayerNode          ( spi_getcurrentplayer () )
@@ -108,14 +108,14 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
          item_check_waiter    = ElapsedMilliseconds() + 100
       EndIf 
       anz_updateinput         ()
-      anz_updateparticles     ()
-      anz_updatesound         ()
-      anz_updateDeleteAnimator()
+      ;anz_updateparticles     ()
+      ;anz_updatesound         ()
+      ;anz_updateDeleteAnimator()
       anz_setShownObjects     ( spi_GetPlayerNode( spi_getcurrentplayer()) )
-      MIN_RenderMiniMap       ()
+      ;MIN_RenderMiniMap       ()
       anz_updateview          ()
       itextgui                ( *FPSgadget , Str(ifps()))
-      gui_updateGUI           ()
+      ;gui_updateGUI           ()
       
       
       
@@ -153,10 +153,6 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
      anz_AddDeleteAnimator( *cube , 3000)
      
    EndIf
-   
-      If GetAsyncKeyState_    ( #VK_SPACE ) And GetAsyncKeyState_( #VK_CONTROL )
-         CallDebugger
-      EndIf 
       
       If GetAsyncKeyState_(#VK_F3)
          anz_updateview()
@@ -226,10 +222,10 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; CursorPosition = 58
 ; FirstLine = 14 
 ; jaPBe Version=3.9.12.818
-; Build=3
-; FirstLine=75
-; CursorPosition=87
+; Build=6
+; FirstLine=33
+; CursorPosition=53
 ; ExecutableFormat=Windows
-; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\max level_new Engine.exe
+; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\abenthum 1.0
 ; DontSaveDeclare
 ; EOF

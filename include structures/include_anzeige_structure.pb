@@ -328,6 +328,7 @@ Global anz_islighting            .w
 Global anz_isfog                 .w 
 Global anz_isnormalmapping       .w
 Global anz_isparallaxmapping     .w
+Global anz_isPostProcessing      .w
 Global anz_resolutionx           .w
 Global anz_resolutiony           .w
 Global anz_resolutiondepth       .w
@@ -364,8 +365,8 @@ Global anz_shader_curent_mat.l=0
  
 ; jaPBe Version=3.9.12.818
 ; Build=0
-; FirstLine=314
-; CursorPosition=331
+; FirstLine=299
+; CursorPosition=329
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
