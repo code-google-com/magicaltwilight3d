@@ -26,3 +26,4 @@ Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\einfachesSchwert.png
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\brot.png
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\Schriftrolle.png
+Resizing window (1240 768)

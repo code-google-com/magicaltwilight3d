@@ -250,13 +250,13 @@
       spi_camera\motionspeed = speed 
    EndProcedure 
    
-   Procedure spi_addspieler ( x.f,y.f,z.f, leben.w , maxleben.w , mana.w , maxmana.w , name.s , Team.s , IsCurrentSpieler.b = 1) ; erstellt neues 3D Wesen!! und den spieler 
+   Procedure spi_addspieler ( x.f,y.f,z.f, leben.w , maxleben.w , mana.w , maxmana.w , Name.s , Team.s , IsCurrentSpieler.b = 1) ; erstellt neues 3D Wesen!! und den spieler 
       Protected *spieler.spi_spieler , *WesenID.wes_wesen , *light 
       *spieler                        = AddElement   ( spi_spieler ())
          
          If *spieler                  ; wenn noch genug ram da.
             *spieler\InventarID       = AddElement   ( spi_inventar())
-            *spieler\WesenID          = wes_AddWesen ( name , x , y , z , Team , maxleben , #spi_standard_speed , #pfad_spieler_mesh , #pfad_spieler_texture , #pfad_spieler_texture2 , #EMT_NORMAL_MAP_SOLID ,1 , *spieler) ; wesen hinzufügen.
+            *spieler\WesenID          = wes_AddWesen ( Name , x , y , z , Team , maxleben , #spi_standard_speed , #pfad_spieler_mesh , #pfad_spieler_texture , #pfad_spieler_texture2 , #EMT_NORMAL_MAP_SOLID ,1 , *spieler) ; wesen hinzufügen.
             *spieler\exist            = 1
             *spieler\Anzahl_Sacke     = 3 ; 1 Sack amm anfang.. inventarsack ;)
             *WesenID                  = *spieler\WesenID 
@@ -267,7 +267,14 @@
             iPositionNode             ( *light , 0,#meter * 1.5,0)
             iambientlight             ( $DDDDDDDD)
             ifallofflight             ( *light , 11 )
+            
             ; nur zum debuggen:
+             *meshid .anz_mesh
+             *meshid = *WesenID\anz_Mesh_ID
+             *nodeid = *meshid\nodeid 
+             
+             iScaleNode ( *nodeid , 0.02 , 0.02 , 0.02   )
+             
             *anz_billboard.anz_billboard = anz_AddBillboard       ( "..\..\test\grün.png" , 0,#meter *1.7,0,0.2*#meter,0.2*#meter , #IRR_EMT_TRANSPARENT_ALPHA_CHANNEL,1 )
                anz_attachobject( anz_getobject3dByAnzID (wes_getAnzMeshID(*WesenID) ) ,anz_getobject3dByAnzID( *anz_billboard , #anz_art_billboard ) , 0,#meter * 1, 0)
             ; -- 
@@ -282,9 +289,9 @@
                irotatenode               ( anz_camera   , rotx , roty , rotz)
                spi_DefinePlayerCamera    ( anz_camera ) 
                spi_FixCamera             ( wes_getNodeID( *spieler\WesenID ))
-               spi_SetCameraDistance     ( 5.0 * #meter )                
+               spi_SetCameraDistance     ( 7.6 * #meter )                
                iNearValueCamera          ( anz_camera , 0.001 )
-               iFarValueCamera           ( anz_camera                 , 150 * #meter)
+               iFarValueCamera           ( anz_camera                 ,85 * #meter)
                
             EndIf
             
@@ -455,10 +462,19 @@
       If IsFirstPerson 
           If modelscale\x = 0
               iNodeScale ( spi_camera\targetnode , @modelscale )
+              modelscale\x = 0.0023  ; PAUSE.. das spielermodel wird halt kleingezoomt.. aber nur für SYDNEY zulässig..
+              modelscale\y = 0.0023
+              modelscale\z = 0.0023
           EndIf 
           iScaleNode     ( spi_camera\targetnode  , 1000,1000,1000)
           iVisibleNode   ( spi_camera\targetnode  , 1   ) ; wird aber im programm vor collision immer wieder angezeigt kur zund gehidden (3d engine merkt davon nichts, offizell allso gehidden)
       Else  ; zurück zur 3rd person
+         If modelscale\x = 0
+              iNodeScale ( spi_camera\targetnode , @modelscale )
+             modelscale\x = 0.0023  ; PAUSE.. das spielermodel wird halt kleingezoomt.. aber nur für SYDNEY zulässig..
+              modelscale\y = 0.0023
+              modelscale\z = 0.0023
+          EndIf 
          iScaleNode     ( spi_camera\targetnode  , modelscale\x , modelscale\y  , modelscale\z)
          inoderotation  ( spi_camera\targetnode  , Rot ) 
          irotatenode    ( spi_camera\targetnode  , 0 , Rot\y+90 , 0)
@@ -478,10 +494,10 @@
    
    ; Diese Funktion ändert die Entfernung der spi_camera zum Modell
    Procedure spi_SetCameraDistance(distance.f)
-     If distance < 10
-        distance = ( distance + 10 ) / 2
-     ElseIf distance > 300
-        distance = ( distance + 300 ) / 2
+     If distance < 1 * #meter
+        distance = ( distance + 1 * #meter) / 2
+     ElseIf distance > 30 * #meter
+        distance = ( distance + 30 * #meter) / 2
      EndIf
      spi_camera\distance = distance
    EndProcedure
@@ -652,11 +668,12 @@
 ; FirstLine = 189 
 ; jaPBe Version=3.9.12.818
 ; FoldLines=0010001400160029002B003D003F004A004C0058005A0069006B00BD00BF00D1
-; FoldLines=00D500D700D900DD00E400E600F200F6012701330135013B013D014101430145
-; FoldLines=0177017A017C01840186019701D401DC01DF01E601E901FB01FD022902850287
+; FoldLines=00D500D700D900DD00E400E600F200F6012E013A013C014201440148014A014C
+; FoldLines=015001630165016F0171017C017E01810183018B018D019E01E401EC01F9020B
+; FoldLines=020D023902950297
 ; Build=0
-; FirstLine=257
-; CursorPosition=587
+; FirstLine=161
+; CursorPosition=475
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
