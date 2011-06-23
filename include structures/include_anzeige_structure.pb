@@ -59,9 +59,9 @@ EndEnumeration
 #anz_pause_Menu     = %00000010 ; Hauptmenü löst pause aus.
 #anz_pause_Sequenze = %00000100 ; Video Sequence causes Pause.
    
-#anz_meter            = 1.2 ;34.511627                 ; ein Meter ist demnach XX Pixel groß
+#anz_meter            = 0.07 ;34.511627                 ; ein Meter ist demnach XX Pixel groß
 #meter                = #anz_meter                ; weil oft aus versehen #Meter eingebaut wurde.. naja kann man nicht verdenken, 
-#anz_Walkspeed        = #anz_meter /14            ; im Meter pro 60-tel Sekunde (Frame) . wie weit der spieler pro durchlauf geht.. 
+#anz_Walkspeed        = #anz_meter /10            ; im Meter pro 60-tel Sekunde (Frame) . wie weit der spieler pro durchlauf geht.. 
 #anz_raster_maxrasterelements = 200    ;
 #anz_rasterboxbreite = #anz_meter * 80  ; also 100 pixel pro Rasterblock ; 35 = ungefähr 1 m in 3d welt.. (gerundet)
 #anz_rasterboxhohe   = #anz_meter * 83 ; so aehnlich auch hier.. bisschen höher, weil weniger passiert, hier.
@@ -365,8 +365,8 @@ Global anz_shader_curent_mat.l=0
  
 ; jaPBe Version=3.9.12.818
 ; Build=0
-; FirstLine=299
-; CursorPosition=329
+; FirstLine=42
+; CursorPosition=62
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

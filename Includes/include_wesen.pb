@@ -47,7 +47,7 @@ Procedure wes_AddWesen ( name.s, x.f , y.f , z.f , Team.s , maxleben.i , speed.f
      *newwesen\SpielerID      = SpielerID 
      *newwesen\Team           = team_AddTeam( Team )
      *newwesen\waypoint       = way_getclosestwaypoint   ( x , y, z )
-     *newwesen\anz_Mesh_ID    = anz_addmesh              ( pfad , x , y , z , texture1 , MaterialType , texture2 , Isdirectload , 1 , #anz_col_box , #anz_ColType_movable )
+     *newwesen\anz_Mesh_ID    = anz_addmesh              ( pfad , x , y , z , texture1 , MaterialType , texture2 , Isdirectload , 1 , #anz_col_box , #anz_ColType_movable  )
      ani_SetAnimSettings        ( *newwesen\anz_Mesh_ID , AnimNR , 0 , 0.4 , 0 , animlist )
      *anz_mesh                  = *newwesen\anz_Mesh_ID 
      *anz_mesh                  \ WesenID   = *newwesen
@@ -1171,8 +1171,8 @@ EndProcedure
 ; FoldLines=0261027E0280028C02AD02C1031F032E0332034003610383038B039A039E03B6
 ; FoldLines=03BA03BC03C0040603CC000003DF0000040A042A043E0445044904510455045C
 ; Build=0
-; FirstLine=481
-; CursorPosition=1073
+; FirstLine=18
+; CursorPosition=48
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

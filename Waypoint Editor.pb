@@ -410,7 +410,7 @@ Global *font.IGUIFont = iGetFont()
      iNodePosition(*cam, @camPos\x)
      ; create mesh to shoot
      *cam_cubemesh.IMesh = icreatesphere(3 , 10)
-     iLoadTextureNode(*cam_cubemesh, "wcrate.png") 
+     iLoadTextureNode(*cam_cubemesh, "Wood02.jpg") 
      iPositionNode(*cam_cubemesh, camPos\x,camPos\y,camPos\z)
      iRotateNode(*cam_cubemesh, Random(180),Random(180),Random(180))    
      
@@ -437,7 +437,7 @@ Repeat
         iNodeDirection(*cam, @camDir\x)
         ; create mesh to shoot
         *cube.IMesh = iCreateCube(5)
-        iLoadTextureNode(*cube, "wcrate.bmp") 
+        iLoadTextureNode(*cube, "Wood02.jpg") 
         iPositionNode(*cube, camPos\x + x * 10,camPos\y,camPos\z)
         iRotateNode(*cube, Random(180),Random(180),Random(180))    
         ; create body
@@ -464,7 +464,7 @@ Repeat
               iNodeDirection(*cam, @camDir\x)
               ; create mesh to shoot
               *cube.IMesh = iCreateCube(1+Random(10)*0.2)
-              iLoadTextureNode(*cube, "wcrate.bmp") 
+              iLoadTextureNode(*cube, "Wood02.jpg") 
               iPositionNode(*cube, camPos\x+ x * 2,camPos\y+y*2,camPos\z+z*2)
               iRotateNode(*cube, Random(180),Random(180),Random(180))    
               ; create body
@@ -544,6 +544,22 @@ Repeat
       EndIf 
   ;}
   
+   ;{ hide/show Keyboard Help 
+      If iGetKeyDown ( #key_f2) 
+         If key_F2 = 0
+            key_F2 = 1
+            If way_Showkeys = 1
+               way_Showkeys = 0
+            Else 
+               way_Showkeys = 1
+            EndIf 
+         EndIf
+      Else
+         key_F2 = 0
+      EndIf 
+      
+   ;}
+   
   ;}
   
   ; speed umschalten
@@ -581,6 +597,21 @@ Repeat
     iDrawText(*font, "Use SPACE Key for shoot Cube",  10,24,0,0)
     iDrawText(*font, "cam : "+StrF(iNodeY(*cam)),  10,45,0,0)
     iDrawText(*font, "Kistenzahl " + Str( kistenzahl) ,  10,65,0,0)
+    If way_Showkeys = 1 
+       texty= 85
+       iDrawText(*font, "Keys:",  10,texty,0,0) :  texty + 20 
+       iDrawText(*font, "   "+Chr(34) + "Mouse 1"+Chr(34) + ": Place Waypoint",  10,texty,0,0) :  texty + 20 
+       iDrawText(*font, "   "+Chr(34) + "1"+Chr(34) + ": shoot cubes",  10,texty,0,0) :  texty + 20 
+       iDrawText(*font, "   "+Chr(34) + "2"+Chr(34) + ": shoot more cubes",  10,texty,0,0) :  texty + 20 
+       iDrawText(*font, "   "+Chr(34) + "F1"+Chr(34) + ": Switch to FPS/ freefly cam",  10,texty,0,0) :  texty + 20 
+       iDrawText(*font, "   "+Chr(34) + "Space"+Chr(34) + ": in FPS: Jump,    in freefly: turn off collision",  10,texty,0,0) :  texty + 20 
+       iDrawText(*font, "   "+Chr(34) + "Shift"+Chr(34) + ": Speed up movement",  10,texty,0,0) :  texty + 20 
+       iDrawText(*font, "   "+Chr(34) + "ESC"+Chr(34) + ": END",  10,texty,0,0) :  texty + 20 
+       iDrawText(*font, "   "+Chr(34) + "F2"+Chr(34) + ": Hide help",  10,texty,0,0) :  texty + 20 
+    Else
+       texty = 85
+       iDrawText(*font, "Press F2 for Keyboard Help",  10,texty,0,0)
+    EndIf 
     main_Line3dDisplay()
     DrawTriangle()
   iEndScene()
@@ -597,10 +628,10 @@ iFreeEngine()
 ; jaPBe Version=3.9.12.818
 ; FoldLines=00670069006B006D006F00DA0071000000B0000000B4000000B8000000BC0000
 ; FoldLines=00C0000000C4000000C8000000CC000000DC00F500DE000000EC000000F7013D
-; FoldLines=013F014401AE01C401C601DE01E001EA
-; Build=5
-; FirstLine=144
-; CursorPosition=358
+; FoldLines=013F014401EC0220
+; Build=7
+; FirstLine=166
+; CursorPosition=403
 ; EnableXP
 ; ExecutableFormat=Windows
 ; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Waypoint EDITOR.exe

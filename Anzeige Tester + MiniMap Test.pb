@@ -36,16 +36,19 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    
 ; -----------------------------------------------------------------------------------------------------------------------
 ; ------------------------------------------------------ MAIN     ------------------------------------------------------
-; ----------------------------------------------------------------------------------------------------------------------- 
+; --------^^  --------------------------------------------------------------------------------------------------------------- 
+   
+   MessageRequester( "Willkommen" , "WICHTIG: geh nicht in den raum rechts! man kommt nicht mehr raus." + Chr(10) + "Keyboard: " + Chr(10) + Chr(9) + "WASD-ARROWS: Move" +Chr(10)+ Chr(9) + "Space: Jump" + Chr(10) + Chr(9) + "E: pick up Item" +Chr(10) + Chr(9) + "1-5: Quickuse Item" +Chr(10) + Chr(9) + "M: Map" +Chr(10) + Chr(9) + "I-> Inventar" +Chr(10) + Chr(9) + "Q: Questlog" +Chr(10) + Chr(9) + "F1: 3rd-First Person cam"  +Chr(10) + Chr(9) + "F2: Activate BLOOM"+ Chr(10) + Chr(10) + "Viel Spaß =) Sourcecode liegt bei." , #mb_iconinformation )
    
    anz_setresolution          ( 1240 , 768, 32 , 0 )
+   
    anz_enable_normalmapping   ( 0 )
    anz_enable_parallaxmapping ( 0 )
-   anz_enable_shadow          ( 0 )
-   anz_enable_fog             ( 0 )
-   anz_enable_lighting        ( 0 )
+   anz_enable_shadow          ( 1 )
+   anz_enable_fog             ( 1 )
+   anz_enable_lighting        ( 1 )
    anz_savepreferences        (   )
-   
+   anz_isPostProcessing       = 0
    anz_initstuff              ( 0 )
    MIN_INIT                   ( anz_getscreenwidth() -Min_width(),anz_getscreenheight() - Min_height() - 10)
    
@@ -53,14 +56,14 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    ; iInitPhysic  (   )  
    ; iSetPolysPerNode(128)
    ; iSetWorldSize(- #meter*50 , -#meter * 10 , -#meter*50 , #meter*500,#meter*10 , #meter*500)
-   
+   iTextureCreation ( #ETCF_Create_MIP_Maps ,1)
    ; IrrSetTextureCreationFlag  ( #IRR_ETCF_CREATE_MIP_MAPS       , 1 )  ; bei mx_world: 1/33*#meter
    anz_map_load               ( "level_kim.irr" , "Gfx\maps\level_kim\" , 1/80*#meter) ;früher war der meter ca. 34.. dewegen ist die alte welt zu groß --> also rescalieren!!!!! 
-   
+   spi_SetCameraFirstPerson   ( 1 ) 
    gui_setGUI                 ( #Gui_Status_HUD )
-   *nodeid = spi_GetPlayerNode          ( spi_getcurrentplayer () )
+   *nodeid = spi_GetPlayerNode( spi_getcurrentplayer () )
    Position.ivector3 
-   iNodePositionP ( *nodeid  , @Position )
+   iNodePositionP             ( *nodeid  , @Position )
    anz_setobjectPos           ( spi_getObject3DID( spi_getcurrentplayer())  , Position\x , Position\y -#meter*2.1 , Position\z)
    
    ; IrrSetTextureCreationFlag  ( #IRR_ETCF_OPTIMIZED_FOr_speed , 1 )
@@ -157,6 +160,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
       If GetAsyncKeyState_(#VK_F3)
          anz_updateview()
       EndIf 
+      
       If GetAsyncKeyState_(#VK_f1)
          If key_f1 = 0
             key_f1 = 1 
@@ -169,6 +173,20 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
       Else 
          key_f1 = 0
       EndIf 
+      
+      If GetAsyncKeyState_(#VK_f2)
+         If key_f2 = 0
+            key_f2 = 1 
+            If anz_isPostProcessing       = 1 
+               anz_isPostProcessing       = 0
+            Else 
+               anz_isPostProcessing       = 1 
+            EndIf 
+         EndIf 
+      Else 
+         key_f2 = 0
+      EndIf 
+      
       If GetAsyncKeyState_    ( #VK_RETURN )
          If key_return        = 0
             key_return        = 1
@@ -222,10 +240,10 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; CursorPosition = 58
 ; FirstLine = 14 
 ; jaPBe Version=3.9.12.818
-; Build=6
-; FirstLine=33
-; CursorPosition=53
+; Build=8
+; FirstLine=48
+; CursorPosition=59
 ; ExecutableFormat=Windows
-; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\abenthum 1.0
+; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\abenthum 1.0.exe
 ; DontSaveDeclare
 ; EOF
