@@ -38,7 +38,9 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; ------------------------------------------------------ MAIN     ------------------------------------------------------
 ; --------^^  --------------------------------------------------------------------------------------------------------------- 
    
-   MessageRequester( "Willkommen" , "WICHTIG: geh nicht in den raum rechts! man kommt nicht mehr raus." + Chr(10) + "Keyboard: " + Chr(10) + Chr(9) + "WASD-ARROWS: Move" +Chr(10)+ Chr(9) + "Space: Jump" + Chr(10) + Chr(9) + "E: pick up Item" +Chr(10) + Chr(9) + "1-5: Quickuse Item" +Chr(10) + Chr(9) + "M: Map" +Chr(10) + Chr(9) + "I-> Inventar" +Chr(10) + Chr(9) + "Q: Questlog" +Chr(10) + Chr(9) + "F1: 3rd-First Person cam"  +Chr(10) + Chr(9) + "F2: Activate BLOOM"+ Chr(10) + Chr(10) + "Viel Spaß =) Sourcecode liegt bei." , #mb_iconinformation )
+   CompilerIf #PB_Compiler_Debugger = 0
+      MessageRequester( "Willkommen" , "WICHTIG: geh nicht in den raum rechts! man kommt nicht mehr raus." + Chr(10) + "Keyboard: " + Chr(10) + Chr(9) + "WASD-ARROWS: Move" +Chr(10)+ Chr(9) + "Space: Jump" + Chr(10) + Chr(9) + "E: pick up Item" +Chr(10) + Chr(9) + "1-5: Quickuse Item" +Chr(10) + Chr(9) + "M: Map" +Chr(10) + Chr(9) + "I-> Inventar" +Chr(10) + Chr(9) + "Q: Questlog" +Chr(10) + Chr(9) + "F1: 3rd-First Person cam"  +Chr(10) + Chr(9) + "F2: Activate BLOOM"+ Chr(10) + Chr(10) + "Viel Spaß =) Sourcecode liegt bei." , #MB_ICONINFORMATION )
+   CompilerEndIf 
    
    anz_setresolution          ( 1240 , 768, 32 , 0 )
    
@@ -56,7 +58,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    ; iInitPhysic  (   )  
    ; iSetPolysPerNode(128)
    ; iSetWorldSize(- #meter*50 , -#meter * 10 , -#meter*50 , #meter*500,#meter*10 , #meter*500)
-   iTextureCreation ( #ETCF_Create_MIP_Maps ,1)
+   iTextureCreation ( #ETCF_CREATE_MIP_MAPS ,1)
    ; IrrSetTextureCreationFlag  ( #IRR_ETCF_CREATE_MIP_MAPS       , 1 )  ; bei mx_world: 1/33*#meter
    anz_map_load               ( "level_kim.irr" , "Gfx\maps\level_kim\" , 1/80*#meter) ;früher war der meter ca. 34.. dewegen ist die alte welt zu groß --> also rescalieren!!!!! 
    spi_SetCameraFirstPerson   ( 1 ) 
@@ -104,8 +106,16 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    iTimerUpdatePhysic (30) 
    
    Repeat 
-
-        
+      ;{ wegen spi_SetCameraDistance schauen..
+      If GetAsyncKeyState_(#vk_add )
+        spi_SetCameraDistance ( spi_GetCameraDistance( ) + 0.01 )
+        Debug spi_GetCameraDistance( )/#meter
+      EndIf 
+      If GetAsyncKeyState_(#vk_subtract )
+        spi_SetCameraDistance ( spi_GetCameraDistance( ) - 0.01 )
+        Debug spi_GetCameraDistance( )/#meter
+      EndIf 
+      
       If item_check_waiter    < ElapsedMilliseconds() 
          Item_FocusItem_Reset ()
          item_check_waiter    = ElapsedMilliseconds() + 100
@@ -137,20 +147,20 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
       ; shoot with cube
    If GetAsyncKeyState_(#VK_F8)
      *cam = anz_camera 
-     camPos.ivector3
+     campos.ivector3
      camDir.ivector3 
-     iNodePosition(*cam, @camPos\x)
+     iNodePosition(*cam, @campos\x)
      iNodeDirection(*cam, @camDir\x)
      wes_getposition        ( spi_GetSpielerWesenID( spi_getcurrentplayer()) , @test_x , @test_y , @test_z)
      *item.ITEM =Item_Add( "Seifenblasenwaffe" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\seifenblasenwaffe.b3d" , "" , "" , #EMT_SOLID , Gui_Inventar_Image_Brot ,"Seifenblasenwaffe")
      
      ;*item.ITEM = Item_Add( "Brot" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\Brot.3ds" , "..\..\maps\Max Welt\items\Brot_texture.jpg" , "..\..\maps\Max Welt\items\brot_normal.jpg" , #EMT_PARALLAX_MAP_SOLID , Gui_Inventar_Image_Brot ,"Brot mit bisschen Salz")
      
-     Debug "pos: " + Str( camPos\x ) + " y " + Str( camPos\y ) + " z " + Str( camPos\z )
+     Debug "pos: " + Str( campos\x ) + " y " + Str( campos\y ) + " z " + Str( campos\z )
      ; create mesh to shoot
      *cube.IMesh = iCreateCube(#meter /2)
      *texture = iLoadTextureNode(*cube, "..\..\maps\Max Welt\items\Brot_texture.jpg") 
-     iPositionNode(*cube, camPos\x,camPos\y,camPos\z)
+     iPositionNode(*cube, campos\x,campos\y,campos\z)
      irotatenode(*cube, Random(180),Random(180),Random(180))    
      ; create body
      anz_AddDeleteAnimator( *cube , 3000)
@@ -241,8 +251,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; FirstLine = 14 
 ; jaPBe Version=3.9.12.818
 ; Build=8
-; FirstLine=48
-; CursorPosition=59
+; FirstLine=35
+; CursorPosition=43
 ; ExecutableFormat=Windows
 ; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\abenthum 1.0.exe
 ; DontSaveDeclare
