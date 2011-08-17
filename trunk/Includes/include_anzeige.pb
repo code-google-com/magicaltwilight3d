@@ -455,7 +455,6 @@ EndMacro
       ProcedureReturn anz_skybox\nodeID 
       
    EndProcedure 
-   
    Procedure anz_ende  (    ) ; beendet das ganze, ohne jegliches Speichern!!! nicht fürn hausgebraucht"!
       Delay            ( 10 )  ; warten, um error zu vermeiden.
       iFreeEngine      (    )
@@ -463,8 +462,7 @@ EndMacro
       IrrKlangStop     (    ) ; 3d klang bleibt von thalius wrapper. (genauso wie xml)
       Delay            ( 10 )
       End
-   EndProcedure 
-   
+   EndProcedure  
    Procedure anz_savepreferences()
    
       If OpenPreferences     ("anzeige_preferences.pref") ; die allgemeine anzeigepreferencedatei
@@ -488,8 +486,7 @@ EndMacro
          WritePreferenceLong ("isfog"             , anz_IsFogEnabled() )
       EndIf 
       
-   EndProcedure 
-   
+   EndProcedure  
    Procedure anz_loadpreferences()
    
       If OpenPreferences            ( "anzeige_preferences.pref")
@@ -501,8 +498,7 @@ EndMacro
          anz_enable_fog             ( ReadPreferenceLong( "isfog" , 0 ))           ; nebel.. sollte auch immer aus sein.
       EndIf 
       
-   EndProcedure 
-   
+   EndProcedure  
    Procedure anz_error(text.s , isIrrlichtRunning = 0) ; wenn irrlicht nicht mehr läuft kommt die Fehlermeldung als 
       If isIrrlichtRunning = 0
          ; *element.i = IrrGuiAddMessageBox(#programmname+ " Fehler:" , text )
@@ -653,15 +649,15 @@ EndMacro
          
          If *Object3dID \ child[n] = 0          ; wenn noch ein Platz für child-nodes frei ist 
             
+            anz_setobjectPos              ( *Object3dID_child , x , y , z)  
             If anz_getobject3dIsGeladen   ( *Object3dID )          And anz_getobject3dIsGeladen ( *Object3dID_child )  ; prüfen, ob irrlichtnodes geladen. wenn ja: irrparent setzen.
                If ParentID_IS_BONE        > ""
-                  iparentnode             ( anz_getBoneNodeID      ( *Object3dID\id             , ParentID_IS_BONE) , anz_getObject3DIrrNode ( *Object3dID_child   ))
+                  iparentnode             ( anz_getObject3DIrrNode ( *Object3dID_child   ) , anz_getBoneNodeID      ( *Object3dID\id             , ParentID_IS_BONE))
                Else 
-                  iparentnode             ( anz_getObject3DIrrNode ( *Object3dID      )         , anz_getObject3DIrrNode ( *Object3dID_child   ))
+                  iparentnode             ( anz_getObject3DIrrNode ( *Object3dID_child   ) , anz_getObject3DIrrNode ( *Object3dID      ))
                EndIf 
             EndIf 
                
-               anz_setobjectPos        ( *Object3dID_child , x , y , z)  
                *Object3dID_child       \ ParentID         = *Object3dID 
                *Object3dID_child       \ ParentID_IS_BONE = ParentID_IS_BONE   ; wenn nur ein Knochen von Object3dID das Parentnode sein soll, ist ParentID_IS_BONE > ""
                *Object3dID             \ child [n]        = *Object3dID_child  ; falls dann nämlich Parent gelöscht wird, MUSS der Link vom Child zum Parent ebenfalls gelöschtwerden, wenn nicht gleich die ganze child/parent kette (im Falle eines Wesens)
@@ -3419,7 +3415,7 @@ EndMacro
                                           ; collision des levels auf die neue camera da draufbauen.
                                           If *anz_CollisionMeta_anzMesh > 0
                                               iSetCollideForm             ( #COMPLEX_PRIMITIVE_SURFACE)
-                                              anz_CollisionMeta_solid     = iCreateCollisionResponseAnimator  (*anz_CollisionMeta_anzMesh\nodeID , spi_GetPlayerNode( spi_getcurrentplayer()) ,#meter*0.4 , #meter*0.6 , #meter*0.4 , 0 ,-0.8*#meter, 0 ,0 , -#meter , 0 )
+                                              anz_CollisionMeta_solid     = iCreateCollisionResponseAnimator  (*anz_CollisionMeta_anzMesh\nodeID , spi_GetPlayerNode( spi_getcurrentplayer()) ,#meter*0.4 , #meter*0.7 , #meter*0.4 , 0 ,-0.01*#meter, 0 ,0 , -#meter , 0 )
                                               *CollisionResponse          = iAddCollisionResponse             ( spi_GetPlayerNode( spi_getcurrentplayer()) , anz_CollisionMeta_solid) 
                                           EndIf 
                                         
@@ -3594,17 +3590,17 @@ EndMacro
     
          ;{ spielfigur bewegen 
          
-         If GetAsyncKeyState_( #VK_LEFT) Or GetAsyncKeyState_(#VK_A) ; nach links
-            spi_move_spielerleft ( spi_getcurrentplayer() , #anz_Walkspeed )
-         EndIf 
-         If GetAsyncKeyState_(#VK_RIGHT) Or GetAsyncKeyState_(#VK_D) ; nach rechts
-            spi_move_spielerright ( spi_getcurrentplayer() , #anz_Walkspeed )
-         EndIf 
          If GetAsyncKeyState_( #VK_UP) Or GetAsyncKeyState_(#VK_W) ; nach forne gehen
-            spi_move_spielerforward( spi_getcurrentplayer() , #anz_Walkspeed )
+             spi_Move_CurrentSpieler   (#spi_action_rotate_Forward , #anz_Walkspeed  ) ; dreht und bewegt den spieler.
          EndIf 
          If GetAsyncKeyState_( #VK_DOWN) Or GetAsyncKeyState_(#VK_S) ; nach hinten gehen
-            spi_move_spielerforward( spi_getcurrentplayer() , - #anz_Walkspeed *0.8 )
+            spi_Move_CurrentSpieler   (#spi_action_rotate_Back , #anz_Walkspeed * 0.8) ; dreht und bewegt den spieler.
+         EndIf 
+         If GetAsyncKeyState_( #VK_LEFT) Or GetAsyncKeyState_(#VK_A) ; nach links
+            spi_Move_CurrentSpieler   (#spi_action_rotate_Left , #anz_Walkspeed ) ; dreht und bewegt den spieler.
+         EndIf 
+         If GetAsyncKeyState_(#VK_RIGHT) Or GetAsyncKeyState_(#VK_D) ; nach rechts
+            spi_Move_CurrentSpieler   (#spi_action_rotate_Right , #anz_Walkspeed ) ; dreht und bewegt den spieler.
          EndIf 
          
          ;}
@@ -5061,29 +5057,30 @@ EndMacro
 ; FirstLine = 77 
 ; jaPBe Version=3.9.12.818
 ; FoldLines=009800A000A800AA00AC00AE00B000B200B400B600B800C000C200CA00CC00DC
-; FoldLines=00E001A700F000000155000001A901AB01AD01AF01B101B301B501B701B901BB
-; FoldLines=01BF01C801CA01D101D301EA01EC01F701F902000202020A020C020E0210021B
-; FoldLines=021D0228022A02360238023B023E02420244025B025D027202740278027A027E
-; FoldLines=028002A302A702D202D402F902FB0359035B0390039203C203C4040C040E044C
-; FoldLines=044E0491049304A204A604C404C604E304E704F404F6055204FB000005370000
-; FoldLines=05560562056405660568056A056C056E0570057205740591059305960598059A
-; FoldLines=059C059E05A005A205A405A605A805AA05AC05AF05B105B305B505B705BB05BD
-; FoldLines=05C105EB05E3000005ED05FC05FE060A060C06310633064B064D06650667067B
-; FoldLines=067D0693069506AC06AE06B506B706C006C406FB06FD0701070307110713071B
-; FoldLines=071D0739073D07AB07AD07EC07EE081508170839083B084D084F08C508540000
-; FoldLines=0879000008820000088F0000089A000008C708D008D209040906091609180923
-; FoldLines=092509310935095A095C096B096D097909A40A080A0A0A100A120D750A350000
-; FoldLines=0A3B00000A5D00000A6300000AB400000B4400000BB700000BBD00000C040000
-; FoldLines=0C9800000CA800000CEF00000D2100000D770D8F0D910D930D970DA00DA20DB3
-; FoldLines=0DA400000DD10DDB0DDD0F0C0E3400000E4100000E4D00000E5900000E650000
-; FoldLines=0E7E00000E8B00000E9800000EA500000EB800000F0E0F1E0F200FC30FC51011
-; FoldLines=0FE000000FEE00000FFA00001013122D10460000108A0000108F000010940000
-; FoldLines=11340000115D0000118200001198000011CE000011DC000011EB000011F20000
-; FoldLines=122F123D124112431247124E125012661268128F129112D11297000012B00000
-; FoldLines=12C4000012D31350135213AE
+; FoldLines=00F00151015501A301A901AB01AD01AF01B101B301B501B701B901BB01BF01C8
+; FoldLines=01C901D001D101E801E901F401F501FC01FE02060208020A020C021702190224
+; FoldLines=0226023202340237023A023E024002570259026E027002740276027A02A302CE
+; FoldLines=02D002F502F703550357038C038E03BE03C00408040A0448044A048D048F049E
+; FoldLines=04A204C004C204DF04E304F004F2054E04F70000053300000552055E05600562
+; FoldLines=056405660568056A056C056E0570058D058F0592059405960598059A059C059E
+; FoldLines=05A005A205A405A605A805AB05AD05AF05B105B305B705B905BD05E705DF0000
+; FoldLines=05E905F805FA06060608062D062F064706490661066306770679068F069106A8
+; FoldLines=06AA06B106B306BC06C006F706F906FD06FF070D070F071707190735073907A7
+; FoldLines=07A907E807EA08110813083508370849084B08C10850000008750000087E0000
+; FoldLines=088B00000896000008C308CC08CE0900090209120914091F0921092D09310956
+; FoldLines=09580967096909750979099E09A00A040A060A0C0A0E0D710A3100000A370000
+; FoldLines=0A5900000A5F00000AB000000B4000000BB300000BB900000C0000000C940000
+; FoldLines=0CA400000CEB00000D1D00000D730D8B0D8D0D8F0D930D9C0D9E0DAF0DA00000
+; FoldLines=0DB10DCB0DCD0DD70E300E3B0E3D0E420E490E530E550E5F0E610E780E7A0E85
+; FoldLines=0E870E920E940E9F0EA10EAE0EB40F060F0A0F1A0F1C0FBF0FC1100D0FDC0000
+; FoldLines=0FEA00000FF60000100F12291042000010860000108B00001090000011300000
+; FoldLines=11590000117E00001194000011CA000011D8000011E7000011EE0000122B1239
+; FoldLines=123D123F1243124A124C12621264128B128D12CD1293000012AC000012C00000
+; FoldLines=12CF134C134E13AA
 ; Build=0
-; FirstLine=361
-; CursorPosition=2439
+; CompileThis=..\Anzeige Tester + MiniMap Test.pb
+; FirstLine=241
+; CursorPosition=651
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

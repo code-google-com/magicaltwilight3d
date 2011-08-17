@@ -165,7 +165,7 @@ Declare.f math_betrag ( zahl.f ) ; gibt den Betrag (positiven wert) der Zahl aus
 Declare   math_IsFiInBereich( Fi.f, Startfi.f , Endfi.f) ; wobei die fis auch richtig umgerechnet  werden (+360,-360) etc.
 ;}
 ;{ Declarations spieler
-Declare spi_GetCameraDistance()
+Declare.f spi_GetCameraDistance()
 Declare DMX_Freelook(action.i, MXS.f , MYS.f ,  Velocity.f=1.01, speed.f=0.05, Damping.f=5.0)
 Declare spi_ExamineCamera() 
 Declare spi_RotateCamera(vertical.f)
@@ -201,7 +201,8 @@ Declare spi_Inventar_AddItem ( *SpielerID.spi_spieler , *itemID.ITEM)
 Declare spi_inventar_getItem     ( *SpielerID.spi_spieler , InventarItemNR) ; gibt die ItemID des akteullen Items heraus. inventaritemnr ist (gui_itemNR+1)+(Sack-1)*99, kein pointer! 
 Declare spi_Inventar_SearchItem ( *SpielerID.spi_spieler , Itemname.s , ItemArt.i ,ExceptionItemID=0) ; sucht bei 1. priorität nach der art, danach nach dem namen.
 Declare spi_revive  ( *SpielerID.spi_spieler , x.f , y.f , z.f ) ; Wiederbelebung des spielers .. er darf nicht komplett sterben dürfen.
-Declare spi_SetSpielerTargetnodeRot ( Rot.f ) ; dreht das Targetnode des Hauptspielers um XX grad.
+Declare spi_SetSpielerTargetnodeRot ( Rot.f, IsSmooth = 0 ) ; dreht das Targetnode des Hauptspielers um XX grad.
+Declare spi_Move_CurrentSpieler   ( const_spi_action_rotate.i , amount.f ) ; dreht und bewegt den spieler.
 Declare.f spi_GetSpielerTargetNodeRot (  ) 
 Declare spi_SetSpielerTargetnodeMotion ( speed.f) ; bewegung of the player's main figure 
 Declare spi_SetCameraFirstPerson(IsFirstPerson = 1) 
@@ -377,8 +378,8 @@ IncludeFile "include_3DEngine.pb"
 IncludeFile "include_minimap.pb" 
 ; jaPBe Version=3.9.12.818
 ; Build=0
-; FirstLine=11
-; CursorPosition=41
+; FirstLine=135
+; CursorPosition=171
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

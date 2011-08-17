@@ -1,11 +1,11 @@
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\minimap\Minimap_Back.png
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\minimap\Minimap_Front.png
-Could not open file of texture: textures\editor_defaults\default_skybox0.jpg
-Could not open file of texture: textures\editor_defaults\default_skybox2.jpg
-Could not open file of texture: textures\editor_defaults\default_skybox1.jpg
-Could not open file of texture: textures\editor_defaults\default_skybox3.jpg
-Could not open file of texture: textures\editor_defaults\default_skyboxdn.jpg
-Could not open file of texture: textures\editor_defaults\default_skyboxup.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skybox0.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skybox2.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skybox1.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skybox3.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skyboxdn.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skyboxup.jpg
 Loaded texture: C:\textures_kim\Floors\Floor11.jpg
 Loaded texture: C:\textures_kim\Walls\Wall12.jpg
 Loaded texture: C:\textures_kim\Wood\Wood02.jpg
@@ -22,8 +22,6 @@ Loaded mesh: ..\level_kim\level_kim_collision.b3d
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\blank.png
 Loaded mesh: ..\..\sydney.md2
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\sydney.jpg
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\test\grün.png
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\einfachesSchwert.png
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\brot.png
 Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\Schriftrolle.png
-Resizing window (1240 768)

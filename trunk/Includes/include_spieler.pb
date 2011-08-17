@@ -232,10 +232,14 @@
    
    ; spieler -verwaltung
    
-   Procedure spi_SetSpielerTargetnodeRot ( Rot.f ) ; dreht das Targetnode des Hauptspielers um XX grad.
-   
+   Procedure spi_SetSpielerTargetnodeRot ( Rot.f , IsSmooth = 0) ; dreht das Targetnode des Hauptspielers um XX grad.
+
       If spi_camera\targetnode > 0
-         spi_camera\relative_rotation = Rot 
+         If IsSmooth 
+            spi_camera\relative_rotation = ( Rot + spi_camera\relative_rotation  ) *0.5
+         Else 
+            spi_camera\relative_rotation = Rot 
+         EndIf 
       EndIf
       
    EndProcedure 
@@ -250,13 +254,13 @@
       spi_camera\motionspeed = speed 
    EndProcedure 
    
-   Procedure spi_addspieler ( x.f,y.f,z.f, leben.w , maxleben.w , mana.w , maxmana.w , Name.s , Team.s , IsCurrentSpieler.b = 1) ; erstellt neues 3D Wesen!! und den spieler 
+   Procedure spi_addspieler ( x.f,y.f,z.f, leben.w , maxleben.w , mana.w , maxmana.w , name.s , Team.s , IsCurrentSpieler.b = 1) ; erstellt neues 3D Wesen!! und den spieler 
       Protected *spieler.spi_spieler , *WesenID.wes_wesen , *light 
       *spieler                        = AddElement   ( spi_spieler ())
          
          If *spieler                  ; wenn noch genug ram da.
             *spieler\InventarID       = AddElement   ( spi_inventar())
-            *spieler\WesenID          = wes_AddWesen ( Name , x , y , z , Team , maxleben , #spi_standard_speed , #pfad_spieler_mesh , #pfad_spieler_texture , #pfad_spieler_texture2 , #EMT_NORMAL_MAP_SOLID ,1 , *spieler) ; wesen hinzufügen.
+            *spieler\WesenID          = wes_AddWesen ( name , x , y , z , Team , maxleben , #spi_standard_speed , #pfad_spieler_mesh , #pfad_spieler_texture , #pfad_spieler_texture2 , #EMT_NORMAL_MAP_SOLID ,1 , *spieler) ; wesen hinzufügen.
             *spieler\exist            = 1
             *spieler\Anzahl_Sacke     = 3 ; 1 Sack amm anfang.. inventarsack ;)
             *WesenID                  = *spieler\WesenID 
@@ -265,33 +269,39 @@
             wes_SetMana               ( *spieler\WesenID , mana    )
             *light                    = iCreateLight      ( $FFFFFFFF, #meter*6 ,anz_getObject3DIrrNode( anz_getobject3dByAnzID(*WesenID\anz_Mesh_ID )))
             iPositionNode             ( *light , 0,#meter * 1.5,0)
-            iambientlight             ( $DDDDDDDD)
+            iambientlight             ( $DDDDDDDD )
             ifallofflight             ( *light , 11 )
             
             ; nur zum debuggen:
              *meshid .anz_mesh
              *meshid = *WesenID\anz_Mesh_ID
-             *nodeid = *meshid\nodeid 
+             *nodeid = *meshid\nodeID 
              
              iScaleNode ( *nodeid , 0.02 , 0.02 , 0.02   )
              
-            *anz_billboard.anz_billboard = anz_AddBillboard       ( "..\..\test\grün.png" , 0,#meter *1.7,0,0.2*#meter,0.2*#meter , #IRR_EMT_TRANSPARENT_ALPHA_CHANNEL,1 )
-               anz_attachobject( anz_getobject3dByAnzID (wes_getAnzMeshID(*WesenID) ) ,anz_getobject3dByAnzID( *anz_billboard , #anz_art_billboard ) , 0,#meter * 1, 0)
+            ; *anz_billboard.anz_billboard = anz_AddBillboard       ( "..\..\test\grün.png" , 0,#meter *2,0,0.1*#meter,0.1*#meter , #IRR_EMT_TRANSPARENT_ALPHA_CHANNEL,1 )
+            ; anz_attachobject( anz_getobject3dByAnzID ( wes_getAnzMeshID(*WesenID) ) ,anz_getobject3dByAnzID( *anz_billboard , #anz_art_billboard ) , 0,#meter * 2.1, 0)
+            ; anz_moveObject( anz_getobject3dByAnzID( *anz_billboard , #anz_art_billboard ) , 0 , #meter*2 , #meter * 2)
+            ; iPositionNode ( *anz_billboard\id , 0 , #meter*2 , 0 )
+            
             ; -- 
             ; wenn spieler = current spieler (camera erstellen)
          
             If IsCurrentSpieler 
                
                If Not anz_camera 
-                  anz_camera                = iCreateCamera  ( ) ; obacht! global verwendet! anz_camera ist die Standardcamera für alles 
+                  anz_camera             = iCreateCamera  ( ) ; obacht! global verwendet! anz_camera ist die Standardcamera für alles 
+                  iparentnode            ( *light , anz_camera )
+                  iPositionNode          ( *light , x , y , z )
                EndIf 
                iPositionNode             ( anz_camera , x , y , z )
                irotatenode               ( anz_camera   , rotx , roty , rotz)
                spi_DefinePlayerCamera    ( anz_camera ) 
                spi_FixCamera             ( wes_getNodeID( *spieler\WesenID ))
-               spi_SetCameraDistance     ( 7.6 * #meter )                
+               spi_SetCameraDistance     ( 4*#meter)                
                iNearValueCamera          ( anz_camera , 0.001 )
-               iFarValueCamera           ( anz_camera                 ,85 * #meter)
+               iFarValueCamera           ( anz_camera                 ,300 * #meter)
+               
                
             EndIf
             
@@ -334,52 +344,17 @@
    
    ; spieler - MOVE
    
-   Procedure spi_move_spielerforward   ( *SpielerID.spi_spieler , amount.f)  ; anim spieler + bewegen 
-      Protected *WesenID.wes_wesen     , *anz_Mesh_ID.anz_mesh , drehgrad.f
-      *WesenID                         = *SpielerID \WesenID
-      If Not *WesenID\action           = #wes_action_stand 
-         ProcedureReturn 
-      EndIf
-      *WesenID\action                  = #wes_action_move
-      
-      If amount < 0 ; spielerfigur um 180° drehen, beim rückwärtsgehen.
-         drehgrad                      = spi_GetSpielerTargetNodeRot()
-         If drehgrad                   < 0 : drehgrad - 180 : Else : drehgrad + 180 : EndIf  ; muss gemacht werden, zur drehkorrektor etc. (mathe halt)
-         spi_SetSpielerTargetnodeRot   ( drehgrad / 2  ) ; wenn = 90, dann nur noch = 45 ;) :) 
-         amount                        = -amount ; amount ist ja negativ; muss aber positiv sein ;) (bzw. gesetzt werden, sonst läuft figur falschrum)
-      Else         
-         spi_SetSpielerTargetnodeRot   ( spi_GetSpielerTargetNodeRot() / 2 ) ; wenn = 90, dann nur noch = 45 ;) :) 
-      EndIf 
-      
+   Procedure spi_Move_CurrentSpieler   ( const_spi_action_rotate.i , amount.f ) ; dreht und bewegt den spieler.
+      Protected *SpielerID.spi_spieler , *WesenID.wes_wesen
+      spi_camera\Action_flags          | const_spi_action_rotate
       spi_SetSpielerTargetnodeMotion   ( amount )
-      ; PAUSE im Zuge der Rastertechnologie dann schaun, von wegen Rastermäßiges Höhenmessen.. Im Moment läfut alles über collision.
-   EndProcedure 
-   
-   Procedure spi_move_spielerright     ( *SpielerID.spi_spieler,amount.f) ; anim +move
-      Protected *WesenID.wes_wesen     , *anz_Mesh_ID.anz_mesh 
+      *SpielerID                       = spi_getcurrentplayer()
       *WesenID                         = *SpielerID \WesenID
-      If Not *WesenID\action           = #wes_action_stand 
-         ProcedureReturn 
+      If ( *WesenID\action             = #wes_action_stand )
+        wes_SetWesenCommand            ( *WesenID , #wes_action_move )
       EndIf
-      *WesenID\action                  = #wes_action_move
-      spi_SetSpielerTargetnodeRot      ( 90 )
-      spi_SetSpielerTargetnodeMotion   ( amount )
-      ; PAUSE im Zuge der Rastertechnologie dann schaun, von wegen Rastermäßiges Höhenmessen (er will ja nicht in abgründe fallen.).. Im Moment läfut alles über collision. 
    EndProcedure 
 
-   Procedure spi_move_spielerleft      ( *SpielerID.spi_spieler , amount.f) ; anim +move 
-      Protected *WesenID.wes_wesen     , *anz_Mesh_ID.anz_mesh 
-      
-      *WesenID                         = *SpielerID \WesenID
-      If Not *WesenID\action           = #wes_action_stand 
-         ProcedureReturn 
-      EndIf
-      *WesenID\action                  = #wes_action_move
-      spi_SetSpielerTargetnodeRot      ( -90 )
-      spi_SetSpielerTargetnodeMotion   ( amount )
-     ; PAUSE im Zuge der Rastertechnologie dann schaun, von wegen Rastermäßiges Höhenmessen.. Im Moment läfut alles über collision.
-   EndProcedure 
- 
    Procedure spi_setspielerlocate      ( *SpielerID.spi_spieler , x.f , y.f , z.f ) ; only locate without animate
       wes_Stand                        ( *WesenID )
       wes_setposition                  ( *SpielerID\WesenID , x , y, z ) 
@@ -421,7 +396,7 @@
    EndProcedure 
    
    Procedure spi_setspielerschwertangriff( *SpielerID.spi_spieler)
-   
+      Debug "Main spieler schwertkampf"
    EndProcedure 
    
    Procedure spi_setspielermagie( *SpielerID.spi_spieler)
@@ -495,9 +470,9 @@
    ; Diese Funktion ändert die Entfernung der spi_camera zum Modell
    Procedure spi_SetCameraDistance(distance.f)
      If distance < 1 * #meter
-        distance = ( distance + 1 * #meter) / 2
-     ElseIf distance > 30 * #meter
-        distance = ( distance + 30 * #meter) / 2
+        distance = 1 * #meter
+     ElseIf distance > 4 * #meter
+        distance = 4 * #meter
      EndIf
      spi_camera\distance = distance
    EndProcedure
@@ -526,6 +501,7 @@
    Procedure spi_ExamineCamera() 
     
      Protected ax.f, ay.f, az.f, px.f, py.f, pz.f, camx.f, camy.f, camz.f , Vvector.ivector3 , campos.ivector3 
+     
      ; Drehung des Zielnodes ermitteln
      If spi_camera\IsFPS = 0  ; 3rd person.
         If spi_camera\targetnode
@@ -584,6 +560,34 @@
        EndIf 
     
        If (action = #True )
+            ;{ anhand der Flags die Drehung berechnen.
+      
+          If spi_camera\Action_flags            < > 0 
+              If spi_camera\Action_flags        & #spi_action_rotate_Forward = #spi_action_rotate_Forward ;gerade
+                If spi_camera\Action_flags      & #spi_action_rotate_Right   = #spi_action_rotate_Right ; gerade und rechts
+                    spi_SetSpielerTargetnodeRot (  45 ,1 )
+                ElseIf spi_camera\Action_flags  & #spi_action_rotate_Left    = #spi_action_rotate_Left ; gerade und links
+                    spi_SetSpielerTargetnodeRot ( -45 ,1 )
+                Else
+                    spi_SetSpielerTargetnodeRot (  0 ,1)
+                EndIf 
+              ElseIf spi_camera\Action_flags    & #spi_action_rotate_Back  = #spi_action_rotate_Back ; zurück
+                If spi_camera\Action_flags      & #spi_action_rotate_Right = #spi_action_rotate_Right ; zurück und rechts
+                    spi_SetSpielerTargetnodeRot ( 135 ,1)
+                ElseIf spi_camera\Action_flags  & #spi_action_rotate_Left  = #spi_action_rotate_Left ; zurück und links
+                    spi_SetSpielerTargetnodeRot ( -135 ,1)
+                Else
+                    spi_SetSpielerTargetnodeRot ( 180 ,1)
+                EndIf 
+              ElseIf spi_camera\Action_flags    & #spi_action_rotate_Right = #spi_action_rotate_Right ; right
+                  spi_SetSpielerTargetnodeRot   ( 90  ,1)
+              ElseIf spi_camera\Action_flags    & #spi_action_rotate_Left  = #spi_action_rotate_Left ; left
+                  spi_SetSpielerTargetnodeRot   ( -90 ,1)
+              EndIf 
+          EndIf 
+          spi_camera \Action_flags = 0
+          ;}
+          
               If  spi_IsCameraFirstPerson() = 0
                 
                   ;-Camera rotation
@@ -659,7 +663,7 @@
    EndProcedure 
 
    ; Diese Funktion ermittelt die Entfernung der spi_camera zum Modell
-   Procedure spi_GetCameraDistance()
+   Procedure.f spi_GetCameraDistance()
      ProcedureReturn spi_camera\distance
    EndProcedure
 
@@ -667,13 +671,15 @@
 ; CursorPosition = 220
 ; FirstLine = 189 
 ; jaPBe Version=3.9.12.818
-; FoldLines=0010001400160029002B003D003F004A004C0058005A0069006B00BD00BF00D1
-; FoldLines=00D500D700D900DD00E400E600F200F6012E013A013C014201440148014A014C
-; FoldLines=015001630165016F0171017C017E01810183018B018D019E01E401EC01F9020B
-; FoldLines=020D023902950297
+; FoldLines=0008000E0010001400160029002B003D003F004A004C0058005A0069006B00BD
+; FoldLines=00BF00D100D500D700D900DD00E000E200E400E600EA00F400F600FA00FC00FE
+; FoldLines=013801440146014C014E01520154015601650168016A0172017401850189018B
+; FoldLines=018D018F0191019301950197019C019E01A101A401A601A801AA01C901CB01D3
+; FoldLines=01E001F201F402210223029602320000
 ; Build=0
-; FirstLine=161
-; CursorPosition=475
+; CompileThis=..\Anzeige Tester + MiniMap Test.pb
+; FirstLine=59
+; CursorPosition=288
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
