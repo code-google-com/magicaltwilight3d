@@ -159,7 +159,7 @@ Structure anz_mesh     ; wenn das 3d object ein mesh ist.
    irr_emt_materialtype.w ; aktueller Status des nodes.
    islighting.i        ; schaut, ob mesh lighted wird, oder nicht. 
    currentmaterialtype.i
-   collisionNodeID.i   ; evtl. connected collisionnode. if < 0 => then no collision ;----; if =0 , then collision, but unloaded => load it .
+   collisionNodeID.i   ; Body für Physics. BodyID ( von icreatebody, bzw. ifreebody)
    Collisiondetail.w   ; #anz_col_box , #anz_col_mesh , #anz_col_terrain
    Collisiontype.w     ; #anz_ColType_solid -> gebäude, "immobile" , oder #anz_colType_movable -> einheiten, "mobile"
    collisionanimator.i ; link zum animator zum spateren löschen.
@@ -363,10 +363,10 @@ Global Dim anz_shader_proctest.anz_shader_Processing(5)
 Global anz_shader_num_mat.l=0
 Global anz_shader_curent_mat.l=0
  
-; jaPBe Version=3.9.12.818
+; jaPBe Version=3.9.12.819
 ; Build=0
-; FirstLine=42
-; CursorPosition=62
+; FirstLine=118
+; CursorPosition=161
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

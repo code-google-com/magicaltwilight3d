@@ -35,8 +35,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    Team_SetTeamVerhaltnis( *team_jagttier , *team_ruhtier  , #team_verhaltnis_feinde )
    
 ; -----------------------------------------------------------------------------------------------------------------------
-; ------------------------------------------------------ MAIN     ------------------------------------------------------
-; --------^^  --------------------------------------------------------------------------------------------------------------- 
+; ------------------------------------------------------ MAIN      ------------------------------------------------------
+; ----------------------------------------------------------------------------------------------------------------------- 
    
    CompilerIf #PB_Compiler_Debugger = 0
       MessageRequester( "Willkommen" , "WICHTIG: geh nicht in den raum rechts! man kommt nicht mehr raus." + Chr(10) + "Keyboard: " + Chr(10) + Chr(9) + "WASD-ARROWS: Move" +Chr(10)+ Chr(9) + "Space: Jump" + Chr(10) + Chr(9) + "E: pick up Item" +Chr(10) + Chr(9) + "1-5: Quickuse Item" +Chr(10) + Chr(9) + "M: Map" +Chr(10) + Chr(9) + "I-> Inventar" +Chr(10) + Chr(9) + "Q: Questlog" +Chr(10) + Chr(9) + "F1: 3rd-First Person cam"  +Chr(10) + Chr(9) + "F2: Activate BLOOM"+ Chr(10) + Chr(10) + "Viel Spaß =) Sourcecode liegt bei." , #MB_ICONINFORMATION )
@@ -90,14 +90,14 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    spi_Inventar_AddItem   ( spi_getcurrentplayer() , *item )
    
    For x = 1 To 20
-      item = Item_Add         ( "Schriftrolle" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\item\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle ,"Brief an Genesis..")
+      item = Item_Add         ( "Schriftrolle" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\items\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle ,"Brief an Genesis..")
        spi_Inventar_AddItem   ( spi_getcurrentplayer() , item )
    Next 
-   item = Item_Add         ( "Ibot" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\item\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle ,"Spezialitem -> " + Chr(10) + "Gibt für 10s +200 leben" + Chr(10) + "Nebeneffekt: kann zu Verdauungsproblemen führen hehe" )
+   item = Item_Add         ( "Ibot" , test_x + #meter , test_y , test_z , 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\items\schriftrolle.3ds" , "..\..\maps\Max Welt\items\schriftrolle_texture.jpg" , "..\..\maps\Max Welt\items\schriftrolle_normal.jpg" , #EMT_NORMAL_MAP_SOLID , Gui_Inventar_Image_Schriftrolle ,"Spezialitem -> " + Chr(10) + "Gibt für 10s +200 leben" + Chr(10) + "Nebeneffekt: kann zu Verdauungsproblemen führen hehe" )
    spi_Inventar_AddItem    ( spi_getcurrentplayer() , item )
-   *item.ITEM =Item_Add( "Pacman Geist" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\Pacman_ghost.b3d" , "" , "" , #EMT_SOLID , Gui_Inventar_Image_Brot ,"Pacmantier")
+   *item.ITEM =Item_Add    ( "Pacman Geist" , test_x +#meter / 2, test_y , test_z +#meter / 2, 23, #item_art_kram , 23, 23,"..\..\maps\Max Welt\Items\Pacman_ghost.b3d" , "" , "" , #EMT_SOLID , Gui_Inventar_Image_Brot ,"Pacmantier")
    spi_Inventar_AddItem    ( spi_getcurrentplayer() , *item )
-   *FPSgadget              = iAddStaticText("fps" ,5,5,150,20,1,1,1)
+   *FPSgadget              = iAddStaticText     ("fps" ,5,5,150,20,1,1,1)
    
 ; ----------------------------------------------------------------------------------------------   
 ; -- Hauptschleife
@@ -107,32 +107,32 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    
    Repeat 
       ;{ wegen spi_SetCameraDistance schauen..
-      If GetAsyncKeyState_(#vk_add )
+      If GetAsyncKeyState_(#VK_ADD )
         spi_SetCameraDistance ( spi_GetCameraDistance( ) + 0.01 )
         Debug spi_GetCameraDistance( )/#meter
       EndIf 
-      If GetAsyncKeyState_(#vk_subtract )
+      If GetAsyncKeyState_(#VK_SUBTRACT )
         spi_SetCameraDistance ( spi_GetCameraDistance( ) - 0.01 )
         Debug spi_GetCameraDistance( )/#meter
       EndIf 
       
       If item_check_waiter    < ElapsedMilliseconds() 
-         Item_FocusItem_Reset ()
+         Item_FocusItem_Reset ( )
          item_check_waiter    = ElapsedMilliseconds() + 100
       EndIf 
-      anz_updateinput         ()
-      ;anz_updateparticles     ()
-      ;anz_updatesound         ()
-      ;anz_updateDeleteAnimator()
+      anz_updateinput         ( )
+      anz_updateparticles     ( )
+      anz_updatesound         ( )
+      anz_updateDeleteAnimator( )
       anz_setShownObjects     ( spi_GetPlayerNode( spi_getcurrentplayer()) )
-      ;MIN_RenderMiniMap       ()
-      anz_updateview          ()
+      MIN_RenderMiniMap       ( )
+      anz_updateview          ( )
       itextgui                ( *FPSgadget , Str(ifps()))
-      ;gui_updateGUI           ()
+      gui_updateGUI           ( )
       
       
       
-   If GetAsyncKeyState_( #VK_F5)
+   If GetAsyncKeyState_       ( #VK_F5)
       If key_f5 = 0
          key_f5 = 1
          If anz_IsParallaxmappingEnabled()
@@ -171,7 +171,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
          anz_updateview()
       EndIf 
       
-      If GetAsyncKeyState_(#VK_f1)
+      If GetAsyncKeyState_(#VK_F1)
          If key_f1 = 0
             key_f1 = 1 
             If spi_IsCameraFirstPerson()
@@ -184,7 +184,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
          key_f1 = 0
       EndIf 
       
-      If GetAsyncKeyState_(#VK_f2)
+      If GetAsyncKeyState_(#VK_F2)
          If key_f2 = 0
             key_f2 = 1 
             If anz_isPostProcessing       = 1 
@@ -239,21 +239,12 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
         key_return = 0
       EndIf 
       
-   ForEver ; wird mit end beendet.
-; IDE Options = PureBasic 4.40 (Windows - x86)
-; CursorPosition = 24
-; FirstLine = 14
-; IDE Options = PureBasic 4.40 (Windows - x86)
-; CursorPosition = 107
-; FirstLine = 96
-; IDE Options = PureBasic 4.40 Beta 1 (Windows - x86)
-; CursorPosition = 58
-; FirstLine = 14 
-; jaPBe Version=3.9.12.818
-; Build=8
-; FirstLine=35
-; CursorPosition=43
+   ForEver 
+; jaPBe Version=3.9.12.819
+; Build=10
+; FirstLine=57
+; CursorPosition=82
 ; ExecutableFormat=Windows
-; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\abenthum 1.0.exe
+; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\abenthum 1.0.exe
 ; DontSaveDeclare
 ; EOF

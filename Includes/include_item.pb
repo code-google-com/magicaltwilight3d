@@ -332,7 +332,8 @@ Procedure item_drop_item ( *itemID.ITEM) ; erstellt ein verstecktes Item an der 
          anz_getMeshPosition( wes_getAnzMeshID( spi_GetSpielerWesenID( spi_getcurrentplayer())) , @*itemID\Anz_mesh_struct\x , @*itemID\Anz_mesh_struct\y , @*itemID\Anz_mesh_struct\z )
          *itemID\Anz_mesh_struct\x + Cos(math_FiToRad( Random(360)))* #meter ; damit die items im Kreis um den spieler liegen (1meter Abstand)
          *itemID\Anz_mesh_struct\z + Sin(math_FiToRad( Random(360)))* #meter 
-         *itemID\anz_Mesh_ID = anz_addmesh    ( *itemID\Anz_mesh_struct\pfad ,*itemID\Anz_mesh_struct\x , *itemID\Anz_mesh_struct\y , *itemID\Anz_mesh_struct\z , *itemID\Anz_mesh_struct\texture , *itemID\Anz_mesh_struct\MaterialType , *itemID\Anz_mesh_struct\normalmap  ,  0 , 0 , #anz_col_box , #anz_ColType_movable )
+         *itemID\Anz_mesh_struct\y + #meter 
+         *itemID\anz_Mesh_ID = anz_addmesh    ( *itemID\Anz_mesh_struct\pfad ,*itemID\Anz_mesh_struct\x , *itemID\Anz_mesh_struct\y , *itemID\Anz_mesh_struct\z , *itemID\Anz_mesh_struct\texture , *itemID\Anz_mesh_struct\MaterialType , *itemID\Anz_mesh_struct\normalmap  ,  1 , 0 , #anz_col_box , #anz_ColType_movable)
          *anz_mesh           = *itemID        \anz_Mesh_ID 
          *anz_mesh           \itemID        = *itemID 
          ProcedureReturn *itemID ; erfolgreich
@@ -352,13 +353,13 @@ Procedure Item_GetGoldwert(*itemID.ITEM)
 EndProcedure
  
 ; jaPBe Version=3.9.12.819
-; FoldLines=0006000F0024002E0063006500AB00E600E800EA00EC00EE00F000F200F400F6
-; FoldLines=00F800FC00FE01000104010E0110011A011C0126012801300132013601380143
-; FoldLines=014501550157015B015D015F
+; FoldLines=0006000F0011003300240000003500520054005F00630065006700A700AB00E6
+; FoldLines=00E800EA00EC00EE00F000F200F400F600F800FC00FE01000104010E0110011A
+; FoldLines=011C012601280130013201360158015C015E0160
 ; Build=0
-; CompileThis=..\Wegfindung TESTER.pb
-; FirstLine=94
-; CursorPosition=137
+; CompileThis=..\Anzeige Tester + MiniMap Test.pb
+; FirstLine=34
+; CursorPosition=335
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
