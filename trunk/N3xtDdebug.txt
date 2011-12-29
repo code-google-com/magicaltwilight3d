@@ -1,27 +1,32 @@
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\minimap\Minimap_Back.png
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\minimap\Minimap_Front.png
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skybox0.jpg
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skybox2.jpg
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skybox1.jpg
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skybox3.jpg
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skyboxdn.jpg
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\default_skyboxup.jpg
-Loaded texture: C:\textures_kim\Floors\Floor11.jpg
-Loaded texture: C:\textures_kim\Walls\Wall12.jpg
-Loaded texture: C:\textures_kim\Wood\Wood02.jpg
-Loaded texture: C:\textures_kim\Wood\Wood01.jpg
-Loaded texture: C:\textures_kim\Roofs\Roof04.jpg
-Loaded texture: C:\textures_kim\sacredplace\Wall02.jpg
-Loaded texture: C:\textures_kim\sacredplace\Wall12.jpg
-Loaded texture: C:\textures_kim\sacredplace\Wood01.jpg
-Loaded texture: C:\textures_kim\sacredplace\Wall06.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\minimap\Minimap_Back.png
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\minimap\Minimap_Front.png
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\default_skybox0.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\default_skybox2.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\default_skybox1.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\default_skybox3.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\default_skyboxdn.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\default_skyboxup.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\Floor11.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\Wall12.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\Wood02.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\Wood01.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\Roof04.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\Wall02.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\Wall06.jpg
 Loaded mesh: ..\level_kim\level_kim.b3d
-Loaded texture: C:\Desktop\sacred plaze\textures_kim\system.bmp
-Loaded texture: C:\Desktop\sacred plaze\textures_kim\Water01.jpg
+Could not open file of texture: system.bmp
+Could not open file of texture: Water01.jpg
 Loaded mesh: ..\level_kim\level_kim_collision.b3d
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\maps\level_kim\blank.png
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\blank.png
 Loaded mesh: ..\..\sydney.md2
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\sydney.jpg
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\einfachesSchwert.png
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\brot.png
-Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\Schriftrolle.png
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\sydney.jpg
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\Items\einfachesSchwert.png
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\Items\brot.png
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\Items\Schriftrolle.png
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\minimap\F.png
+Could not load a texture for entry in 3ds file: stabwaffe st
+Loaded mesh: ..\..\maps\standard stabwaffe.3ds
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\stabwaffe standard.tga
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\Max Welt\Items\seifenblasenwaffe_gelb_texture.png
+Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\Max Welt\Items\seifenblasenwaffe_rot_texture.tga
+Loaded mesh: ..\..\maps\Max Welt\Items\seifenblasenwaffe.b3d

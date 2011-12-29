@@ -376,10 +376,10 @@ IncludeFile "include_animation.pb"
 IncludeFile "include_math.pb"
 IncludeFile "include_3DEngine.pb"
 IncludeFile "include_minimap.pb" 
-; jaPBe Version=3.9.12.818
+; jaPBe Version=3.9.12.819
 ; Build=0
-; FirstLine=135
-; CursorPosition=171
+; FirstLine=0
+; CursorPosition=20
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF

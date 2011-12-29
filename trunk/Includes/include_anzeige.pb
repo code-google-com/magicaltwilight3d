@@ -36,10 +36,10 @@
                                      EndIf 
                                      
                                      ; check if scale meshbuffer
-                                     If loadmesh_scale_meshbuffer = 1
+                                     ;If loadmesh_scale_meshbuffer = 1
                                         *geo.i = iobjectgeometry ( anz_mesh()\meshID )
                                         iScaleMeshBuffer( *geo ,anz_mesh()\scalex , anz_mesh()\scaley , anz_mesh()\scalez )
-                                     EndIf 
+                                     ;EndIf 
                                      
                                      
                                      If anz_mesh()\anim_IsAnimMesh 
@@ -77,7 +77,7 @@
                                         iPositionNode( anz_mesh()\nodeID , anz_Object3d()\x  , anz_Object3d()\y  , anz_Object3d()\z)
                                         irotatenode  ( anz_mesh()\nodeID , anz_mesh()\rotx   , anz_mesh()\roty   , anz_mesh()\rotz)
                                         If loadmesh_scale_meshbuffer = 0
-                                           iScaleNode   ( anz_mesh()\nodeID , anz_mesh()\scalex , anz_mesh()\scaley , anz_mesh()\scalez)
+                                           ;iScaleNode   ( anz_mesh()\nodeID , anz_mesh()\scalex , anz_mesh()\scaley , anz_mesh()\scalez)
                                         EndIf 
                                         debugcounter + 1 :  Debug debugcounter
                                         ; breite, höhe und tiefe berechnen
@@ -107,7 +107,7 @@
                                                  If     anz_mesh()\Collisiondetail  = #anz_col_mesh  ; wird hier immer neugeladen, weil das node ja auch neu ist ;) 
                                                         iSetCollideForm             (  #COMPLEX_PRIMITIVE_SURFACE )
                                                  ElseIf anz_mesh()\Collisiondetail  =  #anz_col_box 
-                                                        iSetCollideForm             (  #BOX_PRIMITIVE )
+                                                        iSetCollideForm             (  #COMPLEX_PRIMITIVE_SURFACE )
                                                  EndIf 
                                                  anz_mesh()\collisionNodeID         =  iCreateBody(anz_mesh()\nodeID , #False) ; nicht bewegbar, deswegen #false.
                                         ElseIf          anz_mesh()\Collisiontype    = #anz_ColType_movable 
@@ -1885,7 +1885,7 @@ EndMacro
          
          
          ; DEBUG:.... eingebaut um das zoomzeugs zu normalisieren:
-         If GetFilePart(pfad ) = "sydney.md2"
+         If GetFilePart(pfad ) = "sydney.md2" Or GetFilePart (pfad) = "standard stabwaffe.3ds" Or GetFilePart (pfad) = "seifenblasenwaffe.b3d" 
              scalx = 1/34*#meter  ; früher war die welt einfach 30  px groß, jetzt ist sie ca. 1 px groß
              scaly = 1/34*#meter
              scalz = 1/34*#meter
@@ -4125,8 +4125,10 @@ EndMacro
       rasterx = Round( x1 / #anz_rasterboxbreite  , 1 )
       rastery = Round( y1 / #anz_rasterboxhohe    , 1 )
       rasterz = Round( z1 / #anz_rasterboxbreite  , 1 )
-      anzahl_zuladendes - 1.4 ; man darf nur maximal einen Wert von 1 neuladen (= 1 Mesh pro Zyklus)
-
+      If anzahl_zuladendes > 0 
+          anzahl_zuladendes - 1.4 ; man darf nur maximal einen Wert von 1 neuladen (= 1 Mesh pro Zyklus)
+      EndIf 
+      
     For x_for = -5 To 5
          For y_for = -4 To 4
             For z_for = -5 To 5
@@ -4265,16 +4267,26 @@ EndMacro
                             
                                If Not anz_IsObject3dChild( *p_obj) ; wenn es ein child ist, wird node nicht gelöscht etc.
                                     If *anz_mesh\geladen 
+                                    
+                                       ;{ DEBUG
                                        If GetAsyncKeyState_(#VK_F4) And *anz_mesh\WesenID > 0
-                                       Debug "Reload Object 3D "
-                                       Debug "ART: " + Str(*p_obj\art)
-                                       Debug "wesenid: " + Str( *anz_mesh\WesenID )
-                                       Debug "irrnode: " + Str(anz_getObject3DIrrNode( *p_obj ))
+                                          Debug "Reload Object 3D "
+                                          Debug "ART: " + Str(*p_obj\art)
+                                          Debug "wesenid: " + Str( *anz_mesh\WesenID )
+                                          Debug "Model: " + GetFilePart ( *anz_mesh\pfad )
+                                          Debug ""
+                                          Delay ( 100) ; to debounce the KEY.!. 
                                        EndIf 
+                                        ;}
+                                        
                                        E3D_GetExtentTransformed(anz_getObject3DIrrNode( *p_obj) , @radx , @rady , @radz)
                                        If GetAsyncKeyState_(#VK_F4) And *anz_mesh\WesenID > 0
-                                       Debug "GOT Extent"
+                                          Debug "GOT Extent"
                                        EndIf 
+                                       
+                                       
+                                      
+                                       
                                        *anz_mesh\width   = radx 
                                        *anz_mesh\height  = rady
                                        *anz_mesh\Depth   = radz
@@ -4351,7 +4363,7 @@ EndMacro
                                  
                                    ;}
                                
-                               ElseIf anz_obj_cam_dist <= anz_distance_fern  * rady / dist_faktor       ; hier noch weniger anzeigen
+                             ElseIf anz_obj_cam_dist <= anz_distance_fern  * rady / dist_faktor       ; hier noch weniger anzeigen
                                
                                  ;{
                                  
@@ -5055,7 +5067,7 @@ EndMacro
 ; IDE Options = PureBasic 4.40 (Windows - x86)
 ; CursorPosition = 108
 ; FirstLine = 77 
-; jaPBe Version=3.9.12.818
+; jaPBe Version=3.9.12.819
 ; FoldLines=009800A000A800AA00AC00AE00B000B200B400B600B800C000C200CA00CC00DC
 ; FoldLines=00F00151015501A301A901AB01AD01AF01B101B301B501B701B901BB01BF01C8
 ; FoldLines=01C901D001D101E801E901F401F501FC01FE02060208020A020C021702190224
@@ -5065,22 +5077,22 @@ EndMacro
 ; FoldLines=056405660568056A056C056E0570058D058F0592059405960598059A059C059E
 ; FoldLines=05A005A205A405A605A805AB05AD05AF05B105B305B705B905BD05E705DF0000
 ; FoldLines=05E905F805FA06060608062D062F064706490661066306770679068F069106A8
-; FoldLines=06AA06B106B306BC06C006F706F906FD06FF070D070F071707190735073907A7
-; FoldLines=07A907E807EA08110813083508370849084B08C10850000008750000087E0000
-; FoldLines=088B00000896000008C308CC08CE0900090209120914091F0921092D09310956
-; FoldLines=09580967096909750979099E09A00A040A060A0C0A0E0D710A3100000A370000
-; FoldLines=0A5900000A5F00000AB000000B4000000BB300000BB900000C0000000C940000
-; FoldLines=0CA400000CEB00000D1D00000D730D8B0D8D0D8F0D930D9C0D9E0DAF0DA00000
-; FoldLines=0DB10DCB0DCD0DD70E300E3B0E3D0E420E490E530E550E5F0E610E780E7A0E85
-; FoldLines=0E870E920E940E9F0EA10EAE0EB40F060F0A0F1A0F1C0FBF0FC1100D0FDC0000
-; FoldLines=0FEA00000FF60000100F12291042000010860000108B00001090000011300000
-; FoldLines=11590000117E00001194000011CA000011D8000011E7000011EE0000122B1239
-; FoldLines=123D123F1243124A124C12621264128B128D12CD1293000012AC000012C00000
-; FoldLines=12CF134C134E13AA
+; FoldLines=06AA06B106B306BC06C006F706F906FD06FF070D070F07170719073507A907E8
+; FoldLines=07EA08110813083508370849084B08C10850000008750000087E0000088B0000
+; FoldLines=0896000008C308CC08CE0900090209120914091F0921092D0931095609580967
+; FoldLines=096909750979099E09A00A040A060A0C0A0E0D710A3100000A3700000A590000
+; FoldLines=0A5F00000AB000000B4000000BB300000BB900000C9400000CA400000CEB0000
+; FoldLines=0D1D00000D730D8B0D8D0D8F0D930D9C0D9E0DAF0DA000000DB10DCB0DCD0DD7
+; FoldLines=0DD90F080E3000000E3D00000E4900000E5500000E6100000E7A00000E870000
+; FoldLines=0E9400000EA100000EB400000F0A0F1A0F1C0FBF0FC1100D0FDC00000FEA0000
+; FoldLines=0FF6000010441084105000001064000010881089108D108E10E1110B110F1138
+; FoldLines=113C116111651186118A119411A011EF11D6000011E4000011F311F611FA122A
+; FoldLines=123712451249124B124F12561258126E12701297129912D9129F000012B80000
+; FoldLines=12CC000012DB1358135A13B6
 ; Build=0
 ; CompileThis=..\Anzeige Tester + MiniMap Test.pb
-; FirstLine=241
-; CursorPosition=651
+; FirstLine=52
+; CursorPosition=73
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
