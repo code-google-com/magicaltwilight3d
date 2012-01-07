@@ -19,6 +19,13 @@ Could not open file of texture: Water01.jpg
 Loaded mesh: ..\level_kim\level_kim_collision.b3d
 Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\level_kim\blank.png
 Loaded mesh: ..\..\sydney.md2
+<<<<<<< .mine
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\sydney.jpg
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\test\grün.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\einfachesSchwert.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\brot.png
+Loaded texture: C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\Gfx\Items\Schriftrolle.png
+=======
 Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\sydney.jpg
 Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\Items\einfachesSchwert.png
 Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\Items\brot.png
@@ -30,3 +37,4 @@ Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\ma
 Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\Max Welt\Items\seifenblasenwaffe_gelb_texture.png
 Loaded texture: G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Gfx\maps\Max Welt\Items\seifenblasenwaffe_rot_texture.tga
 Loaded mesh: ..\..\maps\Max Welt\Items\seifenblasenwaffe.b3d
+>>>>>>> .r43
