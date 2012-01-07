@@ -43,7 +43,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    CompilerEndIf 
    
    anz_setresolution          ( 1240 , 768, 32 , 0 )
-   
+
+    
    anz_enable_normalmapping   ( 0 )
    anz_enable_parallaxmapping ( 0 )
    anz_enable_shadow          ( 1 )
@@ -239,12 +240,13 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
         key_return = 0
       EndIf 
       
-   ForEver 
+   ForEver
 ; jaPBe Version=3.9.12.819
 ; Build=10
 ; FirstLine=57
 ; CursorPosition=82
 ; ExecutableFormat=Windows
-; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\abenthum 1.0.exe
+; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\abenthum 1.0.exe
+
 ; DontSaveDeclare
 ; EOF
