@@ -573,7 +573,7 @@ IncludeFile "includes\include_all.pb"
 ; Manual Parameter S=DX9
 ; Language=0x0000 Language Neutral
 ; FirstLine=292
-; CursorPosition=460
+; CursorPosition=424
 ; EnableUnicode
 ; EnableXP
 ; ExecutableFormat=Windows
