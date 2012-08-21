@@ -60,16 +60,16 @@
                                      EndIf 
                                      
                                      debugcounter + 1 :  Debug debugcounter
-                                     irr_obj               = anz_mesh()\nodeID 
-                                     radx.f = 0
-                                     rady.f = 0
-                                     radz.f = 0
-                                     x1.f   = 0
-                                     y1.f   = 0
-                                     z1.f   = 0
-                                     x2.f   = 0
-                                     y2.f   = 0
-                                     z2.f   = 0
+                                     irr_obj = anz_mesh()\nodeID 
+                                     radx.f  = 0
+                                     rady.f  = 0
+                                     radz.f  = 0
+                                     x1.f    = 0
+                                     y1.f    = 0
+                                     z1.f    = 0
+                                     x2.f    = 0
+                                     y2.f    = 0
+                                     z2.f    = 0
                                      debugcounter + 1 :  Debug debugcounter
                                      If irr_obj
                                         
@@ -107,7 +107,7 @@
                                                  If     anz_mesh()\Collisiondetail  = #anz_col_mesh  ; wird hier immer neugeladen, weil das node ja auch neu ist ;) 
                                                         iSetCollideForm             (  #COMPLEX_PRIMITIVE_SURFACE )
                                                  ElseIf anz_mesh()\Collisiondetail  =  #anz_col_box 
-                                                        iSetCollideForm             (  #COMPLEX_PRIMITIVE_SURFACE )
+                                                        iSetCollideForm             (  #BOX_PRIMITIVE )
                                                  EndIf 
                                                  anz_mesh()\collisionNodeID         =  iCreateBody(anz_mesh()\nodeID , #False) ; nicht bewegbar, deswegen #false.
                                         ElseIf          anz_mesh()\Collisiontype    = #anz_ColType_movable 
@@ -2372,7 +2372,7 @@ EndMacro
 					anz_shader_proctest(anz_shader_num_mat)\id[3] = 0 : anz_shader_proctest(anz_shader_num_mat)\id[4] = 2 : anz_shader_proctest(anz_shader_num_mat)\id[5] = 3
 
 					; texture for render
-					anz_shader_proctest(anz_shader_num_mat)\firstmap = iCreateRenderTargetTexture( 1024, 1024)
+					anz_shader_proctest(anz_shader_num_mat)\firstmap = iCreateRenderTargetTexture( anz_getscreenwidth(), anz_getscreenheight())
 					anz_shader_proctest(anz_shader_num_mat)\secondmap = #Null
 					; new material definition
 					anz_shader_proctest(anz_shader_num_mat)\material = iCreateMaterial()
@@ -2456,7 +2456,7 @@ EndMacro
       iLogFile                 ( 1 )
       iVisibleCursorControl    ( 0 )
       anz_shader_AddProcessing ( #pfad_shader_bloom , #pfad_shader_bloom , 1) ; kein dx-shader dabei..... spiel soll auf opengl laufen.
-      iFog                     ( $FFFFFFFF , #True , 15*#meter,100*#meter, 0.0005 , 1 , 24*#meter )
+      iFog                     ( RGBA(128,128,128,255) , 0 , 0.1*#meter,20*#meter, 0.7 , 1 , 0 )  ; RGBA(192,219,212 , 255)
       
       ; camera wird in load_map gesetzt
       
@@ -3871,7 +3871,7 @@ EndMacro
      
                  If *anz_Mesh_ID\geladen     = 1  
                     
-                    If Not *anz_Mesh_ID\irr_emt_materialtype = -1
+                    If Not *anz_Mesh_ID\irr_emt_materialtype = -1  
                  
                     irr_obj                  = *anz_Mesh_ID\nodeID                   ; vereinfachen der ID auf ne variable
                     
@@ -4021,10 +4021,10 @@ EndMacro
                    
                    
                  ;}
+                    EndIf
                     
-                       iMaterialFlagNode        ( *anz_Mesh_ID\nodeID , #EMF_LIGHTING   , *anz_Mesh_ID\islighting & anz_islighting)
-                       iMaterialFlagNode        ( *anz_Mesh_ID\nodeID , #EMF_FOG_ENABLE , anz_isfog      )
-                    EndIf 
+                     iMaterialFlagNode        ( *anz_Mesh_ID\nodeID , #EMF_LIGHTING   , *anz_Mesh_ID\islighting & anz_islighting)
+                     iMaterialFlagNode        ( *anz_Mesh_ID\nodeID , #EMF_FOG_ENABLE , anz_isfog      ) 
                 EndIf 
                 
              ProcedureReturn irr_obj 
@@ -5069,30 +5069,30 @@ EndMacro
 ; FirstLine = 77 
 ; jaPBe Version=3.9.12.819
 ; FoldLines=009800A000A800AA00AC00AE00B000B200B400B600B800C000C200CA00CC00DC
-; FoldLines=00F00151015501A301A901AB01AD01AF01B101B301B501B701B901BB01BF01C8
-; FoldLines=01C901D001D101E801E901F401F501FC01FE02060208020A020C021702190224
-; FoldLines=0226023202340237023A023E024002570259026E027002740276027A02A302CE
+; FoldLines=00E001A700F000000155000001A901AB01AD01AF01B101B301B501B701B901BB
+; FoldLines=01BF01C801C901D001D101E801E901F401F501FC01FE02060208020A020C0217
+; FoldLines=021902240226023202340237023A023E0259026E027002740276027A02A302CE
 ; FoldLines=02D002F502F703550357038C038E03BE03C00408040A0448044A048D048F049E
 ; FoldLines=04A204C004C204DF04E304F004F2054E04F70000053300000552055E05600562
 ; FoldLines=056405660568056A056C056E0570058D058F0592059405960598059A059C059E
 ; FoldLines=05A005A205A405A605A805AB05AD05AF05B105B305B705B905BD05E705DF0000
 ; FoldLines=05E905F805FA06060608062D062F064706490661066306770679068F069106A8
 ; FoldLines=06AA06B106B306BC06C006F706F906FD06FF070D070F07170719073507A907E8
-; FoldLines=07EA08110813083508370849084B08C10850000008750000087E0000088B0000
-; FoldLines=0896000008C308CC08CE0900090209120914091F0921092D0931095609580967
-; FoldLines=096909750979099E09A00A040A060A0C0A0E0D710A3100000A3700000A590000
-; FoldLines=0A5F00000AB000000B4000000BB300000BB900000C9400000CA400000CEB0000
-; FoldLines=0D1D00000D730D8B0D8D0D8F0D930D9C0D9E0DAF0DA000000DB10DCB0DCD0DD7
-; FoldLines=0DD90F080E3000000E3D00000E4900000E5500000E6100000E7A00000E870000
-; FoldLines=0E9400000EA100000EB400000F0A0F1A0F1C0FBF0FC1100D0FDC00000FEA0000
-; FoldLines=0FF6000010441084105000001064000010881089108D108E10E1110B110F1138
-; FoldLines=113C116111651186118A119411A011EF11D6000011E4000011F311F611FA122A
-; FoldLines=123712451249124B124F12561258126E12701297129912D9129F000012B80000
-; FoldLines=12CC000012DB1358135A13B6
+; FoldLines=07EA081108130835084B08C10850000008750000087E0000088B000008960000
+; FoldLines=08C308CC08CE0900090209120914091F0921092D0969097509A00A040A060A0C
+; FoldLines=0A0E0D710A3100000A3700000A5900000A5F00000AB000000B4000000BB30000
+; FoldLines=0BB900000C9400000CA400000CEB00000D1D00000D730D8B0D8D0D8F0D930D9C
+; FoldLines=0D9E0DAF0DA000000DB10DCB0DCD0DD70DD90F080E3000000E3D00000E490000
+; FoldLines=0E5500000E6100000E7A00000E8700000E9400000EA100000EB400000F0A0F1A
+; FoldLines=0F1C0FBF0F2500000F2B00000F4F00000F7200000F8C00000FA600000FC1100D
+; FoldLines=0FDC00000FEA00000FF60000100F123510440000105000001064000010880000
+; FoldLines=108D000010E10000110F0000113C000011650000118A000011A0000011D60000
+; FoldLines=11E4000011F3000011FA0000123712451249124B124F12561258126E12701297
+; FoldLines=129912D9129F000012B8000012CC000012DB1358135A13B6
 ; Build=0
 ; CompileThis=..\Anzeige Tester + MiniMap Test.pb
-; FirstLine=52
-; CursorPosition=73
+; FirstLine=601
+; CursorPosition=2458
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
