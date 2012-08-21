@@ -240,13 +240,12 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
         key_return = 0
       EndIf 
       
-   ForEver
+   ForEver 
 ; jaPBe Version=3.9.12.819
-; Build=10
+; Build=11
 ; FirstLine=42
 ; CursorPosition=52
 ; ExecutableFormat=Windows
-; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\abenthum 1.0.exe
-
+; Executable=C:\Users\Max\Documents\!Programmierung\Magical Twilight\abenthum 1.0.exe
 ; DontSaveDeclare
 ; EOF
