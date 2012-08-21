@@ -6,7 +6,7 @@ IncludeFile "includes\include_all.pb"
 ; -----------------------------------------------------------------------------------------------------------------------
 ; ------------------------------------------------------ constants ------------------------------------------------------
 ; -----------------------------------------------------------------------------------------------------------------------
-
+#Main_Release = 0
 
 ; -----------------------------------------------------------------------------------------------------------------------
 ; ------------------------------------------------------ Structures------------------------------------------------------
@@ -38,7 +38,7 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
 ; ------------------------------------------------------ MAIN      ------------------------------------------------------
 ; ----------------------------------------------------------------------------------------------------------------------- 
    
-   CompilerIf #PB_Compiler_Debugger = 0
+   CompilerIf #Main_Release = 1
       MessageRequester( "Willkommen" , "WICHTIG: geh nicht in den raum rechts! man kommt nicht mehr raus." + Chr(10) + "Keyboard: " + Chr(10) + Chr(9) + "WASD-ARROWS: Move" +Chr(10)+ Chr(9) + "Space: Jump" + Chr(10) + Chr(9) + "E: pick up Item" +Chr(10) + Chr(9) + "1-5: Quickuse Item" +Chr(10) + Chr(9) + "M: Map" +Chr(10) + Chr(9) + "I-> Inventar" +Chr(10) + Chr(9) + "Q: Questlog" +Chr(10) + Chr(9) + "F1: 3rd-First Person cam"  +Chr(10) + Chr(9) + "F2: Activate BLOOM"+ Chr(10) + Chr(10) + "Viel Spaﬂ =) Sourcecode liegt bei." , #MB_ICONINFORMATION )
    CompilerEndIf 
    
@@ -51,8 +51,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    anz_enable_fog             ( 1 )
    anz_enable_lighting        ( 1 )
    anz_savepreferences        (   )
-   anz_isPostProcessing       = 0
-   anz_initstuff              ( 0 )
+   anz_isPostProcessing       = 1
+   anz_initstuff              ( 1 )
    MIN_INIT                   ( anz_getscreenwidth() -Min_width(),anz_getscreenheight() - Min_height() - 10)
    
    
@@ -243,8 +243,8 @@ test_x.f = 0 : test_y.f = 0: test_z.f = 0
    ForEver
 ; jaPBe Version=3.9.12.819
 ; Build=10
-; FirstLine=57
-; CursorPosition=82
+; FirstLine=42
+; CursorPosition=52
 ; ExecutableFormat=Windows
 ; Executable=C:\Users\Walker\Documents\Programmierung\Magical Twilight 3D\abenthum 1.0.exe
 

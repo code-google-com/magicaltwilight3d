@@ -523,7 +523,7 @@ EndIf
 End 
 ; jaPBe Version=3.9.12.819
 ; Build=1
-; FirstLine=0
+; FirstLine=15
 ; CursorPosition=27
 ; ExecutableFormat=Windows
 ; Executable=G:\Eigene Daten\Documents\Programmierung\Magical Twilight\Welteditor.exe

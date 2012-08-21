@@ -1,6 +1,10 @@
-0
+7
 PBGadget2Irrlicht G translater.pb
 3D welt Editor.pb
 Irr Buttons Editor.pb
 include structures\include_animation_structure.pb
 include structures\include_teams_structure.pb
+Anzeige Tester + MiniMap Test.pb
+Includes\include_anzeige.pb
+Includes\include_spieler.pb
+..\..\Software Entwicklung\Purebasic IRRLICHT 1.4\Examples\sample_n3xtd_neu\043_TerrainWithFog.pb

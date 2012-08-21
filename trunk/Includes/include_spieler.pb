@@ -254,13 +254,13 @@
       spi_camera\motionspeed = speed 
    EndProcedure 
    
-   Procedure spi_addspieler ( x.f,y.f,z.f, leben.w , maxleben.w , mana.w , maxmana.w , name.s , Team.s , IsCurrentSpieler.b = 1) ; erstellt neues 3D Wesen!! und den spieler 
+   Procedure spi_addspieler ( x.f,y.f,z.f, leben.w , maxleben.w , mana.w , maxmana.w , name.s , team.s , IsCurrentSpieler.b = 1) ; erstellt neues 3D Wesen!! und den spieler 
       Protected *spieler.spi_spieler , *WesenID.wes_wesen , *light 
       *spieler                        = AddElement   ( spi_spieler ())
          
          If *spieler                  ; wenn noch genug ram da.
             *spieler\InventarID       = AddElement   ( spi_inventar())
-            *spieler\WesenID          = wes_AddWesen ( name , x , y , z , Team , maxleben , #spi_standard_speed , #pfad_spieler_mesh , #pfad_spieler_texture , #pfad_spieler_texture2 , #EMT_NORMAL_MAP_SOLID ,1 , *spieler) ; wesen hinzufügen.
+            *spieler\WesenID          = wes_AddWesen ( name , x , y , z , team , maxleben , #spi_standard_speed , #pfad_spieler_mesh , #pfad_spieler_texture , #pfad_spieler_texture2 , #EMT_NORMAL_MAP_SOLID ,1 , *spieler) ; wesen hinzufügen.
             *spieler\exist            = 1
             *spieler\Anzahl_Sacke     = 3 ; 1 Sack amm anfang.. inventarsack ;)
             *WesenID                  = *spieler\WesenID 
@@ -299,8 +299,8 @@
                spi_DefinePlayerCamera    ( anz_camera ) 
                spi_FixCamera             ( wes_getNodeID( *spieler\WesenID ))
                spi_SetCameraDistance     ( 4*#meter)                
-               iNearValueCamera          ( anz_camera , 0.001 )
-               iFarValueCamera           ( anz_camera                 ,300 * #meter)
+               iNearValueCamera          ( anz_camera , 0.003 )
+               iFarValueCamera           ( anz_camera                 ,70 * #meter)
                
                
             EndIf
@@ -670,7 +670,7 @@
 ; IDE Options = PureBasic 4.40 (Windows - x86)
 ; CursorPosition = 220
 ; FirstLine = 189 
-; jaPBe Version=3.9.12.818
+; jaPBe Version=3.9.12.819
 ; FoldLines=0008000E0010001400160029002B003D003F004A004C0058005A0069006B00BD
 ; FoldLines=00BF00D100D500D700D900DD00E000E200E400E600EA00F400F600FA00FC00FE
 ; FoldLines=013801440146014C014E01520154015601650168016A0172017401850189018B
@@ -678,8 +678,8 @@
 ; FoldLines=01E001F201F402210223029602320000
 ; Build=0
 ; CompileThis=..\Anzeige Tester + MiniMap Test.pb
-; FirstLine=59
-; CursorPosition=288
+; FirstLine=67
+; CursorPosition=292
 ; ExecutableFormat=Windows
 ; DontSaveDeclare
 ; EOF
